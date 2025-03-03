@@ -21,6 +21,7 @@ import FinishPage from './components/OpeningPage/FinishPage'
 
 import next from './assets/arrow-right.svg'
 import previous from './assets/arrow-left.svg'
+import rotate from './assets/videos/rotate.mov'
 
 import management from './assets/navbar-icons/management.svg'
 import checkList from './assets/navbar-icons/check-list.svg'
@@ -113,6 +114,10 @@ const Subjects = [
 const pathArray = ['/', '/subjectsPage', '/finishPage'];
 
 function App() {
+  // horizontal view on mobile
+  const [isPortrait, setIsPortrait] = useState(false);
+
+  // variables
   const [countPages, setCountPages] = useState(0);
   const [firstPage, setFirstPage] = useState(false);
   const [lastPage, setLastPage] = useState(false);
@@ -157,76 +162,113 @@ function App() {
     }
   })
 
+  // Detect screen orientation and update state
+  useEffect(() => {
+    const handleOrientationChange = () => {
+      if (window.innerWidth < window.innerHeight) {
+        setIsPortrait(true); // Portrait mode
+      } else {
+        setIsPortrait(false); // Landscape mode
+      }
+    };
+
+    // Initial check
+    handleOrientationChange();
+
+    // Listen for resize events to detect when the device is rotated
+    window.addEventListener('resize', handleOrientationChange);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleOrientationChange);
+    };
+  }, []);
+
+
   return (
     <>
-      <Route path="/" >
-        <OpeningPage />
-      </Route>
-      <Route path="/subjectsPage">
-        <SubjectsPage Subjects={Subjects} />
-      </Route>
-      <Route path="/finishPage">
-        <FinishPage Subjects={Subjects} />
-      </Route>
-      <div>
-        <div className='split right' style={{ display: !pathArray.includes(window.location.pathname) ? "block" : "none" }}>
-          <Route path="/page1" >
-            <Page1 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
-          </Route>
-          <Route path="/page2" >
-            <Page2 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
-          </Route>
-          <Route path="/page3" >
-            <Page3 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
-          </Route>
-          <Route path="/page4" >
-            <Page4 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
-          </Route>
-          <Route path="/page5" >
-            <Page5 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
-          </Route>
-          <Route path="/page6" >
-            <Page6 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
-          </Route>
-          <Route path="/page7" >
-            <Page7 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
-          </Route>
-          <Route path="/page8" >
-            <Page8 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
-          </Route>
-          <Route path="/page8/1" >
-            <Page8Subtopic countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
-          </Route>
-          <Route path="/page9" >
-            <Page9 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
-          </Route>
-          <Route path="/page9/1" >
-            <Page9Subtopic countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
-          </Route>
-          <Route path="/page10" >
-            <Page10 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
-          </Route>
-
-          <div className='arrows'>
-            <button style={{ visibility: finish || selectedPage === 2 ? "visible" : "hidden" }}
-              onClick={nextSlide}>
-              {countPages === maxPages ?
-                <Link setCountPages={setCountPages} href={!lastPage ? linkName : '/finishPage'}><img src={next} className='next-arrow'></img></Link> :
-                <img src={next} className='next-arrow'></img>}
-            </button>
-
-            <button onClick={previousSlide}>
-              {countPages === 0 ?
-                <Link setCountPages={setCountPages} href={!firstPage ? `/page${currentSubject.id - 1}` : '/subjectsPage'}><img src={previous} className='previous-arrow'></img></Link> :
-                <img src={previous} className='previous-arrow'></img>}
-            </button>
+      <div >
+        {/* rotate phone message */}
+        {isPortrait && (
+          <div className='portrait'>
+            <video src={rotate}  type='video/mov' width='350rem' autoPlay loop muted></video>
           </div>
-        </div>
+        )}
 
-        {
-          !pathArray.includes(window.location.pathname) ?
-            <Navbar className="split left" Subjects={Subjects} currentSubject={currentSubject} setCurrentSubject={setCurrentSubject}></Navbar> : <></>
-        }
+        {/* landscape mode */}
+        <Route path="/" >
+          <OpeningPage />
+        </Route>
+        <Route path="/subjectsPage">
+          <SubjectsPage Subjects={Subjects} />
+        </Route>
+        <Route path="/finishPage">
+          <FinishPage Subjects={Subjects} />
+        </Route>
+
+        {/* pages with navbar */}
+        <div>
+          <div className='split right' style={{ display: !pathArray.includes(window.location.pathname) ? "block" : "none" }}>
+            <Route path="/page1" >
+              <Page1 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+            </Route>
+            <Route path="/page2" >
+              <Page2 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+            </Route>
+            <Route path="/page3" >
+              <Page3 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+            </Route>
+            <Route path="/page4" >
+              <Page4 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+            </Route>
+            <Route path="/page5" >
+              <Page5 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+            </Route>
+            <Route path="/page6" >
+              <Page6 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+            </Route>
+            <Route path="/page7" >
+              <Page7 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+            </Route>
+            <Route path="/page8" >
+              <Page8 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+            </Route>
+            <Route path="/page8/1" >
+              <Page8Subtopic countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+            </Route>
+            <Route path="/page9" >
+              <Page9 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+            </Route>
+            <Route path="/page9/1" >
+              <Page9Subtopic countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+            </Route>
+            <Route path="/page10" >
+              <Page10 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+            </Route>
+
+            {/* arrows */}
+            <div className='arrows'>
+              <button style={{ visibility: finish || selectedPage === 2 ? "visible" : "hidden" }}
+                onClick={nextSlide}>
+                {countPages === maxPages ?
+                  <Link setCountPages={setCountPages} href={!lastPage ? linkName : '/finishPage'}><img src={next} className='next-arrow'></img></Link> :
+                  <img src={next} className='next-arrow'></img>}
+              </button>
+
+              <button onClick={previousSlide}>
+                {countPages === 0 ?
+                  <Link setCountPages={setCountPages} href={!firstPage ? `/page${currentSubject.id - 1}` : '/subjectsPage'}><img src={previous} className='previous-arrow'></img></Link> :
+                  <img src={previous} className='previous-arrow'></img>}
+              </button>
+            </div>
+          </div>
+
+          {/* navbar */}
+          {
+            !pathArray.includes(window.location.pathname) ?
+              <Navbar className="split left" Subjects={Subjects} currentSubject={currentSubject} setCurrentSubject={setCurrentSubject}></Navbar> : <></>
+          }
+        </div>
       </div>
     </>
   )
