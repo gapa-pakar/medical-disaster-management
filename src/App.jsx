@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import Route from './components/Route'
 import Link from './components/Link'
 import Navbar from './components/Navbar/Navbar'
-import FullScreen from './components/FullScreen'
 import Page1 from './components/Page1/Page1'
 import Page2 from './components/Page2/Page2'
 import Page3 from './components/Page3/Page3'
@@ -206,7 +205,6 @@ function App() {
         <Route path="/finishPage">
           <FinishPage Subjects={Subjects} />
         </Route>
-        <FullScreen /> {/* Render the FullScreen component */}
 
         {/* pages with navbar */}
         <div>
