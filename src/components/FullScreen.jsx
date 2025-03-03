@@ -7,7 +7,7 @@ export default function FullScreen() {
 
     // Function to detect mobile devices
     const checkIfMobile = () => {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1000) {
             setIsMobile(true);
         } else {
             setIsMobile(false);
