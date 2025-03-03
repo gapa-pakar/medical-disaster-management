@@ -766,7 +766,6 @@ textarea {
 
 .portrait {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh;
@@ -776,6 +775,12 @@ textarea {
   z-index: 2000;
   color: white;
   direction: ltr;
+}
+
+.portrait video {
+  margin-top: 34rem;
+  margin-right: -5rem;
+  width: 50rem;
 }
 
 .rotate-warning {

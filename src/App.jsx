@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Route from './components/Route'
 import Link from './components/Link'
 import Navbar from './components/Navbar/Navbar'
+import FullScreen from './components/FullScreen'
 import Page1 from './components/Page1/Page1'
 import Page2 from './components/Page2/Page2'
 import Page3 from './components/Page3/Page3'
@@ -21,7 +22,7 @@ import FinishPage from './components/OpeningPage/FinishPage'
 
 import next from './assets/arrow-right.svg'
 import previous from './assets/arrow-left.svg'
-import rotate from './assets/videos/rotate.mov'
+import rotate from './assets/videos/rotate.mp4'
 
 import management from './assets/navbar-icons/management.svg'
 import checkList from './assets/navbar-icons/check-list.svg'
@@ -191,7 +192,7 @@ function App() {
         {/* rotate phone message */}
         {isPortrait && (
           <div className='portrait'>
-            <video src={rotate}  type='video/mov' width='350rem' autoPlay loop muted></video>
+            <video src={rotate}  type='video/mp4' autoPlay loop muted></video>
           </div>
         )}
 
@@ -205,6 +206,7 @@ function App() {
         <Route path="/finishPage">
           <FinishPage Subjects={Subjects} />
         </Route>
+        <FullScreen /> {/* Render the FullScreen component */}
 
         {/* pages with navbar */}
         <div>
