@@ -1,0 +1,386 @@
+.medical-order-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9rem;
+}
+
+.elements-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.role-container {
+    padding: 1.2rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.75rem;
+}
+
+.role-title {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.roles {
+    background-color: white;
+    padding: 0rem 0.7rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+}
+
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-top: 1rem solid;
+    font-size: 0;
+    line-height: 0;
+    /* float: center; */
+    margin: 1rem 0rem;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: flex;
+    justify-content: space-around;
+}
+
+/* .triangle-arrows-container {
+    display: flex;
+    flex-direction: flex;
+    justify-content: space-around;
+} */
+
+.section-container-2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* part 2 */
+.medical-container-2 {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    margin-top: 8rem;
+    margin-right: 9rem;
+}
+
+.medical-menu {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17rem;
+    margin-left: 42rem;
+}
+
+ul {
+    list-style: none;
+    line-height: 1.8;
+}
+
+.roles-circle-label {
+    width: 19rem;
+    height: 19rem;
+    margin-top: -12rem;
+    margin-left: -20rem;
+    position: relative;
+    z-index: 100;
+}
+
+.roles-circle-border {
+    width: 19rem;
+    height: 9.5rem;
+    transform: rotate(-90deg);
+    display: flex;
+    position: relative;
+    z-index: 99;
+}
+
+#border1 {
+    border-top-left-radius: 11.5rem;
+    /* 100px of height + 10px of border */
+    border-top-right-radius: 11.5rem;
+    border: 2rem solid #fc9928;
+    align-items: flex-start;
+}
+
+#border2 {
+    border-bottom-left-radius: 11.5rem;
+    /* 100px of height + 10px of border */
+    border-bottom-right-radius: 11.5rem;
+    border: 2rem solid #3376bc;
+    align-items: flex-end;
+}
+
+.roles-title-circle {
+    width: 19rem;
+    height: 19rem;
+    border-radius: 19rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* top: 50%; */
+    /* right: 0; */
+    cursor: pointer;
+    /* z-index: 99; */
+    /* background-color: #343233; */
+    box-shadow: 0rem 0rem 0.625rem rgb(0, 0, 0, 40%);
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.roles-title {
+    transform: rotate(90deg);
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.2;
+    padding: 2rem;
+    text-align: center;
+}
+
+.medical-menu ul.medical-text-menu {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    transform: rotate(90deg);
+    visibility: hidden;
+    transition: visibility .1s;
+}
+
+.medical-menu>input:checked~ul {
+    visibility: inherit;
+}
+
+
+.medical-menu>input:checked~ul li {
+    transform: translateX(0deg);
+    transform: rotate(0deg);
+    right: 0;
+    opacity: 1;
+}
+
+/* 6 items + 1 */
+.medical-menu ul.medical-text-menu li {
+    --item: 1;
+    position: absolute;
+    transform: translateX(9.813rem);
+    transform: rotate(calc((90deg / 7) * var(--item)));
+    /* transform-origin: left center; */
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: transform .7s, opacity .2s, right .7s;
+}
+
+#one1 {
+    --item: 1;
+    top: 20rem;
+    right: 18.2rem;
+}
+
+#one2 {
+    --item: 2;
+    top: 28rem;
+    right: 12.9rem;
+}
+
+#one3 {
+    --item: 3;
+    top: 30rem;
+    right: 7.6rem;
+}
+
+#one4 {
+    --item: 4;
+    top: 30rem;
+    right: 2.6rem;
+}
+
+#one5 {
+    --item: 5;
+    top: 28rem;
+    right: -2.4rem;
+}
+
+#one6 {
+    --item: 6;
+    top: 23rem;
+    right: -7.8rem;
+}
+
+#two1 {
+    --item: 1;
+    top: 10rem;
+    right: 18.2rem;
+}
+
+#two2 {
+    --item: 2;
+    top: 2rem;
+    right: 12rem;
+}
+
+#two3 {
+    --item: 3;
+    top: 0rem;
+    right: 5.3rem;
+}
+
+#two4 {
+    --item: 4;
+    top: 2rem;
+    right: -1.3rem;
+}
+
+#two5 {
+    --item: 5;
+    top: 6rem;
+    right: -7.9rem;
+}
+
+.medical-menu ul li .span {
+    transform: rotate(-90deg);
+    background-color: #fc9928;
+    width: 25rem;
+    border-radius: 25rem;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.num-circle {
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.7rem;
+}
+
+#orange-text {
+    background-color: #343233;
+    color: white;
+}
+
+#blue-text {
+    background-color: white;
+    color: #343233;
+}
+
+.num-id {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.medical-roles-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    direction: rtl;
+    width: 20rem;
+    margin-left: 0.2rem;
+}
+
+.medical-roles-title {
+    font-weight: bold;
+
+}
+
+.medical-roles-description {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.text1 {
+    background-color: white;
+    border-radius: 0.625rem;
+    font-weight: bold;
+    font-size: 0.79rem;
+    text-align: center;
+    transform: rotate(-40deg);
+    position: absolute;
+    transition: transform .7s, opacity .2s;
+}
+
+.medical-menu>input:checked~ul .text1 {
+    transform: rotate(-90deg);
+    opacity: 1;
+}
+
+#text1-orange {
+    border: 0.125rem solid #fc9928;
+    color: #fc9928;
+    top: 23.5rem;
+    right: -10rem;
+    width: 20rem;
+}
+
+#text1-blue {
+    border: 0.125rem solid #3376bc;
+    color: #3376bc;
+    top: 9rem;
+    right: -4.5rem;
+    width: 9rem;
+}
+
+.medical-people-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.medical-people-line {
+    border-top: 0.125rem solid #343233;
+    margin-top: 0.4rem;
+    width: 40rem;
+}
+
+/* .medical-menu ul li span::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 25px;
+    background-color: white;
+    z-index: -1;
+    transition: background-color .3s;
+}  */
+
+@media only screen and (max-width: 800px) {
+    .medical-container-2 {
+        margin-right: 5rem;
+    }
+
+    .medical-menu {
+        margin-left: 35rem;
+    }
+
+    .roles-circle-label {
+        width: 16rem;
+        height: 16rem;
+    }
+    
+}

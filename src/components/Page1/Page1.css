@@ -1,0 +1,307 @@
+/* page 1 part 1 */
+.managers-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
+
+.element1-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.up-container {
+    margin-top: 14rem;
+}
+
+.down-container {
+    margin-bottom: 6rem;
+}
+
+.colored-line-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.colored-line {
+    width: 12.4rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-circle-border {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 25rem;
+    border: 0.125rem dashed white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-circle {
+    background-color: white;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 25rem;
+}
+
+.div-triangle-up,
+.div-triangle-down {
+    position: relative;
+    width: 12rem;
+    height: 10rem;
+    border-radius: 0.938rem;
+    /* border-top-color: blue; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+}
+
+.div-triangle-up {
+    animation-name: animate-slide-up;
+}
+
+.div-triangle-down {
+    animation-name: animate-slide-down;
+}
+
+#delay-up-1 {
+    animation-delay: 0s;
+}
+
+#delay-down-2 {
+    animation-delay: 0.2s;
+}
+
+#delay-up-3 {
+    animation-delay: 0.4s;
+}
+
+#delay-down-4 {
+    animation-delay: 0.6s;
+}
+
+#delay-up-5 {
+    animation-delay: 0.8s;
+}
+
+#delay-down-6 {
+    animation-delay: 1s;
+}
+
+#delay-up-7 {
+    animation-delay: 1.2s;
+}
+
+.div-triangle-up:after,
+.div-triangle-down:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    margin-left: -1.875rem;
+    width: 0;
+    height: 0;
+    border-top: solid 1.875rem;
+    border-top-color: inherit;
+    border-left: solid 1.875rem transparent;
+    border-right: solid 1.875rem transparent;
+}
+
+.div-triangle-up:after {
+    bottom: 100%;
+    transform: rotate(180deg);
+}
+
+.div-triangle-down:after {
+    top: 100%;
+}
+
+.page1-title-up,
+.page1-title-down {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 9rem;
+    height: 2rem;
+    text-align: center;
+    opacity: 1;
+}
+
+.page1-title-up {
+    padding-bottom: 2rem;
+}
+
+.page1-title-down {
+    padding-top: 2rem;
+}
+
+.page1-description-up,
+.page1-description-down {
+    padding: 1rem;
+}
+
+/* page1-second */
+.page1-triangle-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
+
+/* triangle */
+/* .page1-triangle {
+    width: 20rem;
+    height: 20rem;
+    border-top-right-radius: 30%;
+    background-color: blue;
+    transform: rotate(-60deg) skewX(-30deg) scale(1, .866);
+  }
+  
+  .page1-triangle::before,
+  .page1-triangle::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background: inherit;
+    border-top-right-radius: inherit;
+  }
+  
+  .page1-triangle::before {
+    transform: rotate(-135deg) skewX(-45deg) scale(1.414, .707) translateY(-50%);
+  }
+  
+  .page1-triangle::after {
+    transform: rotate(135deg) skewY(-45deg) scale(.707, 1.414) translateX(50%);
+  } */
+
+/* #triangle {
+    animation-name: animate-fade;
+} */
+
+.triangle-text-container {
+    --r: 4rem;
+    /* border radius */
+    width: 47rem;
+    aspect-ratio: 1/cos(30deg);
+    --_g: calc(tan(60deg)*var(--r)) bottom var(--r), #000 98%, #0000 101%;
+    mask:
+        conic-gradient(from -30deg at 50% calc(200% - 3*var(--r)/2), #000 60deg, #0000 0) 0 100%/100% calc(100% - 3*var(--r)/2) no-repeat,
+        radial-gradient(var(--r) at 50% calc(2*var(--r)), #000 98%, #0000 101%),
+        radial-gradient(var(--r) at left var(--_g)),
+        radial-gradient(var(--r) at right var(--_g));
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.triangle-text-container {
+    color: white;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.triangle-title {
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-top: 10rem;
+}
+
+.triangle-description {
+    background-color: white;
+    font-weight: 600;
+    text-align: center;
+    height: 4rem;
+    width: 15rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 0.8rem;
+    margin: 1.8rem 0;
+}
+
+.triangle-more-text {
+    width: 19rem;
+    text-align: center;
+}
+
+.triangle-instructions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 34rem;
+    margin-top: 0.4rem;
+    margin-right: 2rem;
+}
+
+.triangle-icons-container {
+    display: flex;
+    align-items: center;
+    margin: 0.4rem 0.5rem;
+    width: 15rem;
+}
+
+.triangle-icons {
+    width: 1.5rem;
+    margin-left: 0.6rem;
+}
+
+.triangle-colored-line {
+    position: absolute;
+    top: 22rem;
+    right: 40rem;
+    background-image: linear-gradient(to right, #357b8f, #0a5684);
+    width: 40rem;
+    height: 0.26rem;
+    z-index: -1;
+}
+
+.gold-triangle-title-container {
+    position: absolute;
+    top: 16rem;
+    right: 50rem;
+    background-color: white;
+    box-shadow: 0rem 0rem 0.625rem rgb(0, 0, 0, 40%);
+    /* border: 2px solid lightgray; */
+    width: 10rem;
+    height: 10rem;
+    border-radius: 25rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gold-triangle-title {
+    font-family: 'Heebo';
+    font-weight: 800;
+    color: #10214c;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .gold-triangle-title-container {
+        right: 45rem;
+    }
+
+    .triangle-colored-line {
+        right: 30rem;
+    }
+}

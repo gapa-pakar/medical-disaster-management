@@ -1,0 +1,36 @@
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 1080">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #377c90;
+      }
+
+      .st1 {
+        fill: #1c3d71;
+      }
+
+      .st2 {
+        fill: #fafbfb;
+      }
+
+      .st3 {
+        fill: #12234d;
+      }
+
+      .st4 {
+        fill: #fefefe;
+      }
+
+      .st5 {
+        fill: #0d5785;
+      }
+    </style>
+  </defs>
+  
+  <path class="st3" d="M939,625.2c1.7-2.5,3.1-1.7,5.7-1.7l33.2-25c1.4-1.3,3.1-.5,1.4.9l-33.4,24.7c-1.2,2.8-.7,4.2-4,5.3h-.5c-1.6-.3-2.1-.8-2.4-2.4v-1.9Z" data-index="1" style="visibility: visible; opacity: 1;"></path>
+  <path class="st0" d="M939,454.3v-1.9c2.8-3.2,6.4-1.8,6,2.4l34.9,26.1-1,1-34.6-25.9c-2.6,1.2-3.6.5-5.2-1.7Z" data-index="2" style="visibility: visible;"></path>
+  <polygon class="st2" points="941.4 629.5 939 629.5 939 627.1 941.4 629.5"></polygon>
+  <path class="st5" d="M979.8,514.2c.2.3-.2,1.2-.7,1.3l-32.9-6.4c-1,0-1.5,1.3-2.5,1.6-2.5.8-5.4-3-2.4-5.3s3.9,1.9,5.5,2.5l32.9,6.3Z" data-index="3" style="visibility: visible;"></path>
+  <path class="st1" d="M979.8,563.5c.9,1-.5,1.5-1.3,1.8-9.8,2.8-21.5,3.4-31.6,6-1.4.6-1.6,2.9-3.5,3.2-5.3.8-3.6-10.1,2.8-4.3l33.6-6.6Z" data-index="4" style="visibility: visible;"></path>
+</svg>

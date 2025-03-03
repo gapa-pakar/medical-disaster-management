@@ -1,0 +1,142 @@
+.page10-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 7.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.p10-operations-container-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1.6rem;
+}
+
+.p10-number {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+}
+
+.p10-text-container {
+    width: 49rem;
+    border: 0.25rem solid;
+    border-radius: 0.313rem;
+}
+
+.p10-title-container {
+    padding: 1.2rem 1rem;
+    font-weight: bold;
+    display: flex;
+}
+
+.p10-title {
+    background-color: white;
+    padding: 0rem 0.6rem;
+    border-radius: 0.313rem;
+}
+
+.p10-d {
+    background-color: white;
+    padding: 0.7rem 1rem;
+    font-weight: 500;
+}
+
+
+.p10-q-container {
+    background-color: white;
+    border-radius: 4rem;
+    padding: 1.4rem 3rem;
+    margin-top: 2rem;
+    border-radius: 1.563rem;
+    box-shadow: 0rem 0rem 0.625rem rgb(0, 0, 0, 40%);
+}
+
+.p10-q-title {
+    font-size: 1.2rem;
+    color: #ffaf42;
+}
+
+.p10-q-line {
+    border-top: 0.188rem solid #ffaf42;
+    margin-top: -0.6rem;
+    width: 34rem;
+}
+
+.p10-q-text {
+    margin-top: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #3b3838;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.options-bg {
+    color: #a6a6a6;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+    padding: 1.4rem 1.4rem;
+    width: 12rem;
+    border-radius: 0.313rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0.125rem solid transparent;
+}
+
+.options-bg-selected {
+    background-color: var(--bg-color);
+    color: var(--bg-color)
+}
+
+.options-text {
+    background-color: white;
+    padding: 0.2rem 1rem;
+    border-radius: 0.313rem;
+}
+
+.p10-check-button {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 0rem 2rem;
+    font-weight: bold;
+    font-family: 'Heebo';
+    font-size: 1.1rem;
+    border-radius: 25rem;
+    border: 0.125rem solid #ffaf42;
+    color: #ffaf42;
+}
+
+.p10-check-button:hover {
+    background-color: #ffaf42;
+    color: white;
+}
+
+.p10-correct-m {
+    color: #548235; 
+}
+
+.p10-wrong-m {
+    color: #ff5757;
+}
+
+.p10-wrong-m, .p10-correct-m {
+    font-size: 1.2rem;
+    text-align: center;
+}
