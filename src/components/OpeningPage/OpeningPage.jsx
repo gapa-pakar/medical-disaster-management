@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './OpeningPage.css'
 import Link from '../Link'
 
@@ -57,6 +57,10 @@ export default function OpeningPage() {
         localStorage.setItem('data', JSON.stringify(page));
         window.location.replace(link);
     }
+    
+    useEffect(() => {
+        localStorage.clear()
+    }, [])
 
     return (
         <div className='home-page'>

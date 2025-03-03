@@ -176,18 +176,19 @@ html {
 
 .arrowRight,
 .arrowLeft {
-  width: 1.2rem;
+  width: 1.3rem;
   position: absolute;
-  bottom: 1.5rem;
+  top: 1.2rem;
   z-index: 12;
+  cursor: pointer;
 }
 
 .arrowRight {
-  left: 4rem;
+  left: 3.6rem;
 }
 
 .arrowLeft {
-  left: 21rem;
+  left: 23.6rem;
 }
 
 .subject-title-container {
@@ -629,8 +630,10 @@ textarea {
 
 @media only screen and (max-width: 1000px) {
   html {
-    font-size: calc((1vh + 1vw) * 0.5);
+    font-size: calc((0.9vh + 1vw) * 0.6);
   }
+
+  
 
   .subjects-circle-1 {
     left: 6rem;

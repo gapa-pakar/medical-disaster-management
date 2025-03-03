@@ -30,7 +30,7 @@ export default function Page2Part1(props) {
                                             <h1 className='briefing-title' id={`title_${card.id}`} style={{ color: card.color }}>{card.title}</h1>
                                         ) : <></>
                                     }
-                                    <p className='briefing-description' style={{ fontSize: titleInfo.pTitle ? "1rem" : "1rem", lineHeight: titleInfo.pTitle ? "2" : "" }}>{card.description}</p>
+                                    <p className='briefing-description' style={{ lineHeight: titleInfo.pTitle ? "2" : "" }}>{card.description}</p>
                                 </div>
                             </div>
                         </div>

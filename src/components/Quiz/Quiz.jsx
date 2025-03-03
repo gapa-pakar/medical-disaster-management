@@ -82,7 +82,7 @@ export default function Quiz(props) {
                                 /{addLeadingZero(questions.length)}
                             </span>
                         </div>
-                        <h2>{question}</h2>
+                        <h2 id='question'>{question}</h2>
                         <ul id='ul'>
                             {choices.map((answer, index) => (
                                 <li id={`answer_${index}`}

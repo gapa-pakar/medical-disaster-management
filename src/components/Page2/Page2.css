@@ -32,7 +32,8 @@
     width: 25rem;
 }
 
-.page2-briefing-container, .page9-briefing-container {
+.page2-briefing-container,
+.page9-briefing-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -307,12 +308,128 @@
     border-radius: 0.563rem;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
+    /***** page 2 part 1 *****/
+    .page2-briefing-container {
+        margin-top: -4rem;
+        height: 43rem;
+    }
+
+    .briefing-card {
+        width: 37rem;
+    }
+
+    .briefing-number,
+    .briefing-title {
+        font-size: x-small;
+    }
+
+    #title_04 {
+        width: 21rem;
+    }
+
+    .briefing-description {
+        font-size: x-small;
+        padding: 0;
+        margin: 0.8rem 0rem;
+    }
+
+    .briefing-text-container {
+        text-align: center;
+        width: 34rem;
+    }
 
     #b_04,
     #b_05,
     #b_06,
     #b_07 {
-        margin-right: 22rem;
+        margin-right: 24rem;
     }
+    /**********/
+
+    /***** page 2 video question *****/
+    .reminder-line {
+        top: 10.7rem;
+        width: 90rem;
+    }
+
+    .circle-arrows-container {
+        margin-top: 1rem;
+    }
+
+    .page2-p-container {
+        margin-top: 0;
+    }
+
+    .video-next-button,
+    .video-button-instractions {
+        font-size: x-small;
+        margin-top: 0.6;
+    }
+
+    .video-question-title,
+    .button-yn,
+    .video-yn-buttons div,
+    .video-text-question,
+    .page2-p,
+    .answer-text {
+        font-size: x-small;
+    }
+
+    .correct-briefing {
+        font-size: 1.7rem;
+    }
+
+    .answer-text {
+        margin-top: 3rem;
+        padding: 0rem 2rem;
+    }
+
+    .title-reminder {
+        font-size: larger;
+    }
+
+    #line-page2-part2 {
+        width: 70rem;
+    }
+
+    .video-question-container {
+        height: 26rem
+    }
+
+    .video-question-screen {
+        margin-top: 0;
+    }
+    /**********/
+}
+
+@media only screen and (max-width: 700px) {
+    /***** page 2 part 1 *****/
+    .page2-briefing-container {
+        margin-top: -1rem;
+        height: 47rem;
+    }
+
+    .briefing-description {
+        font-size: 1.4rem;
+    }
+
+    .briefing-number,
+    .briefing-title {
+        font-size: xx-small;
+    }
+
+    #title_04 {
+        width: 24rem;
+    }
+
+    .briefing-card {
+        width: 32rem;
+    }
+
+    .briefing-text-container {
+        text-align: center;
+        width: 29rem;
+    }
+    /**********/
 }

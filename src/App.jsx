@@ -131,19 +131,22 @@ function App() {
   // navbar variable
   const [currentSubject, setCurrentSubject] = useState({});
 
+  // if (lastPage) {
+  //   const [page, setPage] = useState("hello");
+  // }
 
   // arrows functions
   const nextSlide = () => {
     if (countPages < maxPages) {
       setCountPages(c => c + 1);
-      setFirstPage(false);
+      // setFirstPage(false);
     }
   }
 
   const previousSlide = () => {
     if (countPages > 0) {
       setCountPages(preCount => preCount - 1);
-      setLastPage(false);
+      // setLastPage(false);
       setFinish(true);
     }
   }
@@ -266,7 +269,7 @@ function App() {
           {/* navbar */}
           {
             !pathArray.includes(window.location.pathname) ?
-              <Navbar className="split left" Subjects={Subjects} currentSubject={currentSubject} setCurrentSubject={setCurrentSubject}></Navbar> : <></>
+              <Navbar className="split left" Subjects={Subjects} currentSubject={currentSubject} setCurrentSubject={setCurrentSubject} selectedPage={selectedPage}></Navbar> : <></>
           }
         </div>
       </div>

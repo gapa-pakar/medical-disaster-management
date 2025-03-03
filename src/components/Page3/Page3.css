@@ -369,18 +369,179 @@ ul {
     transition: background-color .3s;
 }  */
 
-@media only screen and (max-width: 800px) {
-    .medical-container-2 {
-        margin-right: 5rem;
+@media only screen and (max-width: 1000px) {
+
+    /***** page 3 part 1 *****/
+    .medical-order-container {
+        margin-top: 6rem;
     }
 
-    .medical-menu {
-        margin-left: 35rem;
+    .role-container {
+        margin: 0rem 0.2rem;
+    }
+
+    .role-title,
+    .roles {
+        font-size: x-small;
+    }
+
+    .roles {
+        padding: 0.4rem 1rem;
+        text-align: center;
+    }
+
+    /**********/
+
+
+    /***** page 3 part 2 *****/
+    .medical-container-2 {
+        margin-top: 10rem;
     }
 
     .roles-circle-label {
-        width: 16rem;
-        height: 16rem;
+        width: 19rem;
+        height: 21rem;
     }
-    
+
+    .medical-roles-title {
+        font-size: 1.6rem;
+    }
+
+    .medical-container-2 {
+        margin-right: 4rem;
+    }
+
+    .medical-menu {
+        margin-left: 43rem;
+    }
+
+    .medical-roles-description {
+        font-size: xx-small;
+        width: 25rem;
+    }
+
+    .medical-menu ul li .span {
+        width: 30rem;
+
+    }
+
+    .medical-roles-text {
+        margin-left: 5rem;
+    }
+
+    #one1,
+    #two1 {
+        right: 21rem;
+    }
+
+    #one2 {
+        right: 15rem;
+    }
+
+    #one3 {
+        right: 8rem;
+    }
+
+    #one4 {
+        right: 1rem;
+    }
+
+    #one5 {
+        right: -6rem;
+    }
+
+    #one6 {
+        right: -14rem;
+    }
+
+    #two2 {
+        right: 12.9rem;
+        top: 0rem;
+    }
+
+    #two3 {
+        right: 4.9rem;
+        top: -1.5rem;
+    }
+
+    #two4 {
+        right: -2rem;
+        top: 0rem;
+    }
+
+    #two5 {
+        right: -10rem;
+    }
+
+    .text1 {
+        display: none;
+    }
+
+    /**********/
+}
+
+@media only screen and (max-width: 700px) {
+    /***** page 3 part 2 *****/
+    .medical-container-2 {
+        margin-right: 4rem;
+    }
+
+    .medical-menu {
+        margin-left: 39rem;
+    }
+
+    .medical-roles-description {
+        font-size: 1.4rem;
+        width: 24rem;
+    }
+
+    .roles-circle-label {
+        width: 17rem;
+        height: 19rem;
+    }
+
+    #one2 {
+        right: 12.9rem;
+    }
+
+    #one3 {
+        right: 4.7rem;
+    }
+
+    #one4 {
+        right: -2.4rem;
+    }
+
+    #one5 {
+        right: -9.6rem;
+    }
+
+    #one6 {
+        right: -17.9rem;
+    }
+
+    #two2 {
+        top: -1rem;
+    }
+
+    #two3 {
+        right: 4.7rem;
+        top: -2.9rem;
+    }
+
+    #two4 {
+        right: -2.5rem;
+    }
+
+    #two5 {
+        right: -10.5rem;
+    }
+
+    .text1 {
+        display: none;
+    }
+
+
+
+    /**********/
 }

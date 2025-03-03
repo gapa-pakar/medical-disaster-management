@@ -7,9 +7,11 @@ import arrowLeft from '../../assets/navbar-icons/arrow-left.svg'
 
 export default function Navbar(props) {
 
-    const { Subjects, currentSubject, setCurrentSubject } = props
+    const { Subjects, currentSubject, setCurrentSubject, selectedPage } = props
+
     const [showMenu, setShowMenu] = useState(false);
-    
+    const [page, setPage] = useState(false);
+
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
@@ -29,6 +31,20 @@ export default function Navbar(props) {
     useEffect(() => {
         findCurrentSubject();
     }, [window.location.pathname]);
+
+    useEffect(() => {
+        if (currentSubject.id > 0) { // checks if the currentSubject is updated
+            if (localStorage.currentPage) { // checks if the localStorage variable is defined
+                if (localStorage.currentPage < currentSubject.id) { // checks if the variable should be updated
+                    localStorage.setItem('currentPage', JSON.stringify(currentSubject.id));
+                }
+            } else { // adds the localStorage variable if it's not defined
+                localStorage.setItem('currentPage', JSON.stringify(currentSubject.id));
+            }
+        }
+
+    }, [currentSubject])
+
 
     return (
         <div>
@@ -59,7 +75,7 @@ export default function Navbar(props) {
             {/* closed-menu */}
             <div className='navbar'>
                 <div className='color-line' style={{ backgroundColor: currentSubject.color }}></div>
-                <div className={showMenu ? "menu-responsive" : "menu"}>
+                <div className={showMenu ? "menu-responsive" : "menu"} onClick={toggleMenu}>
                     <div className={showMenu ? "container-responsive" : "container"}>
                         <div className={showMenu ? "vertical-line-responsive" : "vertical-line"}></div>
                         <div className={showMenu ? "subjects-responsive" : "subjects"}>
@@ -68,12 +84,12 @@ export default function Navbar(props) {
                                     return (
                                         <div key={subject.id} className='menu-titles'>
                                             {/* open menu text link */}
-                                            {showMenu ? (<Link href={subject.link} className='title'>{subject.title}
-                                                {subject.subtitle ? <Link href={subject.subtitleLink} className='subtitle-link'><p className='subtitle'>{subject.subtitle}</p></Link> : ""}
+                                            {showMenu ? (<Link href={subject.id <= localStorage.currentPage || selectedPage === 2 ? subject.link : ''} className='title'>{subject.title}
+                                                {subject.subtitle ? <Link href={subject.id <= localStorage.currentPage || selectedPage === 2 ? subject.subtitleLink : ''} className='subtitle-link'><p className='subtitle'>{subject.subtitle}</p></Link> : ""}
                                             </Link>) : <></>}
 
                                             {/* closed menu icons link */}
-                                            <Link href={subject.link}><div className='icon-container' style={{ backgroundColor: subject.color }}>
+                                            <Link href={subject.id <= localStorage.currentPage || selectedPage === 2 ? subject.link : ''} disabled><div className='icon-container' style={{ backgroundColor: subject.id <= localStorage.currentPage || selectedPage === 2 ? subject.color : '#a6a6a6' }}>
                                                 <img src={subject.icon} className='icon'></img>
                                             </div></Link>
                                         </div>

@@ -59,7 +59,7 @@ export default function Page3Part1(props) {
                                     <div className='section-container-2'>
                                         {
                                             medicalOrder[1][1].title.map((element1, i1) => (
-                                                <div className='role-container' key={i1} style={{ backgroundColor: medicalOrder[1][1].color, width: "6rem", padding: "2rem 0rem" }}>
+                                                <div className='role-container' key={i1} style={{ backgroundColor: medicalOrder[1][1].color, width: "fit-content", padding: "2rem 0.4rem" }}>
                                                     <div className='role-title'>{element1}</div>
                                                     <div className='roles' style={{ color: medicalOrder[1][1].color }}>{medicalOrder[1][1].roles}</div>
                                                 </div>

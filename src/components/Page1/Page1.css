@@ -141,7 +141,7 @@
 }
 
 .page1-title-up {
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
 }
 
 .page1-title-down {
@@ -296,12 +296,79 @@
     text-align: center;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
+
+    /***** page 1 part 1 *****/
+    .colored-line {
+        width: 14.4rem;
+    }
+
+    .up-container {
+        margin-top: 15rem;
+    }
+
+    .down-container {
+        margin-bottom: 11rem;
+    }
+
+    .div-triangle-up,
+    .div-triangle-down {
+        width: 14rem;
+        height: 13rem;
+        font-size: x-small;
+    }
+
+    .page1-title-down,
+    .page1-title-up {
+        font-size: x-small;
+    }
+    /**********/
+
+    /***** page 1 part 2 *****/
+    .triangle-text-container {
+        width: 50rem;
+    }
+
+    .triangle-description {
+        width: 18rem;
+        height: 5rem;
+        font-size: larger;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .triangle-title {
+        font-size: 1.8rem;
+    }
+
+    .triangle-more-text {
+        font-size: larger;
+        margin-top: 0;
+    }
+
+    .triangle-instructions {
+        width: 37rem;
+        margin-top: 1rem;
+    }
+
+    .triangle-icons-container {
+        font-size: larger;
+        width: 17rem;
+    }
+    /**********/
+}
+
+@media only screen and (max-width: 700px) {
+    /***** page 1 part 2 *****/
     .gold-triangle-title-container {
         right: 45rem;
     }
 
     .triangle-colored-line {
         right: 30rem;
+    }
+
+
+    .triangle-text-container {
+        width: 48rem;
     }
 }
