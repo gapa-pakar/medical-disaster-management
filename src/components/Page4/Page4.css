@@ -166,29 +166,29 @@
     }
 
     .card-description {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         line-height: 1.5;
     }
 
     .card-background-container {
-        width: 94rem;
+        width: 100rem;
         height: 15rem;
     }
 
     .card-container {
-        width: 92rem;
+        width: 98rem;
         height: 13rem;
     }
 
     .card-section-1 {
-        width: 34rem;
+        width: 42rem;
         padding: 0rem 1rem;
     }
 
     .item-container {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         width: 37rem;
-        margin: 0rem;
+        margin: 0.2rem 0rem;
         padding: 0rem 1rem;
     }
 
@@ -198,6 +198,31 @@
 
     .section-3-container {
         margin-right: 7rem;
+    }
+
+    .icon-circle{
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .card-icon {
+        width: 6rem;
+    }
+
+    #card_2 {
+        height: 12rem 
+    }
+
+    #card_0 {
+        height: 14rem 
+    }
+
+    #card_2 .card-container {
+        height: 10rem 
+    }
+
+    #card_0 .card-container {
+        height: 12rem 
     }
 
 }
