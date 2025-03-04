@@ -61,14 +61,14 @@ html {
 }
 
 .color-line {
-  height: 100vh;
+  height: 100dvh;
   width: 1%;
   z-index: 10;
 }
 
 .menu,
 .menu-responsive {
-  height: 100vh;
+  height: 100dvh;
   background-color: #3b3838;
   z-index: 10;
   /* position: absolute;
@@ -85,7 +85,7 @@ html {
 
 .container,
 .container-responsive {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
 }
@@ -630,10 +630,10 @@ textarea {
 
 @media only screen and (max-width: 1000px) {
   html {
-    font-size: calc((1vh + 1vw) * 0.5);
+    font-size: calc((1dvh + 1dvw) * 0.6);
   }
 
-  
+
 
   .subjects-circle-1 {
     left: 6rem;
@@ -771,8 +771,8 @@ textarea {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
   position: absolute;
   background-color: black;
   z-index: 2000;
