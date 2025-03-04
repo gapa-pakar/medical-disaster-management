@@ -296,7 +296,7 @@ textarea {
 .page1-container {
   margin-top: 5rem;
   margin-right: 0rem;
-  height: 90%;
+  height: 90vh;
   /* border: 2px solid black; */
 }
 
@@ -306,6 +306,11 @@ textarea {
 } */
 
 /* question component */
+
+.home-page {
+  width: 100vw;
+  height: var(--dynamic-height);
+}
 
 /* ****** */
 /* video question component, appearing in page 2 */
@@ -651,6 +656,12 @@ textarea {
 
   .video-placing-small {
     height: 22rem;
+  }
+
+  .page1-container {
+    margin-top: 2rem;
+    height: var(--dynamic-height);
+    /* border: 2px solid black; */
   }
 }
 
