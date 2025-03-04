@@ -33,12 +33,14 @@ export default function Page7Part2(props) {
 
             if (event.type === "touchend") {
                 // Handle drop on touch devices
-                event.target.appendChild(draggedElement);
-                console.log("hello")
+                event.target.appendChild(document.getElementById(draggedElement));
+                // console.log("hello")
             } else {
                 // Handle drop on desktop
                 var data = event.dataTransfer.getData(`text${index}`);
+                // console.log(document.getElementById(data))
                 event.target.appendChild(document.getElementById(data));
+                
 
                 // Check if all items have been moved
                 if (count === snapshotDetails.subjects.length - 1) {
