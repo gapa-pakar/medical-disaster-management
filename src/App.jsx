@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useDynamicHeight } from './contexts/DynamicHeightContext' // import the hook
 
 import Route from './components/Route'
 import Link from './components/Link'
@@ -114,9 +115,6 @@ const Subjects = [
 const pathArray = ['/', '/subjectsPage', '/finishPage'];
 
 function App() {
-  // horizontal view on mobile
-  const [isPortrait, setIsPortrait] = useState(false);
-
   // variables
   const [countPages, setCountPages] = useState(0);
   const [firstPage, setFirstPage] = useState(false);
@@ -124,16 +122,11 @@ function App() {
   const [maxPages, setMaxPages] = useState(0);
   const [linkName, setLinkName] = useState("");
   const [finish, setFinish] = useState(true);
+  const [isPortrait, setIsPortrait] = useState(false);  // horizontal view on mobile
+  const [selectedPage, setSelectedPage] = useState('') // localStorage variable
+  const [currentSubject, setCurrentSubject] = useState({}); // navbar variable
 
-  // localStorage variable
-  const [selectedPage, setSelectedPage] = useState('')
-
-  // navbar variable
-  const [currentSubject, setCurrentSubject] = useState({});
-
-  // if (lastPage) {
-  //   const [page, setPage] = useState("hello");
-  // }
+  const dynamicHeight = useDynamicHeight(); // Get the dynamic height from context
 
   // arrows functions
   const nextSlide = () => {
@@ -190,11 +183,11 @@ function App() {
 
   return (
     <>
-      <div >
+      <div>
         {/* rotate phone message */}
         {isPortrait && (
           <div className='portrait'>
-            <video src={rotate}  type='video/mp4' autoPlay loop muted></video>
+            <video src={rotate} type='video/mp4' autoPlay loop muted></video>
           </div>
         )}
 
@@ -260,7 +253,7 @@ function App() {
 
               <button onClick={previousSlide}>
                 {countPages === 0 ?
-                  <Link setCountPages={setCountPages} href={!firstPage ? `/page${currentSubject.id - 1}` : '/subjectsPage'}><img src={previous} className='previous-arrow'></img></Link> :
+                  <Link setCountPages={setCountPages} href={!firstPage ? `/page${currentSubject.id - 1}` : '/'}><img src={previous} className='previous-arrow'></img></Link> :
                   <img src={previous} className='previous-arrow'></img>}
               </button>
             </div>

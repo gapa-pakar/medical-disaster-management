@@ -8,6 +8,9 @@
   src: url('./assets/fonts/heebo/Heebo-Medium.ttf');
 }
 
+:root {
+  --dynamic-height: 100vh; /* Default value */
+}
 
 body,
 html {
@@ -19,8 +22,8 @@ html {
 }
 
 .split {
-  height: 100%;
-  width: 94%;
+  height: var(--dynamic-height);
+  width: 94vw;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -61,14 +64,14 @@ html {
 }
 
 .color-line {
-  height: 100dvh;
+  height: var(--dynamic-height);
   width: 1%;
   z-index: 10;
 }
 
 .menu,
 .menu-responsive {
-  height: 100dvh;
+  height: var(--dynamic-height);
   background-color: #3b3838;
   z-index: 10;
   /* position: absolute;
@@ -85,7 +88,7 @@ html {
 
 .container,
 .container-responsive {
-  height: 100dvh;
+  height: var(--dynamic-height);
   display: flex;
   align-items: center;
 }
@@ -630,10 +633,8 @@ textarea {
 
 @media only screen and (max-width: 1000px) {
   html {
-    font-size: calc((1dvh + 1dvw) * 0.6);
+    font-size: calc((0.9vh + 0.9vw) * 0.6);
   }
-
-
 
   .subjects-circle-1 {
     left: 6rem;
@@ -771,8 +772,8 @@ textarea {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100dvh;
-  width: 100dvw;
+  height: var(--dynamic-height);
+  width: 100vw;
   position: absolute;
   background-color: black;
   z-index: 2000;
