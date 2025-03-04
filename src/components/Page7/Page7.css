@@ -185,6 +185,37 @@
 } */
 
 
+@media only screen and (max-width: 1000px) {
+    .snapshot-container {
+        margin-top: 3rem;
+    }
+
+    .page7-title-line {
+        width: 50rem;
+    }
+
+    .page7-title-container {
+        font-size: small;
+    }
+
+     .d-roles-container, .word-bank-title {
+        font-size: x-small;
+    }
+
+    .snapshot-subject-div-2 {
+        font-size: x-small;
+        width: 15rem;
+        padding: 2rem;
+    }
+
+    .word-bank-container-1 {
+        margin-top: 2rem;
+    }
+
+    .word-bank-container-1 {
+        padding: 2rem;
+    }
+}
 
 
 

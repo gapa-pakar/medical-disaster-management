@@ -309,14 +309,24 @@
 }
 
 @media only screen and (max-width: 1000px) {
+
     /***** page 2 part 1 *****/
     .page2-briefing-container {
-        margin-top: -4rem;
-        height: 43rem;
+        height: 50rem;
     }
 
     .briefing-card {
         width: 37rem;
+    }
+
+    #b_01,
+    #b_02,
+    #b_03,
+    #b_04,
+    #b_05,
+    #b_06,
+    #b_07 {
+        animation-name: animate-pop;
     }
 
     .briefing-number,
@@ -325,7 +335,7 @@
     }
 
     #title_04 {
-        width: 21rem;
+        width: 24rem;
     }
 
     .briefing-description {
@@ -345,6 +355,12 @@
     #b_07 {
         margin-right: 24rem;
     }
+
+    .circle-arrows-container {
+        top: 54%;
+    }
+
+
     /**********/
 
     /***** page 2 video question *****/
@@ -353,9 +369,9 @@
         width: 90rem;
     }
 
-    .circle-arrows-container {
+    /* .circle-arrows-container {
         margin-top: 1rem;
-    }
+    } */
 
     .page2-p-container {
         margin-top: 0;
@@ -364,16 +380,20 @@
     .video-next-button,
     .video-button-instractions {
         font-size: x-small;
-        margin-top: 0.6;
+        margin-top: 0.6rem;
     }
 
     .video-question-title,
     .button-yn,
     .video-yn-buttons div,
     .video-text-question,
-    .page2-p,
     .answer-text {
         font-size: x-small;
+    }
+
+    .page2-p {
+        font-size: xx-small;
+        line-height: 1.5;
     }
 
     .correct-briefing {
@@ -400,10 +420,26 @@
     .video-question-screen {
         margin-top: 0;
     }
+
     /**********/
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1000px) and (max-height: 384px) {
+    .video-placing {
+        height: 26rem;
+    }
+
+    .video-next-button {
+        margin-top: 0.4rem;
+    }
+
+    .video-button-instractions {
+        margin-top: 1rem;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+
     /***** page 2 part 1 *****/
     .page2-briefing-container {
         margin-top: -1rem;
@@ -412,6 +448,10 @@
 
     .briefing-description {
         font-size: 1.4rem;
+    }
+
+    .circle-arrows-container {
+        margin-top: -1rem;
     }
 
     .briefing-number,
@@ -431,5 +471,6 @@
         text-align: center;
         width: 29rem;
     }
+
     /**********/
 }

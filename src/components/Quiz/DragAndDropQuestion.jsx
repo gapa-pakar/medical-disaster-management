@@ -16,7 +16,7 @@ export default function Page7Part2(props) {
     // Handle dragging on both desktop and mobile
     const drag = (event, index) => {
         if (event.type === "touchstart") {
-            setDraggedElement(event.target);
+            setDraggedElement(event.target.id);
             setIsIndex(index);
         } else {
             // For mouse events
@@ -34,6 +34,7 @@ export default function Page7Part2(props) {
             if (event.type === "touchend") {
                 // Handle drop on touch devices
                 event.target.appendChild(draggedElement);
+                console.log("hello")
             } else {
                 // Handle drop on desktop
                 var data = event.dataTransfer.getData(`text${index}`);

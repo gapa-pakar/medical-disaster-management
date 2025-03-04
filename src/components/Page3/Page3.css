@@ -373,7 +373,11 @@ ul {
 
     /***** page 3 part 1 *****/
     .medical-order-container {
-        margin-top: 6rem;
+        margin-top: 0rem;
+    }
+
+    .triangle-down {
+        margin: 0.4rem 0rem;
     }
 
     .role-container {
@@ -389,14 +393,13 @@ ul {
         padding: 0.4rem 1rem;
         text-align: center;
     }
-
     /**********/
 
 
     /***** page 3 part 2 *****/
-    .medical-container-2 {
-        margin-top: 10rem;
-    }
+    /* .medical-container-2 {
+        margin-top: 7rem;
+    } */
 
     .roles-circle-label {
         width: 19rem;
@@ -408,12 +411,15 @@ ul {
     }
 
     .medical-container-2 {
-        margin-right: 4rem;
+        /* margin-right: 4rem; */
+        position: absolute;
+        left: 40%;
+        transform: translateX(-50%);
     }
 
-    .medical-menu {
-        margin-left: 43rem;
-    }
+    /* .medical-menu {
+        margin-left: 40rem;
+    } */
 
     .medical-roles-description {
         font-size: xx-small;
@@ -476,7 +482,6 @@ ul {
     .text1 {
         display: none;
     }
-
     /**********/
 }
 
@@ -540,8 +545,5 @@ ul {
     .text1 {
         display: none;
     }
-
-
-
     /**********/
 }
