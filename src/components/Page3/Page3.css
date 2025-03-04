@@ -405,11 +405,6 @@ ul {
         height: 16rem;
     }
 
-    .roles-circle-label {
-        width: 17rem;
-        height: 16rem;
-    }
-
     .medical-roles-title {
         font-size: 1.9rem;
         padding-right: 3rem;
@@ -438,22 +433,12 @@ ul {
 
     .medical-container-2 {
         margin-right: 4rem;
-        margin-top: 10rem;
+        margin-top: 7rem;
     }
 
     .medical-menu {
         margin-left: 51rem;
     }
-
-    /* .medical-roles-description {
-        font-size: 1.2rem;
-        width: 25rem;
-    } */
-
-    /* .medical-menu ul li .span {
-        width: 30rem;
-
-    } */
 
     .medical-roles-text {
         margin-left: 14rem;
@@ -491,7 +476,7 @@ ul {
 
     #two3 {
         right: -1.4rem;
-        top: -1.7rem;
+        top: -2.7rem;
     }
 
     #two4 {
@@ -507,7 +492,6 @@ ul {
         display: none;
     }
     /**********/
-    
 }
 
 @media only screen and (max-width: 750px) {

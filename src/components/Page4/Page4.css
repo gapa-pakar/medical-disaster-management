@@ -159,3 +159,45 @@
     align-self: center;
     margin-top: 1rem;
 }
+
+@media only screen and (max-width: 1000px) {
+    .card-title {
+        font-size: 2.2rem;
+    }
+
+    .card-description {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+
+    .card-background-container {
+        width: 94rem;
+        height: 15rem;
+    }
+
+    .card-container {
+        width: 92rem;
+        height: 13rem;
+    }
+
+    .card-section-1 {
+        width: 34rem;
+        padding: 0rem 1rem;
+    }
+
+    .item-container {
+        font-size: 1.2rem;
+        width: 37rem;
+        margin: 0rem;
+        padding: 0rem 1rem;
+    }
+
+    .interface-container{
+        margin-top: 5rem;
+    }
+
+    .section-3-container {
+        margin-right: 7rem;
+    }
+
+}
