@@ -15,14 +15,17 @@ export default function Page7Part2(props) {
 
     // Handle dragging on both desktop and mobile
     const drag = (event, index) => {
-        if (event.type === "touchstart") {
-            setDraggedElement(event.target.id);
-            setIsIndex(index);
-        } else {
-            // For mouse events
-            event.dataTransfer.setData(`text${index}`, event.target.id);
-            setIsIndex(index);
-        }
+        // if (event.type === "touchstart") {
+        //     setDraggedElement(event.target.id);
+        //     setIsIndex(index);
+        // } else {
+        //     // For mouse events
+        //     event.dataTransfer.setData(`text${index}`, event.target.id);
+        //     setIsIndex(index);
+        // }
+
+        setDraggedElement(event.target.id);
+        setIsIndex(index);
     }
 
     const drop = (event, index) => {
@@ -30,23 +33,30 @@ export default function Page7Part2(props) {
 
         if (isIndex === index) {
             setCount(c => c + 1);
-
-            if (event.type === "touchend") {
-                // Handle drop on touch devices
-                event.target.appendChild(document.getElementById(draggedElement));
-                // console.log("hello")
-            } else {
-                // Handle drop on desktop
-                var data = event.dataTransfer.getData(`text${index}`);
-                // console.log(document.getElementById(data))
-                event.target.appendChild(document.getElementById(data));
-                
-
-                // Check if all items have been moved
-                if (count === snapshotDetails.subjects.length - 1) {
-                    setFinish(true);
-                }
+            event.target.appendChild(document.getElementById(draggedElement));
+            
+            // Check if all items have been moved
+            if (count === snapshotDetails.subjects.length - 1) {
+                setFinish(true);
             }
+
+            // if (event.type === "drop") {
+            //     // Handle drop on touch devices
+            //     event.target.appendChild(document.getElementById(draggedElement));
+            //     console.log("hello")
+            // } else {
+            //     // Handle drop on desktop
+            //     console.log(event.type)
+            //     var data = event.dataTransfer.getData(`text${index}`);
+            //     // console.log(document.getElementById(data))
+            //     event.target.appendChild(document.getElementById(data));
+
+
+            //     // Check if all items have been moved
+            //     if (count === snapshotDetails.subjects.length - 1) {
+            //         setFinish(true);
+            //     }
+            // }
         }
     }
 
@@ -86,6 +96,7 @@ export default function Page7Part2(props) {
                                         onDrop={(event) => drop(event, index)}
                                         onDragOver={allowDrop}
                                         onTouchMove={handleTouchMove}
+
                                         className={info.dropContainerClass}
                                         style={{ borderColor: subject.color, "--subject-color": subject.color }}>
                                     </div>
