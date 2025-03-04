@@ -395,155 +395,134 @@ ul {
     }
     /**********/
 
-
     /***** page 3 part 2 *****/
-    /* .medical-container-2 {
-        margin-top: 7rem;
-    } */
+    .roles-circle-border{
+        width: 16rem;
+    }
+
+    .roles-title-circle {
+        width: 16rem;
+        height: 16rem;
+    }
 
     .roles-circle-label {
-        width: 19rem;
-        height: 21rem;
+        width: 17rem;
+        height: 16rem;
     }
 
     .medical-roles-title {
-        font-size: 1.6rem;
+        font-size: 1.9rem;
+        padding-right: 3rem;
+        width: 37rem;
     }
-
-    .medical-container-2 {
-        /* margin-right: 4rem; */
-        position: absolute;
-        left: 40%;
-        transform: translateX(-50%);
-    }
-
-    /* .medical-menu {
-        margin-left: 40rem;
-    } */
 
     .medical-roles-description {
-        font-size: xx-small;
-        width: 25rem;
+        font-size: 1.8rem;
+        width: 30rem;
+        padding-right: 3rem;
     }
 
     .medical-menu ul li .span {
-        width: 30rem;
-
+        width: 37rem;
     }
 
     .medical-roles-text {
         margin-left: 5rem;
+        line-height: 1.2;
+    } 
+
+    .roles-circle-label {
+        width: 19rem;
+        height: 14rem;
+    }
+
+    .medical-container-2 {
+        margin-right: 4rem;
+        margin-top: 10rem;
+    }
+
+    .medical-menu {
+        margin-left: 51rem;
+    }
+
+    /* .medical-roles-description {
+        font-size: 1.2rem;
+        width: 25rem;
+    } */
+
+    /* .medical-menu ul li .span {
+        width: 30rem;
+
+    } */
+
+    .medical-roles-text {
+        margin-left: 14rem;
     }
 
     #one1,
     #two1 {
-        right: 21rem;
+        right: 15.2rem;
     }
 
     #one2 {
-        right: 15rem;
+        right: 6.9rem;
     }
 
     #one3 {
-        right: 8rem;
+        right: -1.4rem;
     }
 
     #one4 {
-        right: 1rem;
+        right: -8.6rem;
     }
 
     #one5 {
-        right: -6rem;
+        right: -15.8rem;
     }
 
     #one6 {
-        right: -14rem;
+        right: -24rem;
     }
 
     #two2 {
-        right: 12.9rem;
+        right: 6.9rem;
         top: 0rem;
     }
 
     #two3 {
-        right: 4.9rem;
-        top: -1.5rem;
+        right: -1.4rem;
+        top: -1.7rem;
     }
 
     #two4 {
-        right: -2rem;
+        right: -9.6rem;
         top: 0rem;
     }
 
     #two5 {
-        right: -10rem;
+        right: -19.2rem;
     }
 
     .text1 {
         display: none;
     }
     /**********/
+    
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 750px) {
     /***** page 3 part 2 *****/
-    .medical-container-2 {
-        margin-right: 4rem;
-    }
-
     .medical-menu {
-        margin-left: 39rem;
-    }
-
-    .medical-roles-description {
-        font-size: 1.4rem;
-        width: 24rem;
+        margin-left: 47rem;
     }
 
     .roles-circle-label {
-        width: 17rem;
-        height: 19rem;
+        width: 18rem;
+        height: 14rem;
     }
 
-    #one2 {
-        right: 12.9rem;
-    }
-
-    #one3 {
-        right: 4.7rem;
-    }
-
-    #one4 {
-        right: -2.4rem;
-    }
-
-    #one5 {
-        right: -9.6rem;
-    }
-
-    #one6 {
-        right: -17.9rem;
-    }
-
-    #two2 {
-        top: -1rem;
-    }
-
-    #two3 {
-        right: 4.7rem;
-        top: -2.9rem;
-    }
-
-    #two4 {
-        right: -2.5rem;
-    }
-
-    #two5 {
-        right: -10.5rem;
-    }
-
-    .text1 {
-        display: none;
+    .medical-container-2 {
+        margin-right: 2rem;
     }
     /**********/
 }

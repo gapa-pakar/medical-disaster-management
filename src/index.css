@@ -667,6 +667,18 @@ textarea {
   .page2-container {
     height: var(--dynamic-height);
   }
+
+  /***** drag and drop page 3 *****/
+  .drop-div-page3 {
+    height: 12rem;
+    width: 19rem;
+    margin-right: 1rem;
+  }
+
+  .d-roles-container {
+    width: 15rem;
+    margin-right: 1rem;
+  }
 }
 
 /* ****** */

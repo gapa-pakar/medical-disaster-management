@@ -13,57 +13,39 @@ export default function Page7Part2(props) {
         event.preventDefault();
     }
 
+    // Touch and Mouse Event Handlers for Mobile Support
+    const handleTouchMove = (event) => {
+        event.preventDefault();
+    };
+
     // Handle dragging on both desktop and mobile
     const drag = (event, index) => {
-        // if (event.type === "touchstart") {
-        //     setDraggedElement(event.target.id);
-        //     setIsIndex(index);
-        // } else {
-        //     // For mouse events
-        //     event.dataTransfer.setData(`text${index}`, event.target.id);
-        //     setIsIndex(index);
-        // }
-
         setDraggedElement(event.target.id);
         setIsIndex(index);
+
+        // // For mouse events
+        // event.dataTransfer.setData(`text${index}`, event.target.id);
+        // setIsIndex(index);
     }
 
+    // Handle drop on both desktop and mobile
     const drop = (event, index) => {
         event.preventDefault();
 
         if (isIndex === index) {
             setCount(c => c + 1);
             event.target.appendChild(document.getElementById(draggedElement));
-            
+
             // Check if all items have been moved
             if (count === snapshotDetails.subjects.length - 1) {
                 setFinish(true);
             }
 
-            // if (event.type === "drop") {
-            //     // Handle drop on touch devices
-            //     event.target.appendChild(document.getElementById(draggedElement));
-            //     console.log("hello")
-            // } else {
-            //     // Handle drop on desktop
-            //     console.log(event.type)
-            //     var data = event.dataTransfer.getData(`text${index}`);
-            //     // console.log(document.getElementById(data))
-            //     event.target.appendChild(document.getElementById(data));
-
-
-            //     // Check if all items have been moved
-            //     if (count === snapshotDetails.subjects.length - 1) {
-            //         setFinish(true);
-            //     }
-            // }
+            // // Handle drop on desktop
+            // var data = event.dataTransfer.getData(`text${index}`);
+            // event.target.appendChild(document.getElementById(data));
         }
     }
-
-    // Touch and Mouse Event Handlers for Mobile Support
-    const handleTouchMove = (event) => {
-        event.preventDefault();
-    };
 
     useEffect(() => {
         setFinish(false);
@@ -77,7 +59,7 @@ export default function Page7Part2(props) {
                     <div className='page7-title-line'></div>
                 </div>
 
-
+                {/* drop */}
                 <div className='drop-divs-container'>
                     {
                         snapshotDetails.subjects.map((subject, index) => {
@@ -106,6 +88,7 @@ export default function Page7Part2(props) {
                     }
                 </div>
 
+                {/* drag */}
                 <div className='word-bank-container-1' style={{ display: count === snapshotDetails.subjects.length ? "none" : "block" }}>
                     <div className='word-bank-title'>{info.title2}</div>
                     <div className='word-bank-container-2'>

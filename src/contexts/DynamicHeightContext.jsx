@@ -28,7 +28,7 @@ export const DynamicHeightProvider = ({ children }) => {
     useEffect(() => {
         // Update the CSS variable when height changes
         document.documentElement.style.setProperty('--dynamic-height', `${height}px`);
-        console.log(height)
+        // console.log(height)
     }, [height])
 
     return (
