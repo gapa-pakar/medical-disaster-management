@@ -39,7 +39,7 @@ export default function Question(props) {
     }, [])
 
     return (
-        <div>
+        <div id={page === 6 ? 'page6-p-container' : ''}>
             {
                 watchedVideo ?
                     (

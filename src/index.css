@@ -652,8 +652,13 @@ textarea {
   }
 
   audio {
-    width: 40rem;
-    height: 25px;
+    width: 24rem;
+    height: 3rem;
+  }
+
+  audio::-webkit-media-controls-current-time-display,
+  audio::-webkit-media-controls-time-remaining-display {
+    font-size: x-small; /* Adjust the font size for time display */
   }
 
   /* video question */
@@ -697,13 +702,9 @@ textarea {
     height: 19rem;
   }
 
-  /* .answer-div {
-    padding-right: -2rem;
-  } */
-
   .answer-text-5 li {
     font-size: 1.1rem;
-    margin-right: -6rem;
+    margin-right: -5rem;
   }
 }
 

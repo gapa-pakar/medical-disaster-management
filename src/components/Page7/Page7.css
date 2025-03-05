@@ -51,7 +51,8 @@
     margin-right: 5rem;
 }
 
-.snapshot-subject-div, .snapshot-subject-div-1 {
+.snapshot-subject-div,
+.snapshot-subject-div-1 {
     padding: 1rem;
     background-color: white;
     display: flex;
@@ -101,7 +102,6 @@
 #subject4 {
     margin-top: 7rem;
 }
-
 
 .arrow-point-dashed {
     position: relative;
@@ -171,23 +171,47 @@
     margin-top: 0.7rem;
 }
 
-
-/* #subject1::after {
-    content: '';
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 25rem;
-    background-color: #10214c;
-    transform: rotate(270deg);
-    margin-top: -5rem;
-    margin-right: 13.4rem;
-} */
-
-
 @media only screen and (max-width: 1000px) {
+
+    /* page 7 part 1 */
     .snapshot-container {
-        margin-top: 3rem;
+        margin-top: 6rem;
+    }
+
+    .snapshot-title {
+        font-size: x-small;
+    }
+
+    .snapshot-description-container {
+        font-size: xx-small;
+    }
+
+    .snapshot-subject-div {
+        width: 16rem;
+    }
+
+    .snapshot-text,
+    .snapshot-subject-number {
+        font-size: xx-small;
+    }
+
+    .snapshot-subject-description {
+        font-size: larger;
+    }
+
+    #dashed1,
+    #dashed2,
+    #dashed3 {
+        margin-right: 22rem;
+    }
+
+    #subject4 {
+        margin-right: 2rem;
+    }
+
+    /***** drag and drop question *****/
+    .page7-title-container {
+        margin-top: -3rem;
     }
 
     .page7-title-line {
@@ -198,8 +222,30 @@
         font-size: small;
     }
 
-     .d-roles-container, .word-bank-title {
+    .d-roles-container,
+    .word-bank-title {
         font-size: x-small;
+    }
+
+    .snapshot-subject-div-1 {
+        width: 17rem;
+    }
+
+    .drop-div {
+        width: 19rem;
+        height: 17rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .drop-div::before {
+        margin-top: -16.7rem;
+    }
+
+    .snapshot-subject-div-1 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 0.7rem;
     }
 
     .snapshot-subject-div-2 {
@@ -210,13 +256,6 @@
 
     .word-bank-container-1 {
         margin-top: 2rem;
-    }
-
-    .word-bank-container-1 {
         padding: 2rem;
     }
 }
-
-
-
-
