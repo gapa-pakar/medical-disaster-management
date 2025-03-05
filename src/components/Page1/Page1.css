@@ -158,39 +158,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 90%;
+    /* width: 90%; */
 }
-
-/* triangle */
-/* .page1-triangle {
-    width: 20rem;
-    height: 20rem;
-    border-top-right-radius: 30%;
-    background-color: blue;
-    transform: rotate(-60deg) skewX(-30deg) scale(1, .866);
-  }
-  
-  .page1-triangle::before,
-  .page1-triangle::after {
-    content: '';
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    background: inherit;
-    border-top-right-radius: inherit;
-  }
-  
-  .page1-triangle::before {
-    transform: rotate(-135deg) skewX(-45deg) scale(1.414, .707) translateY(-50%);
-  }
-  
-  .page1-triangle::after {
-    transform: rotate(135deg) skewY(-45deg) scale(.707, 1.414) translateX(50%);
-  } */
-
-/* #triangle {
-    animation-name: animate-fade;
-} */
 
 .triangle-text-container {
     --r: 4rem;
@@ -273,8 +242,10 @@
 
 .gold-triangle-title-container {
     position: absolute;
-    top: 16rem;
-    right: 50rem;
+    top: 15rem;
+    /* right: 50rem; */
+    left: 50%;
+    transform: translateX(-50%);
     background-color: white;
     box-shadow: 0rem 0rem 0.625rem rgb(0, 0, 0, 40%);
     /* border: 2px solid lightgray; */
@@ -322,7 +293,10 @@
     .page1-title-up {
         font-size: x-small;
     }
-    /**********/
+
+    .page1-title-up {
+        padding-bottom: 3.5rem;
+    }
 
     /***** page 1 part 2 *****/
     .triangle-text-container {
@@ -357,16 +331,8 @@
     /**********/
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 750px) {
     /***** page 1 part 2 *****/
-    .gold-triangle-title-container {
-        right: 45rem;
-    }
-
-    .triangle-colored-line {
-        right: 30rem;
-    }
-
     .triangle-text-container {
         width: 48rem;
     }

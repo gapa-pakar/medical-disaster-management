@@ -163,8 +163,9 @@
   /**********/
   /* quiz */
   .quiz-container {
-    margin-top: 0rem;
-    width: 50rem;
+    /* margin-top: 4rem; */
+    width: 58rem;
+    padding-top: 3rem;
   }
 
   .quiz-container ul {

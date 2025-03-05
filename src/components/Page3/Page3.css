@@ -377,7 +377,7 @@ ul {
     }
 
     .triangle-down {
-        margin: 0.4rem 0rem;
+        margin: 0.6rem 0rem;
     }
 
     .role-container {
@@ -409,10 +409,11 @@ ul {
         font-size: 1.9rem;
         padding-right: 3rem;
         width: 37rem;
+        margin-bottom: 0.2rem;
     }
 
     .medical-roles-description {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         width: 30rem;
         padding-right: 3rem;
     }
@@ -427,17 +428,19 @@ ul {
     } 
 
     .roles-circle-label {
-        width: 19rem;
-        height: 14rem;
+        width: 20rem;
+        height: 15rem;
     }
 
     .medical-container-2 {
         margin-right: 4rem;
         margin-top: 7rem;
+        width: 75%;
+        justify-content: space-between;
     }
 
     .medical-menu {
-        margin-left: 51rem;
+        margin-left: 0rem;
     }
 
     .medical-roles-text {
@@ -446,46 +449,46 @@ ul {
 
     #one1,
     #two1 {
-        right: 15.2rem;
+        right: 14rem;
     }
 
     #one2 {
-        right: 6.9rem;
+        right: 7.9rem;
     }
 
     #one3 {
-        right: -1.4rem;
+        right: 1rem;
     }
 
     #one4 {
-        right: -8.6rem;
+        right: -5.9rem;
     }
 
     #one5 {
-        right: -15.8rem;
+        right: -11.8rem;
     }
 
     #one6 {
-        right: -24rem;
+        right: -18.7rem;
     }
 
     #two2 {
-        right: 6.9rem;
+        right: 5.9rem;
         top: 0rem;
     }
 
     #two3 {
-        right: -1.4rem;
+        right: -2.4rem;
         top: -2.7rem;
     }
 
     #two4 {
-        right: -9.6rem;
+        right: -9.7rem;
         top: 0rem;
     }
 
     #two5 {
-        right: -19.2rem;
+        right: -17.7rem;
     }
 
     .text1 {

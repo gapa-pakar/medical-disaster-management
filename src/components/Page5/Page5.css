@@ -585,3 +585,33 @@
 #show3 {
     display: none;
 }
+
+@media only screen and (max-width: 1000px) {
+    .circled-text {
+       transform: rotate(90deg);
+    }
+
+    .circled-text span {
+        font-size: xx-small;
+        left: 6rem;
+    }
+
+    .channel-container {
+        font-size: larger;
+        width: 27rem;
+    }
+
+    .channel-title {
+        font-size: xx-small;
+    }
+
+    .channel-goals-title {
+        font-size: 1.2rem;
+    }
+
+    .channel-goals {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+}

@@ -9,7 +9,8 @@
 }
 
 :root {
-  --dynamic-height: 100vh; /* Default value */
+  --dynamic-height: 100vh;
+  /* Default value */
 }
 
 body,
@@ -19,6 +20,7 @@ html {
   direction: rtl;
   font-family: 'Heebo', 'Calibri';
   font-size: 1rem;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .split {
@@ -487,6 +489,10 @@ textarea {
   z-index: 1;
 }
 
+#question-page5 {
+  height: 17rem;
+}
+
 /* ****** */
 
 /* ****** */
@@ -650,6 +656,7 @@ textarea {
     height: 25px;
   }
 
+  /* video question */
   .video-placing-small {
     margin-right: 4.2rem;
   }
@@ -658,12 +665,14 @@ textarea {
     height: 22rem;
   }
 
+  /* page 1 */
   .page1-container {
     margin-top: 2rem;
     height: var(--dynamic-height);
     /* border: 2px solid black; */
   }
 
+  /* page 2 */
   .page2-container {
     height: var(--dynamic-height);
   }
@@ -678,6 +687,11 @@ textarea {
   .d-roles-container {
     width: 15rem;
     margin-right: 1rem;
+  }
+
+  /* open question  */
+  #question-page5 {
+    height: 19rem;
   }
 }
 

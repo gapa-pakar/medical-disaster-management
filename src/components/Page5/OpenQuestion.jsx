@@ -41,7 +41,7 @@ export default function OpenQuestion(props) {
     return (
         <div>
             <div className='question-page5-container'>
-                <div className='question-container' style={{ height: "17rem" }}>
+                <div className='question-container' id='question-page5'>
                     <div className='follow-up-question'>
                         <h1 className='video-question-title' style={{ color: "#95aed7" }}>{question.title}</h1>
                         <div className='question-line' style={{ width: question.width, borderTopColor: "#95aed7" }}></div>
