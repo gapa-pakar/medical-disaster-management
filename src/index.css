@@ -665,11 +665,14 @@ textarea {
     height: 22rem;
   }
 
+  .video-question-title {
+    margin-bottom: 0.2rem;
+  }
+
   /* page 1 */
   .page1-container {
     margin-top: 2rem;
     height: var(--dynamic-height);
-    /* border: 2px solid black; */
   }
 
   /* page 2 */
@@ -692,6 +695,15 @@ textarea {
   /* open question  */
   #question-page5 {
     height: 19rem;
+  }
+
+  /* .answer-div {
+    padding-right: -2rem;
+  } */
+
+  .answer-text-5 li {
+    font-size: 1.1rem;
+    margin-right: -6rem;
   }
 }
 

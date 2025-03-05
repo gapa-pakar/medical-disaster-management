@@ -151,7 +151,7 @@
     position: absolute;
     top: 55%;
     right: 50%;
-    transform: translate(150%, 100%);
+    transform: translate(-50%, -50%);
     /* position: relative;
     width: 70%; */
 }
@@ -311,10 +311,6 @@
 @media only screen and (max-width: 1000px) {
 
     /***** page 2 part 1 *****/
-    .page2-briefing-container {
-        height: 45rem;
-    }
-
     .briefing-card {
         width: 37rem;
     }
@@ -359,8 +355,6 @@
     .circle-arrows-container {
         top: 54%;
     }
-
-
     /**********/
 
     /***** page 2 video question *****/
@@ -368,10 +362,6 @@
         top: 10.7rem;
         width: 90rem;
     }
-
-    /* .circle-arrows-container {
-        margin-top: 1rem;
-    } */
 
     .page2-p-container {
         margin-top: 0;
@@ -415,7 +405,6 @@
 
     .video-question-container {
         height: 27rem;
-        /* padding-top: 0; */
     }
 
     .video-question-screen {
@@ -426,10 +415,6 @@
 }
 
 @media only screen and (max-width: 1000px) and (max-height: 384px) {
-    .page2-briefing-container {
-        height: 39rem;
-    }
-
     .briefing-number,
     .briefing-title {
         font-size: x-small;
@@ -446,7 +431,7 @@
     }
 
     .circle-arrows-container {
-        top: 56%;
+        top: 60%;
     }
 
     /* video question */
@@ -466,17 +451,8 @@
 @media only screen and (max-width: 812px) {
 
     /***** page 2 part 1 *****/
-    .page2-briefing-container {
-        margin-top: -1rem;
-        height: 47rem;
-    }
-
     .briefing-description {
         font-size: 1.4rem;
-    }
-
-    .circle-arrows-container {
-        margin-top: -4rem;
     }
 
     .briefing-number,
@@ -498,4 +474,10 @@
     }
 
     /**********/
+}
+
+@media only screen and (max-width: 750px) {
+    .circle-arrows-container {
+        top: 50%;
+    }
 }
