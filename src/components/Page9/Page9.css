@@ -20,7 +20,11 @@
 }
 
 #line-page9 {
-    width: 36rem;
+    width: 46rem;
+}
+
+#line-page9-1 {
+    width: 45rem;
 }
 
 .evacuation-container {
@@ -191,17 +195,10 @@ strong {
 
 
 /* ****** */
-/* page9 subtopic */
+/***** page9 subtopic *****/
 .page9-subtopic-container {
     box-sizing: border-box;
     margin-top: 9rem;
-}
-
-.book-section {
-    height: 100vh;
-    width: 100%;
-    padding: 2.5rem 0;
-    text-align: center;
 }
 
 .book-section>.book-container {
@@ -412,3 +409,81 @@ strong {
 }
 
 /* ****** */
+
+@media only screen and (max-width: 1000px) {
+
+    /***** page 9 *****/
+    .page2-p-title {
+        font-size: 1.4rem;
+    }
+
+    #line-page9 {
+        width: 60rem;
+    }
+
+    /***** page 9 subtopic book *****/
+    .page9-subtopic-container {
+        margin-top: 0rem;
+    }
+
+    .book-section>.book-container {
+        height: 37rem;
+        width: 56rem;
+    }
+
+    .next, .previous {
+        top: 34rem;
+    }
+
+    .fb-image {
+        width: 21rem;
+    }
+
+    .side2-title {
+        font-size: 1.4rem;
+        width: 22rem;
+    }
+
+    .side1 {
+        font-size: 2.7rem;
+    }
+
+    .side2-title1 {
+        font-size: 1.4rem;
+    }
+
+    .d-container, .d-number, .stage-d {
+        font-size: 1.4rem;
+    }
+
+    .stage-d {
+        line-height: 1.4;
+        margin-bottom: 2rem;
+    }
+
+    #th, #td {
+        font-size: 1rem;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) and (max-height: 384px) {
+
+    /***** page 9 *****/
+    .page9-subjects-container {
+        margin-top: 0rem;
+    }
+
+    .page9-subjects-button {
+        top: 2.4rem;
+        left: 14rem;
+    }
+
+    .page9-subjects-title {
+        margin-bottom: 1rem;
+    }
+
+    .table1 {
+        margin-top: 0rem;
+    }
+}

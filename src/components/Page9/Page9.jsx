@@ -319,7 +319,7 @@ export default function Page9(props) {
                             showSubject ? <Page9Subjects info={info[subjectNumber]} setShowSubject={setShowSubject} /> : (
                                 <div className='page9-container'>
                                     <div className='page2-p'>אמצעי הפינוי יבחר על ידי המפקד הרפואי והאגמ״י על פי זמינות האמצעים, אופי הפציעה, מצבו של הנפגע,<br></br>הצורך בליווי הנפגע על ידי מט״ב, בית החולים הרלוונטי ושיקולים נוספים.</div>
-                                    <div className='line' id='line-page9'></div>
+                                    <div className='line' id='line-page9-1'></div>
                                     <div className='more-circle'>לחצו על <br></br>הכפתורים<br></br> למידע נוסף</div>
 
                                     <div className='evacuation-container'>

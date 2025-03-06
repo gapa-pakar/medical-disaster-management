@@ -181,7 +181,7 @@ export default function Page8(props) {
 
                 {/* explaining text */}
                 {
-                    eventsArray.includes(0) ? <></> : (
+                    eventsArray.length > 0 ? <></> : (
                         <div className='medical-people-text' id='medical1'>
                             <div>לחצו על כל אחד מהעיגולים כדי לחשוף את השלבים</div>
                             <div className='medical-people-line'></div>

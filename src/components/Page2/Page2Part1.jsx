@@ -14,7 +14,7 @@ export default function Page2Part1(props) {
                     ) : <></>
                 }
                 <div className='page2-p'>{titleInfo.p1}<br></br>{titleInfo.p2}</div>
-                <div className='line' id='line-page2'></div>
+                <div className='line' id={page === 2 ? 'line-page2' : 'line-page9'}></div>
             </div>
 
             {/* cards */}

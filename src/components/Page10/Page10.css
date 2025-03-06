@@ -97,7 +97,7 @@
     align-items: center;
     font-weight: bold;
     cursor: pointer;
-    border: 0.125rem solid transparent;
+    border: 0.4rem solid transparent;
 }
 
 .options-bg-selected {
@@ -139,4 +139,11 @@
 .p10-wrong-m, .p10-correct-m {
     font-size: 1.2rem;
     text-align: center;
+}
+
+@media only screen and (max-width: 1000px) { 
+    .page10-container {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

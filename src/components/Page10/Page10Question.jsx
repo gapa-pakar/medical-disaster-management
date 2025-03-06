@@ -55,6 +55,8 @@ export default function Page10Question({ setFinish }) {
             setCountWrong(count2);
 
             if (question === questions.question2) {
+                console.log(countWrong);
+                console.log(countCorrect)
                 if (count1 === question.correct.length && count2 === 0) {
                     setFinish(true);
                 }
@@ -64,7 +66,6 @@ export default function Page10Question({ setFinish }) {
 
             if (countCorrect === question.correct.length && countWrong === 0) {
                 setQuestion(questions.question2)
-                console.log("hello")
             }
         }
     }

@@ -23,6 +23,23 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+button {
+  all: unset;
+  border: none;
+  padding: 0;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Heebo';
+  text-align: center;
+  text-decoration: none;
+}
+
+textarea {
+  all: unset;
+}
+
+/***** pages screen *****/
 .split {
   height: var(--dynamic-height);
   width: 94vw;
@@ -60,6 +77,7 @@ html {
   background-color: #f2f2f2;
 }
 
+
 .navbar {
   display: flex;
   justify-content: left;
@@ -71,6 +89,36 @@ html {
   z-index: 10;
 }
 
+.arrows {
+  position: fixed;
+  bottom: 0rem;
+  width: 94%;
+}
+
+.arrows-hidden {
+  display: none;
+}
+
+.next-arrow,
+.previous-arrow {
+  bottom: 2rem;
+  width: 4rem;
+  cursor: pointer;
+  margin: 0 2rem;
+  position: absolute;
+}
+
+.previous-arrow {
+  left: 1rem;
+}
+
+.next-arrow {
+  right: 1rem;
+}
+
+/* ****** */
+
+/***** navbar *****/
 .menu,
 .menu-responsive {
   height: var(--dynamic-height);
@@ -154,7 +202,6 @@ html {
   width: 1.6rem;
 }
 
-
 .title {
   margin-left: 3rem;
   color: white;
@@ -177,23 +224,6 @@ html {
 .title,
 .subtitle {
   cursor: pointer;
-}
-
-.arrowRight,
-.arrowLeft {
-  width: 1.3rem;
-  position: absolute;
-  top: 1.2rem;
-  z-index: 12;
-  cursor: pointer;
-}
-
-.arrowRight {
-  left: 3.6rem;
-}
-
-.arrowLeft {
-  left: 23.6rem;
 }
 
 .subject-title-container {
@@ -253,69 +283,40 @@ html {
   padding: 0rem 4rem;
 }
 
-.arrows {
-  position: fixed;
-  bottom: 0rem;
-  width: 94%;
-}
-
-.arrows-hidden {
-  display: none;
-}
-
-.next-arrow,
-.previous-arrow {
-  bottom: 2rem;
-  width: 4rem;
-  cursor: pointer;
-  margin: 0 2rem;
+.arrowRight,
+.arrowLeft {
+  width: 1.3rem;
   position: absolute;
-}
-
-.previous-arrow {
-  left: 1rem;
-}
-
-.next-arrow {
-  right: 1rem;
-}
-
-button {
-  all: unset;
-  border: none;
-  padding: 0;
-  background: none;
-  outline: none;
+  top: 1.2rem;
+  z-index: 12;
   cursor: pointer;
-  font-family: 'Heebo';
-  text-align: center;
 }
 
-textarea {
-  all: unset;
+.arrowRight {
+  left: 3.6rem;
 }
 
-.page1-container {
-  margin-top: 5rem;
-  margin-right: 0rem;
-  height: 90vh;
-  /* border: 2px solid black; */
+.arrowLeft {
+  left: 23.6rem;
 }
 
+/* ****** */
 
-/* .next-subject {
-
-} */
-
-/* question component */
-
+/***** home page ******/
 .home-page {
   width: 100vw;
   height: var(--dynamic-height);
 }
 
-/* ****** */
-/* video question component, appearing in page 2 */
+
+/***** page 1 ******/
+.page1-container {
+  margin-top: 5rem;
+  margin-right: 0rem;
+  height: 90vh;
+}
+
+/***** video question component, appearing in page 2 ******/
 .video-container {
   display: flex;
   justify-content: center;
@@ -374,7 +375,6 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: right;
-  /* justify-content: center; */
   padding: 2rem;
   border-radius: 1.563rem;
   box-shadow: 0rem 0rem 0.625rem rgb(0, 0, 0, 40%);
@@ -471,8 +471,7 @@ textarea {
 
 /* ****** */
 
-/* ****** */
-/* page4 and page5 question container */
+/***** page4 and page5 question container *****/
 .question-container {
   width: 60rem;
   height: 20rem;
@@ -481,7 +480,6 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: right;
-  /* justify-content: center; */
   padding: 2rem 3.4rem;
   border-radius: 1.563rem;
   box-shadow: 0rem 0rem 0.625rem rgb(0, 0, 0, 40%);
@@ -495,8 +493,7 @@ textarea {
 
 /* ****** */
 
-/* ****** */
-/* drag and drop  */
+/***** drag and drop  *****/
 .drop-divs-container {
   display: flex;
   flex-direction: row;
@@ -641,14 +638,17 @@ textarea {
 
 /* ****** */
 
+ /***** page 9 subtopic book *****/
+ .book-section {
+  height: var(--dynamic-height);
+  width: 100%;
+  padding: 2.5rem 0;
+  text-align: center;
+}
 
 @media only screen and (max-width: 1000px) {
   html {
     font-size: calc((0.9vh + 0.9vw) * 0.6);
-  }
-
-  .subjects-circle-1 {
-    left: 6rem;
   }
 
   audio {
@@ -658,10 +658,15 @@ textarea {
 
   audio::-webkit-media-controls-current-time-display,
   audio::-webkit-media-controls-time-remaining-display {
-    font-size: x-small; /* Adjust the font size for time display */
+    font-size: x-small;
+    /* Adjust the font size for time display */
   }
 
-  /* video question */
+  .subjects-circle-1 {
+    left: 6rem;
+  }
+
+  /***** video question *****/
   .video-placing-small {
     margin-right: 4.2rem;
   }
@@ -674,13 +679,13 @@ textarea {
     margin-bottom: 0.2rem;
   }
 
-  /* page 1 */
+  /***** page 1 *****/
   .page1-container {
     margin-top: 2rem;
     height: var(--dynamic-height);
   }
 
-  /* page 2 */
+  /***** page 2 *****/
   .page2-container {
     height: var(--dynamic-height);
   }
@@ -697,7 +702,7 @@ textarea {
     margin-right: 1rem;
   }
 
-  /* open question  */
+  /***** open question  *****/
   #question-page5 {
     height: 19rem;
   }
@@ -708,8 +713,7 @@ textarea {
   }
 }
 
-/* ****** */
-/* animations */
+/***** animations *****/
 .animation {
   animation-duration: 0.75s;
   animation-duration: 1s;
