@@ -345,7 +345,7 @@ a {
 }
 
 .video-placing {
-  width: fit-content;
+  width: 53.2rem;
   height: 30rem;
   margin-top: 2.7rem;
   border: 0.25rem solid #3b3838;
@@ -380,8 +380,8 @@ a {
 }
 
 .video-placing-small {
-  width: max-content;
-  height: 25rem;
+  width: 40rem;
+  height: 22.5rem;
   margin-top: 3.4rem;
   margin-right: 6rem;
   border: 0.25rem solid #3b3838;
@@ -628,6 +628,10 @@ a {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.word-container {
+  touch-action: none;
 }
 
 .snapshot-subject-div-1 {

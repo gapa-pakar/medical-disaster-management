@@ -108,7 +108,7 @@ export default function Question(props) {
                             <div className='video-container'>
                                 {/* video screen */}
                                 <div>
-                                    <video className='video-placing' src={info.video} controls></video>
+                                    <video className='video-placing' src={info.video} controls ></video>
                                 </div>
                                 {/* the button should appear only after watching the video */}
                                 <button className='video-next-button' onClick={moveToQuestion}>הבא</button>

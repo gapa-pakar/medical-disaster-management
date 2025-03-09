@@ -47,6 +47,11 @@ export default function Page7Part2(props) {
         }
     }
 
+    const handleTouchEnd = (event, index) => {
+        event.preventDefault();
+        drop(event, index)
+    }
+
     useEffect(() => {
         setFinish(false);
     }, [])
@@ -78,7 +83,7 @@ export default function Page7Part2(props) {
                                         onDrop={(event) => drop(event, index)}
                                         onDragOver={allowDrop}
                                         onTouchMove={handleTouchMove}
-
+                                        onTouchEnd={(event) => drop(event, index)}
                                         className={info.dropContainerClass}
                                         style={{ borderColor: subject.color, "--subject-color": subject.color }}>
                                     </div>
@@ -100,6 +105,7 @@ export default function Page7Part2(props) {
                                     draggable="true"
                                     onDragStart={(event) => drag(event, index1)}
                                     onTouchStart={(event) => drag(event, index1)}
+                                    onTouchEnd={(event) => handleTouchEnd(event, index1)}
                                     id={`drag${index1}`}>
                                     {
                                         page === 7 ? (
