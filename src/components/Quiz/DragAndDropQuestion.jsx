@@ -8,6 +8,7 @@ export default function Page7Part2(props) {
     const [isIndex, setIsIndex] = useState("");
     const [count, setCount] = useState(0);
     const [draggedElement, setDraggedElement] = useState(null); // Track the dragged element
+    const [element, setElement] = useState("")
 
     const allowDrop = (event) => {
         event.preventDefault();
@@ -16,15 +17,20 @@ export default function Page7Part2(props) {
 
     // Touch and Mouse Event Handlers for Mobile Support
     const handleTouchMove = (event) => {
-        event.preventDefault();
-        console.log("hello1")
+        const touch = event.touches[0];
+        const x = touch.clientX;
+        const y = touch.clientY;
+
+        const selectedElement = document.elementFromPoint(x, y);
+
+        if (selectedElement.id) {
+            setElement(selectedElement);
+            console.log(selectedElement.id)
+        }
     }
 
     const handleTouchEnd = (event, index) => {
         event.preventDefault();
-        console.log("touchEnc")
-        // console.log(snapshotDetails.subjects[index].answer)
-        // console.log("hellow")
         drop(event, snapshotDetails.subjects[index].answer);
     }
 
@@ -35,17 +41,12 @@ export default function Page7Part2(props) {
     }
 
     // Handle drop on both desktop and mobile
-    const drop = (event, index) => {
+    const drop = (event, answer) => {
         event.preventDefault();
-        console.log(isIndex)
-        console.log("answer" + index)
-        console.log(snapshotDetails.subjects[isIndex].answer)
-        // console.log(document.getElementById(`drop${index}`))
 
-
-        if (snapshotDetails.subjects[isIndex].answer === index) {
+        if (element.id === `drop${answer}`) {
             setCount(c => c + 1);
-            document.getElementById(`drop${index}`).appendChild(document.getElementById(draggedElement));
+            document.getElementById(`drop${answer}`).appendChild(document.getElementById(draggedElement));
 
             // Check if all items have been moved
             if (count === snapshotDetails.subjects.length - 1) {
@@ -54,8 +55,10 @@ export default function Page7Part2(props) {
         }
     }
 
-    const hello = (event, index) => {
-        console.log("hello")
+    const handl = (event, index) => {
+        // if (event.taget)
+
+
     }
 
     useEffect(() => {
@@ -88,7 +91,7 @@ export default function Page7Part2(props) {
                                         id={`drop${index}`}
                                         onDrop={(event) => drop(event, index)}
                                         onDragOver={allowDrop}
-                                        onTouchMove={handleTouchMove}
+                                        onTouchMove={allowDrop}
                                         onTouchEnd={(event) => drop(event, index)}
                                         className={info.dropContainerClass}
                                         style={{ borderColor: subject.color, "--subject-color": subject.color, color: "white" }}>
@@ -111,6 +114,7 @@ export default function Page7Part2(props) {
                                     draggable="true"
                                     onDragStart={(event) => drag(event, index1)}
                                     onTouchStart={(event) => drag(event, index1)}
+                                    onTouchMove={handleTouchMove}
                                     onTouchEnd={(event) => handleTouchEnd(event, index1)}
                                     id={`drag${index1}`}>
                                     {
