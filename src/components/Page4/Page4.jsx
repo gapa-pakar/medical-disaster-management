@@ -137,8 +137,9 @@ export default function Page4(props) {
 
     return (
         <div className='page1-container'>
-            {countPages === 0 ?
-                (<div>
+            {countPages === 0 ? (
+                // page 4 part 1
+                <div>
                     <div className='interface-container'>
                         {
                             ManagersInterfaces.map((card, index) => (
@@ -166,30 +167,32 @@ export default function Page4(props) {
                                                 <img src={card.icon} className='card-icon' id={`card_icon_${index + 1}`}></img>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             ))
                         }
                     </div>
                 </div>
-                ) : countPages === 1 ? (
-                    <div className='interface-container-2'>
-                        <div className='question-container'>
-                            <h1 className='video-question-title' style={{ color: "#5c83c4" }}>כתבו מהם שלושת סוגי הממשקים הקיימים בעת ניהול אירוע הרס:</h1>
-                            <div className='question-line' style={{ width: "34rem", borderTopColor: "#5c83c4" }}></div>
-                            <div className='answer-container'>
-                                <div className='question-inputs-container'>
-                                    <input id={`input_1`} value={value1} className='question-inputs' onChange={checkAnswer} readOnly={readOnly1} style={{ backgroundColor: value1 ? readOnly1 ? '#a9d18e' : '#ff8989' : '' }}></input>
-                                    <input id={`input_2`} value={value2} className='question-inputs' onChange={checkAnswer} readOnly={readOnly2} style={{ backgroundColor: value2 ? readOnly2 ? '#a9d18e' : '#ff8989' : '' }}></input>
-                                    <input id={`input_3`} value={value3} className='question-inputs' onChange={checkAnswer} readOnly={readOnly3} style={{ backgroundColor: value3 ? readOnly3 ? '#a9d18e' : '#ff8989' : '' }}></input>
-                                </div>
-                                <div className='text-message' style={{ color: readOnly1 && readOnly2 && readOnly3 ? "#548235" : "#ff5757" }}>{readOnly1 && readOnly2 && readOnly3 ? "כל הכבוד!" : displayText ? "כמעט..." : ""}</div>
+            ) : countPages === 1 ? (
+                // page 4 question
+                <div className='interface-container-2'>
+                    <div className='question-container'>
+                        <h1 className='video-question-title' style={{ color: "#5c83c4" }}>כתבו מהם שלושת סוגי הממשקים הקיימים בעת ניהול אירוע הרס:</h1>
+                        <div className='question-line' style={{ width: "34rem", borderTopColor: "#5c83c4" }}></div>
+                        <div className='answer-container'>
+                            <div className='question-inputs-container'>
+                                <input id={`input_1`} value={value1} className='question-inputs' onChange={checkAnswer} readOnly={readOnly1} style={{ backgroundColor: value1 ? readOnly1 ? '#a9d18e' : '#ff8989' : '' }}></input>
+                                <input id={`input_2`} value={value2} className='question-inputs' onChange={checkAnswer} readOnly={readOnly2} style={{ backgroundColor: value2 ? readOnly2 ? '#a9d18e' : '#ff8989' : '' }}></input>
+                                <input id={`input_3`} value={value3} className='question-inputs' onChange={checkAnswer} readOnly={readOnly3} style={{ backgroundColor: value3 ? readOnly3 ? '#a9d18e' : '#ff8989' : '' }}></input>
                             </div>
+                            <div className='text-message' style={{ color: readOnly1 && readOnly2 && readOnly3 ? "#548235" : "#ff5757" }}>{readOnly1 && readOnly2 && readOnly3 ? "כל הכבוד!" : displayText ? "כמעט..." : ""}</div>
                         </div>
                     </div>
-                ) : <Quiz quiz={quiz} setFinish={setFinish}></Quiz>
-            }
+                </div>
+            ) : (
+                // quiz
+                <Quiz quiz={quiz} setFinish={setFinish}></Quiz>
+            )}
         </div>
     )
 }

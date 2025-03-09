@@ -13,6 +13,7 @@
   /* Default value */
 }
 
+
 body,
 html {
   overflow: hidden;
@@ -21,6 +22,13 @@ html {
   font-family: 'Heebo', 'Calibri';
   font-size: 1rem;
   -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 button {
