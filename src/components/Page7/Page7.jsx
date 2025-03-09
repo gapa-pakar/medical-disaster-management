@@ -15,7 +15,7 @@ const snapshotDetails = {
             id: 1,
             title: "איסוף נתונים",
             description: "הצגת הדרישות לנתונים ואיסוף נתונים בצורה יזומה מן המקורות השונים.",
-            color: "#10214c",
+            color: "#3877c0",
             colorAfter: "#1a3b70"
         },
         {
@@ -30,13 +30,13 @@ const snapshotDetails = {
             title: "ניתוח החומר",
             description: "זיהוי העובדות הנכונות מתוך כלל הידיעות.",
             color: "#3877c0",
-            colorAfter: "#10214c"
+            colorAfter: "#1a3b70"
         },
         {
             id: 4,
             title: "קבלת החלטות",
             description: 'קבלת החלטות על רלוונטיות החומר וחשיבותו, וכך על אופן ועיתוי שילובו כנתון ב"תמונת המצב".',
-            color: "#10214c"
+            color: "#1a3b70"
         }
     ]
 }

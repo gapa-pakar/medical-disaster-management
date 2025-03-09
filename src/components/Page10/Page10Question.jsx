@@ -45,7 +45,7 @@ export default function Page10Question({ setFinish }) {
             let count1 = 0
             let count2 = 0
             selected.forEach((answer, index) => {
-                if (answer === question.correct[index]) {
+                if (question.correct.includes(answer)) {
                     count1++;
                 } else {
                     count2++;
@@ -55,15 +55,13 @@ export default function Page10Question({ setFinish }) {
             setCountWrong(count2);
 
             if (question === questions.question2) {
-                console.log(countWrong);
-                console.log(countCorrect)
                 if (count1 === question.correct.length && count2 === 0) {
                     setFinish(true);
                 }
             }
         } else {
             setChecked(false);
-
+            
             if (countCorrect === question.correct.length && countWrong === 0) {
                 setQuestion(questions.question2)
             }
@@ -71,6 +69,7 @@ export default function Page10Question({ setFinish }) {
     }
 
     useEffect(() => {
+        console.log("here")
         setSelected([]);
         setCountCorrect(0);
         setCountWrong(0);
@@ -80,7 +79,7 @@ export default function Page10Question({ setFinish }) {
     useEffect(() => {
         setFinish(false);
     }, [])
-    
+
     return (
         <div>
             <div className='page10-container'>

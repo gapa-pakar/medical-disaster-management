@@ -246,15 +246,25 @@ function App() {
             <div className='arrows'>
               <button style={{ visibility: finish || selectedPage === 2 ? "visible" : "hidden" }}
                 onClick={nextSlide}>
-                {countPages === maxPages ?
-                  <Link setCountPages={setCountPages} href={!lastPage ? linkName : '/finishPage'}><img src={next} className='next-arrow'></img></Link> :
-                  <img src={next} className='next-arrow'></img>}
+                <div className='next-arrow'>
+                  {countPages === maxPages ?
+                    <Link setCountPages={setCountPages} href={!lastPage ? linkName : '/finishPage'}>
+                      <img src={next} />
+                    </Link> :
+                    <img src={next}></img>}
+                  <div>הבא</div>
+                </div>
               </button>
 
               <button onClick={previousSlide}>
-                {countPages === 0 ?
-                  <Link setCountPages={setCountPages} href={!firstPage ? `/page${currentSubject.id - 1}` : '/'}><img src={previous} className='previous-arrow'></img></Link> :
-                  <img src={previous} className='previous-arrow'></img>}
+                <div className='previous-arrow'>
+                  {countPages === 0 ?
+                    <Link setCountPages={setCountPages} href={!firstPage ? `/page${currentSubject.id - 1}` : '/'}>
+                      <img src={previous} />
+                    </Link> :
+                    <img src={previous}></img>}
+                  <div>הקודם</div>
+                </div>
               </button>
             </div>
           </div>
@@ -264,8 +274,8 @@ function App() {
             !pathArray.includes(window.location.pathname) ?
               <Navbar className="split left" Subjects={Subjects} currentSubject={currentSubject} setCurrentSubject={setCurrentSubject} selectedPage={selectedPage}></Navbar> : <></>
           }
-        </div>
-      </div>
+        </div >
+      </div >
     </>
   )
 }

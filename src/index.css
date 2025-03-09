@@ -39,6 +39,10 @@ textarea {
   all: unset;
 }
 
+a {
+  text-decoration: none;
+}
+
 /***** pages screen *****/
 .split {
   height: var(--dynamic-height);
@@ -108,6 +112,13 @@ textarea {
   position: absolute;
 }
 
+.next-arrow div,
+.previous-arrow div {
+  color: #1a3b70;
+  font-weight: bold;
+  margin-top: -0.4rem;
+}
+
 .previous-arrow {
   left: 1rem;
 }
@@ -115,6 +126,7 @@ textarea {
 .next-arrow {
   right: 1rem;
 }
+
 
 /* ****** */
 
@@ -638,8 +650,8 @@ textarea {
 
 /* ****** */
 
- /***** page 9 subtopic book *****/
- .book-section {
+/***** page 9 subtopic book *****/
+.book-section {
   height: var(--dynamic-height);
   width: 100%;
   padding: 2.5rem 0;
@@ -667,6 +679,11 @@ textarea {
   }
 
   /***** video question *****/
+  /* rest of video styling is in page2.css */
+  .video-placing {
+    margin-top: 1.7rem;
+  }
+
   .video-placing-small {
     margin-right: 4.2rem;
   }

@@ -344,12 +344,12 @@
 
 @media only screen and (max-width: 1000px) {
     .report-description-page6 {
-        font-size: x-small;
-        width: 77rem;
+        font-size: xx-small;
+        width: 74rem;
     }
 
     .description-container {
-        width: 79rem;
+        width: 76rem;
     }
 
     .back-button {
@@ -374,5 +374,22 @@
 
     .div-triangle-right-background, .div-triangle-left-background {
         width: 30rem;
+    }
+
+    .report-details-title, .audio-title {
+        font-size: xx-small;
+    }
+
+    .report-details-text {
+        font-size: 1.2rem;
+        width: 19rem;
+    }
+
+    .details-container {
+        height: 10rem;
+    }
+
+    .report-details-container, .report-details-title {
+        width: 44rem;
     }
 }
