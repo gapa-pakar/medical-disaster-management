@@ -15,8 +15,9 @@ export default function Page7Part2(props) {
         console.log("hello2")
     }
 
-    // Touch and Mouse Event Handlers for Mobile Support
-    const handleTouchMove = (event) => {
+    // Touch and Mouse Event Handlers for Mobile Support, 
+    // when moving the element findind the drop areas
+    const handleTouchMove = (event, index1) => {
         const touch = event.touches[0];
         const x = touch.clientX;
         const y = touch.clientY;
@@ -29,6 +30,7 @@ export default function Page7Part2(props) {
         }
     }
 
+    // when the user drop the element
     const handleTouchEnd = (event, index) => {
         event.preventDefault();
         drop(event, snapshotDetails.subjects[index].answer);
@@ -43,7 +45,8 @@ export default function Page7Part2(props) {
     // Handle drop on both desktop and mobile
     const drop = (event, answer) => {
         event.preventDefault();
-
+        
+        // add that this will work only on mobile on desktop it will be as it was before check on whatsapp
         if (element.id === `drop${answer}`) {
             setCount(c => c + 1);
             document.getElementById(`drop${answer}`).appendChild(document.getElementById(draggedElement));
@@ -53,12 +56,6 @@ export default function Page7Part2(props) {
                 setFinish(true);
             }
         }
-    }
-
-    const handl = (event, index) => {
-        // if (event.taget)
-
-
     }
 
     useEffect(() => {
@@ -114,7 +111,7 @@ export default function Page7Part2(props) {
                                     draggable="true"
                                     onDragStart={(event) => drag(event, index1)}
                                     onTouchStart={(event) => drag(event, index1)}
-                                    onTouchMove={handleTouchMove}
+                                    onTouchMove={(event) => handleTouchMove(event, index1)}
                                     onTouchEnd={(event) => handleTouchEnd(event, index1)}
                                     id={`drag${index1}`}>
                                     {
