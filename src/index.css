@@ -630,9 +630,9 @@ a {
   cursor: pointer;
 }
 
-.word-container {
+/* .word-container {
   touch-action: none;
-}
+} */
 
 .snapshot-subject-div-1 {
   margin-left: 2rem;
