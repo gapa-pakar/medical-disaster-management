@@ -521,7 +521,8 @@ a {
   align-items: center;
 }
 
-.drop-divs-container-3, .drop-divs-container-7 {
+.drop-divs-container-3,
+.drop-divs-container-7 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -614,7 +615,7 @@ a {
   border: 0.125rem solid lightgray;
   border-radius: 4rem;
   padding: 2rem 4rem;
-  width: 90rem;
+  width: 70rem;
   height: 14rem;
 }
 
@@ -645,23 +646,23 @@ a {
 }
 
 #drag4 {
-  left: 100px;
+  left: 16%;
 }
 
 #drag3 {
-  left: 220px;
+  left: 29.5%;
 }
 
 #drag2 {
-  left: 340px;
+  left: 43%;
 }
 
 #drag1 {
-  left: 460px;
+  left: 56.5%;
 }
 
 #drag0 {
-  left: 580px;
+  left: 70%;
 }
 
 .snapshot-subject-div-1 {
@@ -749,16 +750,68 @@ a {
     height: var(--dynamic-height);
   }
 
-  /***** drag and drop page 3 *****/
+  /***** drag and drop *****/
   .drop-div-page3 {
     height: 12rem;
     width: 19rem;
     margin-right: 1rem;
   }
 
+  .drop-div {
+    width: 19rem;
+    height: 17rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .drop-div::before {
+    margin-top: -16.7rem;
+  }
+
   .d-roles-container {
     width: 15rem;
     margin-right: 1rem;
+  }
+ 
+  .snapshot-subject-div-1 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 0.7rem;
+  }
+
+  .snapshot-subject-div-2 {
+    font-size: xx-small;
+    width: 15rem;
+    padding: 1rem;
+  }
+
+  .word-bank-container-1 {
+    margin-top: 2rem;
+    padding: 2rem;
+  }
+
+  .word-bank-container-1 {
+    width: 93rem;
+  }
+
+  #drag4 {
+    left: 12%;
+  }
+  
+  #drag3 {
+    left: 27%;
+  }
+  
+  #drag2 {
+    left: 42%;
+  }
+  
+  #drag1 {
+    left: 57%;
+  }
+  
+  #drag0 {
+    left: 72%;
   }
 
   /***** open question  *****/
@@ -769,6 +822,28 @@ a {
   .answer-text-5 li {
     font-size: 1.1rem;
     margin-right: -5rem;
+  }
+}
+
+@media only screen and (max-width: 812px) {
+  #drag4 {
+    left: 10%;
+  }
+  
+  #drag3 {
+    left: 26%;
+  }
+  
+  #drag2 {
+    left: 42%;
+  }
+  
+  #drag1 {
+    left: 58%;
+  }
+  
+  #drag0 {
+    left: 74%;
   }
 }
 

@@ -230,32 +230,4 @@
     .snapshot-subject-div-1 {
         width: 17rem;
     }
-
-    .drop-div {
-        width: 19rem;
-        height: 17rem;
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
-
-    .drop-div::before {
-        margin-top: -16.7rem;
-    }
-
-    .snapshot-subject-div-1 {
-        margin-left: 1rem;
-        margin-right: 1rem;
-        padding: 0.7rem;
-    }
-
-    .snapshot-subject-div-2 {
-        font-size: x-small;
-        width: 14rem;
-        padding: 2rem;
-    }
-
-    .word-bank-container-1 {
-        margin-top: 2rem;
-        padding: 2rem;
-    }
 }
