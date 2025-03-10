@@ -614,6 +614,8 @@ a {
   border: 0.125rem solid lightgray;
   border-radius: 4rem;
   padding: 2rem 4rem;
+  width: 90rem;
+  height: 14rem;
 }
 
 .word-bank-title {
@@ -633,11 +635,33 @@ a {
 .word-container {
   touch-action: none;
   position: absolute;
+  margin-top: 9rem;
 }
 
 .dropped {
   top: 0px;
   left: 0px;
+  margin-top: 0rem;
+}
+
+#drag4 {
+  left: 100px;
+}
+
+#drag3 {
+  left: 220px;
+}
+
+#drag2 {
+  left: 340px;
+}
+
+#drag1 {
+  left: 460px;
+}
+
+#drag0 {
+  left: 580px;
 }
 
 .snapshot-subject-div-1 {

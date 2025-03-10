@@ -17,7 +17,8 @@ export default function Page7Part2(props) {
 
     // Allow dropping both on mobile and desktop devices
     const allowDrop = (event) => {
-        event.preventDefault();  // Prevents the default action to allow for dropping
+        //event.preventDefault();  // Prevents the default action to allow for dropping
+        console.log("allow")
     }
 
     // Handle touch movement on mobile devices
@@ -33,15 +34,15 @@ export default function Page7Part2(props) {
             // Update the dragged element's position if it's not already in the dragged array 
             // (the dragged array updates only when the element is in the correct drop container, in a fixed position)
             if (!draggedArray.includes(`drag${index}`)) {
-                document.getElementById(`drag${index}`).style.left = `${x}px`
-                document.getElementById(`drag${index}`).style.top = `${y}px`
+                document.getElementById(`drag${index}`).style.left = `${x-50}px`
+                document.getElementById(`drag${index}`).style.top = `${y-40}px`
             }
 
             // If the touch is over a drop area, store the ID of the drop area
             if (selectedElement.id) {
                 if (selectedElement.id.includes('drop') && !droppedArray.includes(selectedElement.id)) {
                     setDropElement(selectedElement.id);
-                }
+                } 
             }
         }
     }
@@ -54,6 +55,7 @@ export default function Page7Part2(props) {
 
     // Handle the drag event (called when dragging starts)
     const drag = (event, index) => {
+        //console.log("drag")
         setDraggedElement(`drag${index}`);   // Set the ID of the element being dragged
         setDragIndex(index);                // Set the current index of the dragged element (this is only for desktop)
     }
@@ -81,7 +83,7 @@ export default function Page7Part2(props) {
                     setFinish(true); // Set the finish state to true if all elements are dropped
                 }
             }
-            
+
         } else {                                                                // Logic for desktop devices
             if (snapshotDetails.subjects[dragIndex].answer === dropIndex) {     // Check if the answer matches the drop area
 
