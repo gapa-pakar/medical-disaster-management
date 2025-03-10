@@ -5,55 +5,93 @@ export default function Page7Part2(props) {
 
     const { snapshotDetails, info, page, setFinish } = props
 
-    const [isIndex, setIsIndex] = useState("");
-    const [count, setCount] = useState(0);
-    const [draggedElement, setDraggedElement] = useState(null); // Track the dragged element
-    const [element, setElement] = useState("")
+    // Desktop variables
+    const [dragIndex, setDragIndex] = useState("");   // Tracks the current index of the dragged element
+    const [count, setCount] = useState(0);            // Keeps count of the correctly dropped elements
 
+    // Mobile devices variables
+    const [draggedElement, setDraggedElement] = useState(null);    // Stores the ID of the currently dragged elementt
+    const [dropElement, setDropElement] = useState("");            // Stores the ID of the target drop area
+    const [droppedArray, setDroppedArray] = useState([]);          // Tracks the IDs of dropped elements
+    const [draggedArray, setDraggedArray] = useState([]);          // Tracks the IDs of elements that have been dragged
+
+    // Allow dropping both on mobile and desktop devices
     const allowDrop = (event) => {
-        event.preventDefault();
-        console.log("hello2")
+        event.preventDefault();  // Prevents the default action to allow for dropping
     }
 
-    // Touch and Mouse Event Handlers for Mobile Support, 
-    // when moving the element findind the drop areas
-    const handleTouchMove = (event, index1) => {
-        const touch = event.touches[0];
-        const x = touch.clientX;
-        const y = touch.clientY;
+    // Handle touch movement on mobile devices
+    const handleTouchMove = (event, index) => {
+        const touch = event.touches[0];    // Get the first touch point
+        const x = touch.clientX;          // Get the x-coordinate of the touch
+        const y = touch.clientY;         // Get the y-coordinate of the touch
 
-        const selectedElement = document.elementFromPoint(x, y);
+        // Check if the touch is within the allowed window bounds
+        if ((x < (window.innerWidth / 1.2) && x > 1) && (y < (window.innerHeight / 1.2) && y > 1)) {
+            const selectedElement = document.elementFromPoint(x, y);  // Get the element under the touch point
 
-        if (selectedElement.id) {
-            setElement(selectedElement);
-            console.log(selectedElement.id)
+            // Update the dragged element's position if it's not already in the dragged array 
+            // (the dragged array updates only when the element is in the correct drop container, in a fixed position)
+            if (!draggedArray.includes(`drag${index}`)) {
+                document.getElementById(`drag${index}`).style.left = `${x}px`
+                document.getElementById(`drag${index}`).style.top = `${y}px`
+            }
+
+            // If the touch is over a drop area, store the ID of the drop area
+            if (selectedElement.id) {
+                if (selectedElement.id.includes('drop') && !droppedArray.includes(selectedElement.id)) {
+                    setDropElement(selectedElement.id);
+                }
+            }
         }
     }
 
-    // when the user drop the element
+    // Handle the end of a touch event (when the user drops the element)
     const handleTouchEnd = (event, index) => {
-        event.preventDefault();
-        drop(event, snapshotDetails.subjects[index].answer);
+        event.preventDefault(); // Prevents the default behavior
+        drop(event, snapshotDetails.subjects[index].answer); // Call the drop function to process the drop
     }
 
-    // Handle dragging on both desktop and mobile
+    // Handle the drag event (called when dragging starts)
     const drag = (event, index) => {
-        setDraggedElement(`drag${index}`);
-        setIsIndex(index);
+        setDraggedElement(`drag${index}`);   // Set the ID of the element being dragged
+        setDragIndex(index);                // Set the current index of the dragged element (this is only for desktop)
     }
 
-    // Handle drop on both desktop and mobile
-    const drop = (event, answer) => {
-        event.preventDefault();
-        
-        // add that this will work only on mobile on desktop it will be as it was before check on whatsapp
-        if (element.id === `drop${answer}`) {
-            setCount(c => c + 1);
-            document.getElementById(`drop${answer}`).appendChild(document.getElementById(draggedElement));
+    // Handle the drop event (called when the dragged element is dropped)
+    const drop = (event, dropIndex) => {
+        event.preventDefault();  // Prevents the default behavior (important for dropping)
 
-            // Check if all items have been moved
-            if (count === snapshotDetails.subjects.length - 1) {
-                setFinish(true);
+        if (window.innerWidth < 1000) {   // Logic for mobile devices (portrait mode)
+            if (dropElement === `drop${dropIndex}`) {   // Check if the dragged element matches the drop area
+
+                // Update the state arrays to track the dragged and dropped elements
+                setDraggedArray([...draggedArray, draggedElement])
+                setDroppedArray([...droppedArray, `drop${dropIndex}`])
+
+                // Reset the dropElement state
+                setDropElement(null);
+
+                // Append the dragged element to the drop area and mark it as dropped
+                document.getElementById(`drop${dropIndex}`).appendChild(document.getElementById(draggedElement));
+                document.getElementById(draggedElement).className = "dropped"; // Add 'dropped' class that resets the position
+
+                // Check if all items have been moved to the correct drop areas
+                if (droppedArray.length === snapshotDetails.subjects.length) {
+                    setFinish(true); // Set the finish state to true if all elements are dropped
+                }
+            }
+            
+        } else {                                                                // Logic for desktop devices
+            if (snapshotDetails.subjects[dragIndex].answer === dropIndex) {     // Check if the answer matches the drop area
+
+                setCount(c => c + 1);  // Increment the count of correctly dropped items
+                event.target.appendChild(document.getElementById(draggedElement));   // Append the dragged element to the drop target
+
+                // Check if all items have been correctly moved
+                if (count === snapshotDetails.subjects.length - 1) {
+                    setFinish(true); // Mark the task as finished if all items are correctly dropped
+                }
             }
         }
     }
@@ -75,7 +113,7 @@ export default function Page7Part2(props) {
                     {
                         snapshotDetails.subjects.map((subject, index) => {
                             return (
-                                <div key={`subject_${index}`} className='drop-divs-container-1'>
+                                <div key={`subject_${index}`} className={`drop-divs-container-${page}`}>
                                     {
                                         page === 3 ? (
                                             <div className='d-roles-container'>
