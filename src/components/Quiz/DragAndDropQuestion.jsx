@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 
-export default function Page7Part2(props) {
+export default function DragAndDropQuestion(props) {
 
     const { snapshotDetails, info, page, setFinish } = props
 
@@ -17,15 +17,15 @@ export default function Page7Part2(props) {
 
     // Allow dropping both on mobile and desktop devices
     const allowDrop = (event) => {
-        //event.preventDefault();  // Prevents the default action to allow for dropping
+        event.preventDefault();  // Prevents the default action to allow for dropping
         console.log("allow")
     }
 
     // Handle touch movement on mobile devices
     const handleTouchMove = (event, index) => {
-        const touch = event.touches[0];    // Get the first touch point
-        const x = touch.clientX;          // Get the x-coordinate of the touch
-        const y = touch.clientY;         // Get the y-coordinate of the touch
+        const touch = event.touches[0];     // Get the first touch point
+        const x = touch.clientX;            // Get the x-coordinate of the touch
+        const y = touch.clientY;            // Get the y-coordinate of the touch
 
         // Check if the touch is within the allowed window bounds
         if ((x < (window.innerWidth / 1.2) && x > 1) && (y < (window.innerHeight / 1.2) && y > 1)) {
@@ -34,15 +34,15 @@ export default function Page7Part2(props) {
             // Update the dragged element's position if it's not already in the dragged array 
             // (the dragged array updates only when the element is in the correct drop container, in a fixed position)
             if (!draggedArray.includes(`drag${index}`)) {
-                document.getElementById(`drag${index}`).style.left = `${x-50}px`
-                document.getElementById(`drag${index}`).style.top = `${y-40}px`
+                document.getElementById(`drag${index}`).style.left = `${x - 50}px`
+                document.getElementById(`drag${index}`).style.top = `${y - 40}px`
             }
 
             // If the touch is over a drop area, store the ID of the drop area
             if (selectedElement.id) {
                 if (selectedElement.id.includes('drop') && !droppedArray.includes(selectedElement.id)) {
                     setDropElement(selectedElement.id);
-                } 
+                }
             }
         }
     }
@@ -55,7 +55,6 @@ export default function Page7Part2(props) {
 
     // Handle the drag event (called when dragging starts)
     const drag = (event, index) => {
-        //console.log("drag")
         setDraggedElement(`drag${index}`);   // Set the ID of the element being dragged
         setDragIndex(index);                // Set the current index of the dragged element (this is only for desktop)
     }
@@ -66,7 +65,6 @@ export default function Page7Part2(props) {
 
         if (window.innerWidth < 1000) {   // Logic for mobile devices (portrait mode)
             if (dropElement === `drop${dropIndex}`) {   // Check if the dragged element matches the drop area
-
                 // Update the state arrays to track the dragged and dropped elements
                 setDraggedArray([...draggedArray, draggedElement])
                 setDroppedArray([...droppedArray, `drop${dropIndex}`])
@@ -87,11 +85,12 @@ export default function Page7Part2(props) {
         } else {                                                                // Logic for desktop devices
             if (snapshotDetails.subjects[dragIndex].answer === dropIndex) {     // Check if the answer matches the drop area
 
-                setCount(c => c + 1);  // Increment the count of correctly dropped items
+                setCount(c => c + 1);                                                // Increment the count of correctly dropped items
                 event.target.appendChild(document.getElementById(draggedElement));   // Append the dragged element to the drop target
+                document.getElementById(draggedElement).className = "dropped";       // Add 'dropped' class that resets the position
 
                 // Check if all items have been correctly moved
-                if (count === snapshotDetails.subjects.length - 1) {
+                if (count === snapshotDetails.subjects.length) {
                     setFinish(true); // Mark the task as finished if all items are correctly dropped
                 }
             }
@@ -128,7 +127,7 @@ export default function Page7Part2(props) {
                                         id={`drop${index}`}
                                         onDrop={(event) => drop(event, index)}
                                         onDragOver={allowDrop}
-                                        onTouchMove={allowDrop}
+                                        // onTouchMove={allowDrop}
                                         onTouchEnd={(event) => drop(event, index)}
                                         className={info.dropContainerClass}
                                         style={{ borderColor: subject.color, "--subject-color": subject.color, color: "white" }}>
@@ -140,9 +139,9 @@ export default function Page7Part2(props) {
                 </div>
 
                 {/* drag */}
-                <div className='word-bank-container-1' style={{ display: count === snapshotDetails.subjects.length ? "none" : "block" }}>
+                <div className='word-bank-container-1' style={{ display: count === snapshotDetails.subjects.length || droppedArray.length === snapshotDetails.subjects.length ? "none" : "block" }}>
                     <div className='word-bank-title'>{info.title2}</div>
-                    <div className='word-bank-container-2'>
+                    <div className={`word-bank-container-${page}`}>
                         {
                             snapshotDetails.subjects.map((element, index1) => (
                                 <div
@@ -174,7 +173,7 @@ export default function Page7Part2(props) {
                     </div>
                 </div>
 
-                <div className='correct-message' style={{ display: count === snapshotDetails.subjects.length ? "block" : "none" }}>כל הכבוד!</div>
+                <div className='correct-message' style={{ display: count === snapshotDetails.subjects.length || droppedArray.length === snapshotDetails.subjects.length ? "block" : "none" }}>כל הכבוד!</div>
             </div>
         </div>
     )
