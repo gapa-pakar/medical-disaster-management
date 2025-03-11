@@ -5,6 +5,7 @@ import Quiz from '../Quiz/Quiz'
 import icon1 from '../../assets/page4-icons/icon1.svg'
 import icon2 from '../../assets/page4-icons/icon2.svg'
 import icon3 from '../../assets/page4-icons/icon3.svg'
+import { Carousel } from './Carousel'
 
 const ManagersInterfaces = [
     {
@@ -80,6 +81,7 @@ export default function Page4(props) {
     const [readOnly2, setreadOnly2] = useState(false);
     const [readOnly3, setreadOnly3] = useState(false);
     const [displayText, setDisplayText] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     const checkAnswer = (event) => {
         console.log("hello1")
@@ -119,6 +121,10 @@ export default function Page4(props) {
     useEffect(() => {
         setMaxPages(2);
         setLinkName("/page5");
+
+        if (window.innerWidth < 1000) {
+            setIsMobile(true);
+        }
     }, []);
 
     // hiding next arrow
@@ -141,36 +147,7 @@ export default function Page4(props) {
                 // page 4 part 1
                 <div>
                     <div className='interface-container'>
-                        {
-                            ManagersInterfaces.map((card, index) => (
-                                <div key={`card_${index}`} className='card-background-container animation' id={`card_${index}`}>
-                                    <div className='card-container' style={{ backgroundColor: card.lightColor }}>
-                                        <div className='card-section-1' style={{ backgroundColor: card.color }}>
-                                            <div className='card-title animation'>{card.title}</div>
-                                            <div className='card-description'>{card.description}</div>
-                                        </div>
-
-                                        <div className='section-2-container'>
-                                            {
-                                                card.list.map((item, index) => (
-                                                    <div key={`item_${index} `} className='item-container' style={{ backgroundColor: card.color }}>
-                                                        <div className='number-circle-1' style={{ color: card.color }}>
-                                                            <div>0{index + 1}</div>
-                                                        </div>
-                                                        <div className='item-text'>{item}</div>
-                                                    </div>
-                                                ))
-                                            }
-                                        </div>
-                                        <div className='section-3-container'>
-                                            <div className='icon-circle'>
-                                                <img src={card.icon} className='card-icon' id={`card_icon_${index + 1}`}></img>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))
-                        }
+                        <Carousel ManagersInterfaces={ManagersInterfaces} isMobile={isMobile}></Carousel>
                     </div>
                 </div>
             ) : countPages === 1 ? (

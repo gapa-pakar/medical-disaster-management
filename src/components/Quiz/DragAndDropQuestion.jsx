@@ -77,7 +77,7 @@ export default function DragAndDropQuestion(props) {
                 document.getElementById(draggedElement).className = "dropped"; // Add 'dropped' class that resets the position
 
                 // Check if all items have been moved to the correct drop areas
-                if (droppedArray.length === snapshotDetails.subjects.length) {
+                if (droppedArray.length === snapshotDetails.subjects.length - 1) {
                     setFinish(true); // Set the finish state to true if all elements are dropped
                 }
             }
