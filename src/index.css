@@ -1038,9 +1038,6 @@ a {
   width: 50rem;
 }
 
-.rotate-warning {
-  font-size: 4rem;
-  /* margin-bottom: 2rem; */
-  color: red;
-  font-weight: bold;
+.portrait div {
+  font-size: 3rem;
 }

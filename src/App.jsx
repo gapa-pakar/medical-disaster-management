@@ -188,6 +188,7 @@ function App() {
         {isPortrait && (
           <div className='portrait'>
             <video src={rotate} type='video/mp4' autoPlay loop muted></video>
+            <div>← סובבו את הטלפון להתחלה</div>
           </div>
         )}
 

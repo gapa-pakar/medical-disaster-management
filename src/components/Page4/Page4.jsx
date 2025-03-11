@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './Page4.css'
 import Quiz from '../Quiz/Quiz'
+import { Carousel } from './Carousel'
 
 import icon1 from '../../assets/page4-icons/icon1.svg'
 import icon2 from '../../assets/page4-icons/icon2.svg'
 import icon3 from '../../assets/page4-icons/icon3.svg'
-import { Carousel } from './Carousel'
+
 
 const ManagersInterfaces = [
     {
@@ -129,8 +130,10 @@ export default function Page4(props) {
 
     // hiding next arrow
     useEffect(() => {
-        if (countPages === 1 && !readOnly1) {
-            setFinish(false);
+        if (!readOnly1) {
+            if (isMobile || countPages === 1) {
+                setFinish(false);
+            }
         }
     }, [countPages])
 
@@ -145,10 +148,8 @@ export default function Page4(props) {
         <div className='page1-container'>
             {countPages === 0 ? (
                 // page 4 part 1
-                <div>
-                    <div className='interface-container'>
-                        <Carousel ManagersInterfaces={ManagersInterfaces} isMobile={isMobile}></Carousel>
-                    </div>
+                <div className='interface-container'>
+                    <Carousel ManagersInterfaces={ManagersInterfaces} isMobile={isMobile} setFinish={setFinish}></Carousel>
                 </div>
             ) : countPages === 1 ? (
                 // page 4 question
