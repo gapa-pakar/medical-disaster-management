@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useDynamicHeight } from './contexts/DynamicHeightContext' // import the hook
+// import { useDynamicHeight } from './contexts/DynamicHeightContext' // import the hook
 
 import Route from './components/Route'
 import Link from './components/Link'
@@ -126,7 +126,7 @@ function App() {
   const [selectedPage, setSelectedPage] = useState('') // localStorage variable
   const [currentSubject, setCurrentSubject] = useState({}); // navbar variable
 
-  const dynamicHeight = useDynamicHeight(); // Get the dynamic height from context
+  // const dynamicHeight = useDynamicHeight(); // Get the dynamic height from context
 
   // arrows functions
   const nextSlide = () => {
