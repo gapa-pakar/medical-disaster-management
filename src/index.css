@@ -645,6 +645,11 @@ a {
   margin-top: 0rem;
 }
 
+.correct-drop {
+  background-color: #a9d18e;
+  border: 0.25rem solid #548235;
+}
+
 /* page 3 */
 .word-bank-container-3 #drag4 {
   left: 16%;

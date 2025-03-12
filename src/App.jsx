@@ -117,7 +117,7 @@ const pathArray = ['/', '/subjectsPage', '/finishPage'];
 function App() {
   // variables
   const [countPages, setCountPages] = useState(0);
-  const [firstPage, setFirstPage] = useState(false);
+  // const [firstPage, setFirstPage] = useState(false);
   const [lastPage, setLastPage] = useState(false);
   const [maxPages, setMaxPages] = useState(0);
   const [linkName, setLinkName] = useState("");
@@ -132,23 +132,17 @@ function App() {
   const nextSlide = () => {
     if (countPages < maxPages) {
       setCountPages(c => c + 1);
-      // setFirstPage(false);
     }
   }
 
   const previousSlide = () => {
     if (countPages > 0) {
       setCountPages(preCount => preCount - 1);
-      // setLastPage(false);
       setFinish(true);
     }
   }
 
   useEffect(() => {
-    if (currentSubject.id === 1) {
-      setFirstPage(true);
-    }
-
     if (currentSubject.id === 10) {
       setLastPage(true);
     }
@@ -192,7 +186,8 @@ function App() {
           </div>
         )}
 
-        {/* landscape mode */}
+        {/* start and finish */}
+        <div>
         <Route path="/" >
           <OpeningPage />
         </Route>
@@ -202,6 +197,7 @@ function App() {
         <Route path="/finishPage">
           <FinishPage Subjects={Subjects} />
         </Route>
+        </div>
 
         {/* pages with navbar */}
         <div>
@@ -260,7 +256,7 @@ function App() {
               <button onClick={previousSlide}>
                 <div className='previous-arrow'>
                   {countPages === 0 ?
-                    <Link setCountPages={setCountPages} href={!firstPage ? `/page${currentSubject.id - 1}` : '/'}>
+                    <Link setCountPages={setCountPages} href={window.location.pathname !== '/page1' ? `/page${currentSubject.id - 1}` : '/'}>
                       <img src={previous} />
                     </Link> :
                     <img src={previous}></img>}

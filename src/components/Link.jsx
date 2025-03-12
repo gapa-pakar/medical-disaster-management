@@ -4,7 +4,9 @@ export default function Link({ className, href, children, setCountPages }) {
 
     const onClick = (event) => {
         // prevent full page reload
-        // event.preventDefault();
+        if (href !== '/') {
+            event.preventDefault();
+        }
 
         // update url
         window.history.pushState({}, "", href);
@@ -13,8 +15,9 @@ export default function Link({ className, href, children, setCountPages }) {
         const navEvent = new PopStateEvent('popstate');
         window.dispatchEvent(navEvent);
 
-        // pages count reset
-        setCountPages(0);
+        if(setCountPages) {
+            setCountPages(0)
+        }
     }
 
     return (

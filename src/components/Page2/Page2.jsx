@@ -85,7 +85,7 @@ export default function Page2(props) {
           <Question briefingInfo={briefingInfo} info={info} page={2} setFinish={setFinish}></Question> :
           <div className='correct-briefing-container'>
             <div className='correct-briefing'>תדרוך נכון:</div>
-            <video className='video-placing' src={correctBriefing} controls></video>
+            <video className='video-placing' src={correctBriefing} controls preload='auto' type='video/mp4'></video>
           </div>
       }
     </div>

@@ -10,7 +10,7 @@ export default function Route({ path, children }) {
         const onLocationChange = () => {
             console.log("Location Change");
             // update path state to current window URL
-            setCurrentPath(window.location.pathname)
+            setCurrentPath(window.location.pathname);
         }
 
         // listen for popstate event
@@ -21,7 +21,6 @@ export default function Route({ path, children }) {
             window.removeEventListener('popstate', onLocationChange);
         }
     }, [])
-
 
     return currentPath === path ? children : null;
 }

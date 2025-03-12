@@ -28,7 +28,7 @@ export default function DragAndDropQuestion(props) {
         const y = touch.clientY;            // Get the y-coordinate of the touch
 
         // Check if the touch is within the allowed window bounds
-        if ((x < (window.innerWidth / 1.2) && x > 1) && (y < (window.innerHeight / 1.2) && y > 1)) {
+        if ((x < (window.innerWidth / 1.1) && x > 1) && (y < (window.innerHeight / 1.1) && y > 1)) {
             const selectedElement = document.elementFromPoint(x, y);  // Get the element under the touch point
 
             // Update the dragged element's position if it's not already in the dragged array 
@@ -74,6 +74,7 @@ export default function DragAndDropQuestion(props) {
 
                 // Append the dragged element to the drop area and mark it as dropped
                 document.getElementById(`drop${dropIndex}`).appendChild(document.getElementById(draggedElement));
+                document.getElementById(`drop${dropIndex}`).classList.add("correct-drop");
                 document.getElementById(draggedElement).className = "dropped"; // Add 'dropped' class that resets the position
 
                 // Check if all items have been moved to the correct drop areas
@@ -87,10 +88,11 @@ export default function DragAndDropQuestion(props) {
 
                 setCount(c => c + 1);                                                // Increment the count of correctly dropped items
                 event.target.appendChild(document.getElementById(draggedElement));   // Append the dragged element to the drop target
+                event.target.classList.add("correct-drop");
                 document.getElementById(draggedElement).className = "dropped";       // Add 'dropped' class that resets the position
 
                 // Check if all items have been correctly moved
-                if (count === snapshotDetails.subjects.length) {
+                if (count === snapshotDetails.subjects.length - 1) {
                     setFinish(true); // Mark the task as finished if all items are correctly dropped
                 }
             }

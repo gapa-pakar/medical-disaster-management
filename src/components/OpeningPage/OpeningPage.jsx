@@ -58,7 +58,7 @@ export default function OpeningPage() {
 
     useEffect(() => {
         localStorage.clear()
-    }, [])
+    }, []);
 
     return (
         <div className='home-page'>
