@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './OpeningPage.css'
-import Link from '../Link'
 
+// Importing icons for the subjects
 import management from '../../assets/navbar-icons/management.svg'
 import checkList from '../../assets/navbar-icons/check-list.svg'
 import medicalKit from '../../assets/navbar-icons/medical-kit.svg'
@@ -10,6 +10,7 @@ import megaphone from '../../assets/navbar-icons/megaphone.svg'
 import assessment from '../../assets/navbar-icons/assessment.svg'
 import chat from '../../assets/navbar-icons/chat-help.svg'
 
+// Subjects array holding information about each subject's icon, color, and border color
 const subjects = [
     {
         id: 1,
@@ -51,35 +52,48 @@ const subjects = [
 
 export default function OpeningPage() {
 
+    // Function to handle the button click
     const handleClick = (page, link) => {
-        localStorage.setItem('data', JSON.stringify(page));
-        window.location.replace(link);
+        localStorage.setItem('data', JSON.stringify(page));    // Store the page data in localStorage
+        window.location.replace(link);                         // Redirect to the given link
     }
 
+    // useEffect hook to clear the localStorage data when the component mounts
     useEffect(() => {
-        localStorage.clear()
+        localStorage.removeItem('data');
+        localStorage.removeItem('currentPage');
     }, []);
 
     return (
         <div className='home-page'>
             <div className='home-page-subjects'>
+                {/* Circle and triangle layout for the first subject area */}
                 <div className='subjects-circle-1'>
                     <div className='subjects-triangle'>
                         <div className='subject-title-container-1'>
+
+                            {/* Subtitle for the first section */}
                             <div className='subtitle-line-container'>
                                 <div className='subtitle-line'></div>
                                 <div className='subject-subtitle1'>לומדת ניהול</div>
                                 <div className='subtitle-line'></div>
                             </div>
+
+                            {/* Main title of the first section */}
                             <div className='subject-title1'>אירוע הרס רפואי</div>
+
+                            {/* Buttons for navigating to different pages */}
                             <button className='home-button' onClick={() => handleClick(1, '/page1')}>לומדה</button>
                             <button className='home-button' onClick={() => handleClick(2, '/subjectsPage')}>רענון</button>
                         </div>
                     </div>
+
+                    {/* Circle container for the icons */}
                     <div className='subjects-circle-2'>
                         <section className="main-container">
                             <div className="big-circle">
                                 {
+                                    // Mapping through the subjects array to display icons dynamically
                                     subjects.map((element, index) => (
                                         <div className="icon-block" key={index} style={{ backgroundColor: element.color, borderColor: element.border }}>
                                             <img src={element.icon} />
@@ -87,6 +101,8 @@ export default function OpeningPage() {
                                     ))
                                 }
                             </div>
+
+                            {/* Small circle with a chat icon */}
                             <div className='small-circle'>
                                 <img src={chat} />
                             </div>

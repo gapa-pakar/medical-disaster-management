@@ -6,7 +6,7 @@ import arrowLeft from '../../assets/navbar-icons/arrow-left.svg'
 
 export default function Navbar(props) {
 
-    const { Subjects, currentSubject, setCurrentSubject, selectedPage } = props
+    const { Subjects, currentSubject, setCurrentSubject, selectedPage, setFinish } = props
 
     const [showMenu, setShowMenu] = useState(false); // State to toggle the menu visibility
 
@@ -29,6 +29,7 @@ export default function Navbar(props) {
     // Effect hook to update the current subject when the pathname changes
     useEffect(() => {
         findCurrentSubject();
+        setFinish(true);
     }, [window.location.pathname]);
 
     // Effect hook to store and update the currentPage in localStorage

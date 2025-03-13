@@ -4,6 +4,7 @@ import Page3Part1 from './Page3Part1'
 import Page3Part2 from './Page3Part2'
 import DragAndDropQuestion from '../Quiz/DragAndDropQuestion'
 
+// Array containing information for part 1
 const medicalOrder = [
     [
         {
@@ -39,6 +40,7 @@ const medicalOrder = [
     ]
 ]
 
+// Array containing information for part 2
 const medicalPeople = [
     {
         id: 1,
@@ -84,6 +86,7 @@ const medicalPeople = [
     }
 ]
 
+// Array containing information for drag and drop question
 const snapshotDetails = {
     subjects: [
         {
@@ -114,6 +117,7 @@ const snapshotDetails = {
     ]
 }
 
+// drag and drop question titles information
 const info = {
     title1: "חברו בין התפקיד לאיש הצוות האחראי עליו",
     dropContainerClass: "drop-div-page3",

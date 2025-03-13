@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function Page2Part1(props) {
 
     const { briefingInfo, titleInfo, arrowsRight, arrowsLeft, page } = props
 
-     return (
+    return (
         <div>
             {/* description at the top */}
             <div className='page2-p-container'>
@@ -18,7 +18,7 @@ export default function Page2Part1(props) {
             </div>
 
             {/* cards */}
-            <div className={ page === 2 ? 'page2-briefing-container' : 'page9-briefing-container'}>
+            <div className={page === 2 ? 'page2-briefing-container' : 'page9-briefing-container'}>
                 {
                     briefingInfo.map((card, index) => (
                         <div key={card.id} className='briefings-container'>
@@ -38,7 +38,7 @@ export default function Page2Part1(props) {
                 }
             </div>
 
-            {/* element in the middle */}
+            {/* circle element in the middle, between the two card sections */}
             <div className='circle-arrows-container'>
                 <img src={arrowsRight} className={page === 2 ? 'briefing-arrows-right' : 'briefing-arrows-right-9'}></img>
                 <div className={page === 2 ? 'briefing-circle-1' : 'briefing-circle-1-page9'}>

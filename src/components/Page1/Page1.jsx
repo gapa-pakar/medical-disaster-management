@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Page1Part1 from './Page1Part1'
 import Page1Part2 from './Page1Part2'
 import Quiz from '../Quiz/Quiz'
 import './Page1.css'
 
+// The 'quiz' object contains the quiz data (questions, answers, etc.)
 const quiz = {
     topic: 'מבוא למנהלי אירוע',
     totalQuestions: 4,
@@ -65,6 +66,7 @@ export default function Page1(props) {
 
     const { countPages, setMaxPages, setLinkName, setFinish } = props
 
+    // useEffect hook to set max pages and link name when the component mounts
     useEffect(() => {
         setMaxPages(2);
         setLinkName("/page2");

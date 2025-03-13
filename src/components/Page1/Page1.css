@@ -1,4 +1,4 @@
-/* page 1 part 1 */
+/***** page 1 part 1 *****/
 .managers-info-container {
     display: flex;
     justify-content: center;
@@ -61,7 +61,6 @@
     width: 12rem;
     height: 10rem;
     border-radius: 0.938rem;
-    /* border-top-color: blue; */
     display: flex;
     align-items: center;
     text-align: center;
@@ -153,17 +152,15 @@
     padding: 1rem;
 }
 
-/* page1-second */
+/***** page 1 part 2 *****/
 .page1-triangle-container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    /* width: 90%; */
 }
 
 .triangle-text-container {
     --r: 4rem;
-    /* border radius */
     width: 47rem;
     aspect-ratio: 1/cos(30deg);
     --_g: calc(tan(60deg)*var(--r)) bottom var(--r), #000 98%, #0000 101%;
@@ -243,12 +240,10 @@
 .gold-triangle-title-container {
     position: absolute;
     top: 15rem;
-    /* right: 50rem; */
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
     box-shadow: 0rem 0rem 0.625rem rgb(0, 0, 0, 40%);
-    /* border: 2px solid lightgray; */
     width: 10rem;
     height: 10rem;
     border-radius: 25rem;
@@ -266,9 +261,9 @@
     line-height: 2.5rem;
     text-align: center;
 }
+ /**********/
 
 @media only screen and (max-width: 1000px) {
-
     /***** page 1 part 1 *****/
     .colored-line {
         width: 14.4rem;

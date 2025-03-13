@@ -1,6 +1,6 @@
 
-import React, { useEffect } from 'react'
-import Link from '../Link'
+import React from 'react'
+import Link from '../Link' // Importing the Link component to handle navigation
 
 export default function SubjectsPage(props) {
 
@@ -9,11 +9,16 @@ export default function SubjectsPage(props) {
     return (
         <div className='home-page'>
             <div className='subjects-page1'>
+                {/* Title section */}
                 <div className='subjects1-text'>נושאים:</div>
+
+                {/* Container for the list of subjects */}
                 <div className='subjects-page-container-1'>
                     {
+                        // Mapping through the 'Subjects' array to dynamically generate each subject's content
                         Subjects.map((element, index) => (
-                            <div key={index} >
+                            <div key={index}>
+                                {/* Link component wrapping each subject item for navigation */}
                                 <Link href={element.link} className='link-style'>
                                     <div className='subject-title-container' id='title-container-1' style={{ backgroundColor: element.color }}>
                                         <div className='half-circle-container' id='half-circle-1'>

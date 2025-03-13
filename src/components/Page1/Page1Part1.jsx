@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
+// Array containing the introductory information for the event managers (מנהלי אירוע)
 const managersIntro = [
     {
         id: 7,
@@ -65,42 +66,45 @@ export default function Page1Part1() {
         <div>
             <div className='managers-info-container'>
                 {
-                    managersIntro.map((element, index) => (
-                        <div key={element.title} className={element.direction === "up" ? "element1-container up-container" : "element1-container down-container"}>
-                            {/* title down and div-triangle element up display */}
-                            <div>
-                                {
-                                    element.direction === "down" ? (
-                                        <div className='div-triangle-down animation' id={`delay-down-${element.id}`} style={{ backgroundColor: element.direction === "down" ? element.color : "", borderTopColor: element.color }}>
-                                            <div className='page1-description-down'>{element.direction === "down" ? element.description : ""}</div>
-                                        </div>) : <></>
-                                }
-                            </div>
-                            <div className='page1-title-up animation' style={{ color: element.color }}>{element.direction === "up" ? element.title : ""}</div>
+                    // Mapping over the 'managersIntro' array to dynamically render each manager item
+                    managersIntro.map((element, index) => {
+                        return (
+                            <div key={element.title} className={element.direction === "up" ? "element1-container up-container" : "element1-container down-container"}>
+                                {/* title down and div-triangle element up display */}
+                                <div>
+                                    {
+                                        element.direction === "down" ? (
+                                            <div className='div-triangle-down animation' id={`delay-down-${element.id}`} style={{ backgroundColor: element.direction === "down" ? element.color : "", borderTopColor: element.color }}>
+                                                <div className='page1-description-down'>{element.direction === "down" ? element.description : ""}</div>
+                                            </div>) : <></>
+                                    }
+                                </div>
+                                <div className='page1-title-up animation' style={{ color: element.color }}>{element.direction === "up" ? element.title : ""}</div>
 
-                            {/* colored line with numbers display */}
-                            <div className='colored-line-container'>
-                                <div className='colored-line' style={{ backgroundColor: element.color }}>
-                                    <div className='number-circle-border'>
-                                        <div className='number-circle'>
-                                            <p style={{ color: element.color }}>{element.number}</p>
+                                {/* colored line with numbers display */}
+                                <div className='colored-line-container'>
+                                    <div className='colored-line' style={{ backgroundColor: element.color }}>
+                                        <div className='number-circle-border'>
+                                            <div className='number-circle'>
+                                                <p style={{ color: element.color }}>{element.number}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            {/* title up and div-triangle element down display */}
-                            <div className='page1-title-down animation' style={{ color: element.color }}>{element.direction === "down" ? element.title : ""}</div>
-                            <div>
-                                {
-                                    element.direction === "up" ? (
-                                        <div className='div-triangle-up animation' id={`delay-up-${element.id}`} style={{ backgroundColor: element.direction === "up" ? element.color : "", borderTopColor: element.color }}>
-                                            <div className='page1-description-up'>{element.direction === "up" ? element.description : ""}</div>
-                                        </div>) : <></>
-                                }
+                                {/* title up and div-triangle element down display */}
+                                <div className='page1-title-down animation' style={{ color: element.color }}>{element.direction === "down" ? element.title : ""}</div>
+                                <div>
+                                    {
+                                        element.direction === "up" ? (
+                                            <div className='div-triangle-up animation' id={`delay-up-${element.id}`} style={{ backgroundColor: element.direction === "up" ? element.color : "", borderTopColor: element.color }}>
+                                                <div className='page1-description-up'>{element.direction === "up" ? element.description : ""}</div>
+                                            </div>) : <></>
+                                    }
+                                </div>
                             </div>
-                        </div>
-                    ))
+                        )
+                    })
                 }
             </div>
         </div>

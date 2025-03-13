@@ -188,15 +188,15 @@ function App() {
 
         {/* start and finish */}
         <div>
-        <Route path="/" >
-          <OpeningPage />
-        </Route>
-        <Route path="/subjectsPage">
-          <SubjectsPage Subjects={Subjects} />
-        </Route>
-        <Route path="/finishPage">
-          <FinishPage Subjects={Subjects} />
-        </Route>
+          <Route path="/" >
+            <OpeningPage />
+          </Route>
+          <Route path="/subjectsPage">
+            <SubjectsPage Subjects={Subjects} />
+          </Route>
+          <Route path="/finishPage">
+            <FinishPage Subjects={Subjects} />
+          </Route>
         </div>
 
         {/* pages with navbar */}
@@ -269,10 +269,10 @@ function App() {
           {/* navbar */}
           {
             !pathArray.includes(window.location.pathname) ?
-              <Navbar className="split left" Subjects={Subjects} currentSubject={currentSubject} setCurrentSubject={setCurrentSubject} selectedPage={selectedPage}></Navbar> : <></>
+              <Navbar className="split left" Subjects={Subjects} currentSubject={currentSubject} setCurrentSubject={setCurrentSubject} selectedPage={selectedPage} setFinish={setFinish}></Navbar> : <></>
           }
-        </div >
-      </div >
+        </div>
+      </div>
     </>
   )
 }

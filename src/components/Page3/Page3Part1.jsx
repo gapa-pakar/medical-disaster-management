@@ -6,7 +6,7 @@ export default function Page3Part1(props) {
 
     return (
         <div>
-            {/* fisrt and second section the "נפה, חמ"ל ומג"ד" section */}
+            {/* fisrt and second sections ("נפה, חמ"ל ומג"ד" sections) */}
             <div className='medical-order-container'>
                 {
                     medicalOrder[0].map((element) => (
@@ -35,7 +35,7 @@ export default function Page3Part1(props) {
                     }
                 </div>
 
-                {/* third section the "פלוגות" section */}
+                {/* third section ("פלוגות" section) */}
                 <div className='section-container' style={{ width: "70rem", justifyContent: "space-between" }}>
                     {
                         medicalOrder[1][0].title.map((element, index) => (
@@ -55,7 +55,7 @@ export default function Page3Part1(props) {
                                         }
                                     </div>
 
-                                    {/* fourth section the "מחלקות" section */}
+                                    {/* fourth section ("מחלקות" section) */}
                                     <div className='section-container-2'>
                                         {
                                             medicalOrder[1][1].title.map((element1, i1) => (

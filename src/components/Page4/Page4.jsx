@@ -68,7 +68,7 @@ const quiz = {
 }
 
 const value1Array = ['חמ"ל', 'חמל'];
-const value2Array = ['חפ"קים', 'חפקים']
+const value2Array = ['חפ"קים', 'חפקים', 'חפק', 'חפ"ק']
 const value3Array = ['מט"ב', 'מטב']
 
 export default function Page4(props) {
@@ -131,11 +131,11 @@ export default function Page4(props) {
     // hiding next arrow
     useEffect(() => {
         if (!readOnly1) {
-            if (isMobile || countPages === 1) {
+            if ((isMobile && countPages === 0) || countPages === 1) {
                 setFinish(false);
             }
         }
-    }, [countPages])
+    }, [countPages, isMobile])
 
     // adding next arrow back
     useEffect(() => {

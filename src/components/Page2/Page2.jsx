@@ -3,11 +3,13 @@ import Page2Part1 from './Page2Part1'
 import Question from '../Quiz/Question'
 import './Page2.css'
 
+// Importing icons and videos used in the component
 import arrowsRight from '../../assets/page2-icons/arrows-right.svg'
 import arrowsLeft from '../../assets/page2-icons/arrows-left.svg'
 import wrongBriefing from '../../assets/videos/wrongBriefing.mp4'
 import correctBriefing from '../../assets/videos/correctBriefing.mp4'
 
+// Array containing the briefing information (תדרוך אג"מי בהגעה לאירוע)
 const briefingInfo = [
   {
     id: "01",
@@ -53,12 +55,14 @@ const briefingInfo = [
   }
 ]
 
+// Information for the title of part 1
 const titleInfo = {
   p1: 'תדרוך אג"מי הינו תדריך המועבר על ידי מנהל האירוע / חוג"ד של הצוות הרפואה בדרך לאירוע, מטרת התדריך הינה',
   p2: 'הכנה לאירוע מבחינה מנטלית ואג"מית.',
   title: "מה נכלל בתדרוך?"
 }
 
+// information for the video question
 const info = {
   videoTitle: "לפניכם סרטון המציג העברת תדרוך של מנהל אירוע לצוות, לאחר הצפייה תצטרכו לענות האם התדרוך הועבר בצורה מיטבית או לא.",
   question1: "האם התדרוך הועבר בצורה מיטבית?",

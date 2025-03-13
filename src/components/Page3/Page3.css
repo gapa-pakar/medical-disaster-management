@@ -1,3 +1,4 @@
+/***** page 3 part 1 *****/
 .medical-order-container {
     display: flex;
     flex-direction: column;
@@ -42,7 +43,6 @@
     border-top: 1rem solid;
     font-size: 0;
     line-height: 0;
-    /* float: center; */
     margin: 1rem 0rem;
 }
 
@@ -52,23 +52,15 @@
     justify-content: space-around;
 }
 
-/* .triangle-arrows-container {
-    display: flex;
-    flex-direction: flex;
-    justify-content: space-around;
-} */
-
 .section-container-2 {
     display: flex;
     justify-content: space-around;
 }
 
-
-/* part 2 */
+/***** page 3 part 2 *****/
 .medical-container-2 {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     margin-top: 8rem;
     margin-right: 9rem;
 }
@@ -131,13 +123,8 @@ ul {
     align-items: center;
     justify-content: center;
     position: relative;
-    /* top: 50%; */
-    /* right: 0; */
     cursor: pointer;
-    /* z-index: 99; */
-    /* background-color: #343233; */
     box-shadow: 0rem 0rem 0.625rem rgb(0, 0, 0, 40%);
-
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -356,21 +343,7 @@ ul {
     width: 40rem;
 }
 
-/* .medical-menu ul li span::before {
-    content: '';
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    border-radius: 25px;
-    background-color: white;
-    z-index: -1;
-    transition: background-color .3s;
-}  */
-
 @media only screen and (max-width: 1000px) {
-
     /***** page 3 part 1 *****/
     .medical-order-container {
         margin-top: 0rem;
@@ -393,7 +366,6 @@ ul {
         padding: 0.4rem 1rem;
         text-align: center;
     }
-    /**********/
 
     /***** page 3 part 2 *****/
     .roles-circle-border{
@@ -498,6 +470,12 @@ ul {
 }
 
 @media only screen and (max-width: 750px) {
+    /***** page 3 part 1 *****/
+    .role-title,
+    .roles {
+        font-size: 1.6rem;
+    }
+
     /***** page 3 part 2 *****/
     .medical-menu {
         margin-left: 47rem;

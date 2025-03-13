@@ -22,7 +22,7 @@ export const Carousel = (props) => {
     useEffect(() => {
         if(count === 3) {
             setFinish(true);
-        }
+        } 
     }, [count])
 
     return (
