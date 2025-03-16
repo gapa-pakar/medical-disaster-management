@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react'
 
-export default function Page8Questions(props) {
+export default function TrueFalseQuestion(props) {
 
     const { questions, questionTitle, questionCorrect, setFinish } = props;
 
-    const [countCheckedAnswers, setCountCheckedAnswers] = useState([]);
-    const [firstClick, setFirstClick] = useState(true);
-    const [showAnswer, setShowAnswer] = useState(false);
-    const [count, setCount] = useState(0);
-    const [wrong, setWrong] = useState(0);
+    const [countCheckedAnswers, setCountCheckedAnswers] = useState([]); // State to track the ids of selected answers
+    const [firstClick, setFirstClick] = useState(true); // State to track if it's the first time the user clicked any answer
+    const [showAnswer, setShowAnswer] = useState(false); // State to track if the answer display should be shown
+    const [count, setCount] = useState(0); // State to track the number of correct answers
+    const [wrong, setWrong] = useState(0); // State to track the number of wrong answers
 
+    // Function to handle click on a checkbox, adding/removing answers
     const handleClick = (answer, id) => {
         if (!countCheckedAnswers.includes(id)) {
             setCountCheckedAnswers([...countCheckedAnswers, id]);
-            // setCountCheckedAnswers([...countCheckedAnswers, { id: id, answer: answer }]);
         } else {
             const updateArray = countCheckedAnswers.filter(index => index !== id);
             setCountCheckedAnswers(updateArray);
@@ -24,6 +24,7 @@ export default function Page8Questions(props) {
         }
     }
 
+    // Function to check the answers after user interaction
     const checkButton = () => {
         setShowAnswer(!showAnswer);
         setCount(0);
@@ -37,8 +38,9 @@ export default function Page8Questions(props) {
         })
     }
 
+    // useEffect to determine if the user has answered all questions correctly
     useEffect(() => {
-        if(count == questionCorrect) {
+        if (count == questionCorrect) {
             setFinish(true)
         } else {
             setFinish(false)
