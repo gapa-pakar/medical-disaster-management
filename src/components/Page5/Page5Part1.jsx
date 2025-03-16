@@ -3,19 +3,19 @@ import React, { useEffect, useState } from 'react'
 import megaphone from '../../assets/page5-icons/megaphone.svg'
 
 export default function Page5Part1(props) {
-
     const { channelsInfo, count, setCount, setFinish } = props;
 
     const [roundedText, setRoundedText] = useState("לחצו בכדי לחשוף את ערוצי הדיווח");
-
     const roundedTextArray = roundedText.split("");
 
+    // Function to increment the count of visible channels
     const addChannel = () => {
         if (count < 3) {
             setCount(c => c + 1);
         }
     }
 
+    // useEffect to set the finish state when all channels are revealed
     useEffect(() => {
         if (count === 3) {
             setFinish(true);
@@ -27,7 +27,7 @@ export default function Page5Part1(props) {
     return (
         <div>
             <div className='channels-container'>
-                {/* channels info */}
+                {/* Channels Info */}
                 <div>
                     {
                         channelsInfo.map((channel, index) => (
@@ -46,7 +46,7 @@ export default function Page5Part1(props) {
                     }
                 </div>
 
-                {/* arrows with point edges */}
+                {/* Arrows with point edges */}
                 <div>
                     {
                         channelsInfo.map((arrow, index) => (
@@ -61,7 +61,7 @@ export default function Page5Part1(props) {
                     }
                 </div>
 
-                {/* circle element */}
+                {/* Circle element */}
                 <div className='half-circle-1'>
                     <div className='half-circle-2'>
                         <div className='circle-1'>

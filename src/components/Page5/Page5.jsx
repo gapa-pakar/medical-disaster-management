@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './Page5.css'
 
-
 import Page5Part1 from './Page5Part1'
 import OpenQuestion from './OpenQuestion'
 import Page5Part2 from './Page5Part2'
 
-
+// Array containing information for page 5 part 1
 const channelsInfo = [
     {
         id: 1,
@@ -28,6 +27,7 @@ const channelsInfo = [
     }
 ]
 
+// Array containing information for page 5 part 2
 const reportMethods = [
     {
         id: "03",
@@ -77,6 +77,7 @@ const reportMethods = [
     }
 ]
 
+// Array containing information for the open questions
 const questions = [
     {
         title: 'כתבו מהם ערוצי דיווח מקצועי וחמ"לי:',
@@ -98,26 +99,22 @@ const questions = [
 export default function Page5(props) {
 
     const { countPages, setMaxPages, setLinkName, setFinish } = props
+    
+    // variables located in parent component so it won't restart when pressing the arrows
+    // part 1 state variables
+    const [count, setCount] = useState(0); // counts the channelsInfo cards
 
-    // count the channels info divs
-    const [count, setCount] = useState(0);
-
-    // open question variables, located in parent component so it won't restart when pressing the arrows
+    // open question variables
     const [textValue1, setTextValue1] = useState('');
     const [textValue2, setTextValue2] = useState('');
     const [changeDispaly1, setChangeDisplay1] = useState(false);
     const [changeDispaly2, setChangeDisplay2] = useState(false);
 
-    // page5 part2 variables
-    // add arrow to the next triangle section
-    const [showArrow, setshowArrow] = useState(false);
-
-    // add next triangle section and next side section
-    const [triangleIndex, setTriangleIndex] = useState([2]);
+    // part 2 variables
+    const [showArrow, setshowArrow] = useState(false);          // add arrow to the next triangle section
+    const [triangleIndex, setTriangleIndex] = useState([2]);    // add next triangle section and next side section
     const [triangleCount, setTriangleCount] = useState(2);
-
-    // side triangle text, add list after pressing the arrow
-    const [reportIndex, setReportIndex] = useState([]);
+    const [reportIndex, setReportIndex] = useState([]);         // side triangle text, add list after pressing the arrow
 
     useEffect(() => {
         setMaxPages(3);

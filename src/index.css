@@ -625,7 +625,8 @@ a {
   margin-bottom: 2rem;
 }
 
-.word-bank-container-3, .word-bank-container-7 {
+.word-bank-container-3,
+.word-bank-container-7 {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -650,6 +651,142 @@ a {
   border: 0.25rem solid #548235;
 }
 
+/* ****** */
+
+/***** true false quastion *****/
+.q-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.q-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #3b3838;
+}
+
+.q-line {
+  border-bottom: 0.125rem solid #3b3838;
+  width: 35rem;
+}
+
+.a-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.6rem;
+}
+
+.a-container-1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.a-side-div {
+  background-color: #3b3838;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.a-side-circle {
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0.125rem solid;
+  border-radius: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.a-side-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.a-check-icon {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  transform: rotate(-45deg);
+  height: 0.7rem;
+  width: 2rem;
+  position: absolute;
+  display: none;
+}
+
+.icon-white {
+  border-bottom: 0.2rem solid white;
+  border-left: 0.2rem solid white;
+}
+
+.icon-brown {
+  border-bottom: 0.2rem solid #3b3838;
+  border-left: 0.2rem solid #3b3838;
+}
+
+.a-side-checkbox:checked+.a-check-icon {
+  display: block;
+}
+
+.a-title-container {
+  width: 35rem;
+  height: 4rem;
+  background-color: #3b3838;
+  margin-right: 1rem;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0rem 1rem;
+}
+
+.t-correct {
+  background-color: #a9d18e;
+  color: #3b3838;
+}
+
+.t-wrong {
+  background-color: #ff8989;
+  color: #3b3838;
+}
+
+.page8-check-button {
+  background-color: white;
+  border: 0.125rem solid #3b3838;
+  border-radius: 25rem;
+  padding: 0rem 1.2rem;
+  font-family: 'Heebo';
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #3b3838;
+}
+
+.page8-check-button:hover {
+  background-color: #3b3838;
+  color: white;
+}
+
+.page8-correct-message {
+  margin-top: 1rem;
+  color: #548235;
+  font-size: 1.2rem;
+}
+
+/* ****** */
+
+
 /* page 3 */
 .word-bank-container-3 #drag4 {
   left: 16%;
@@ -670,6 +807,7 @@ a {
 .word-bank-container-3 #drag0 {
   left: 70%;
 }
+
 /* ***** */
 
 /* page 7 */
@@ -688,6 +826,7 @@ a {
 .word-bank-container-7 #drag0 {
   left: 65%;
 }
+
 /* ***** */
 
 .snapshot-subject-div-1 {
@@ -797,7 +936,7 @@ a {
     width: 15rem;
     margin-right: 1rem;
   }
- 
+
   .snapshot-subject-div-1 {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -820,44 +959,56 @@ a {
     height: 17rem;
   }
 
+  /***** true false question *****/
+  .a-title-container {
+    font-size: 1.4rem;
+    width: 46rem;
+  }
+
+  .q-title {
+    font-size: 1.8rem;
+  }
+
   /* page 3 */
   .word-bank-container-3 #drag4 {
     left: 12%;
   }
-  
+
   .word-bank-container-3 #drag3 {
     left: 27%;
   }
-  
+
   .word-bank-container-3 #drag2 {
     left: 42%;
   }
-  
+
   .word-bank-container-3 #drag1 {
     left: 57%;
   }
-  
+
   .word-bank-container-3 #drag0 {
     left: 72%;
   }
+
   /* ***** */
 
   /* page 7 */
   .word-bank-container-7 #drag3 {
     left: 16%;
   }
-  
+
   .word-bank-container-7 #drag2 {
     left: 33%;
   }
-  
+
   .word-bank-container-7 #drag1 {
     left: 50%;
   }
-  
+
   .word-bank-container-7 #drag0 {
     left: 67%;
   }
+
   /* ***** */
 
   /***** open question  *****/
@@ -872,23 +1023,24 @@ a {
 }
 
 @media only screen and (max-width: 812px) {
+
   /* page 3 */
   .word-bank-container-3 #drag4 {
     left: 10%;
   }
-  
+
   .word-bank-container-3 #drag3 {
     left: 26%;
   }
-  
+
   .word-bank-container-3 #drag2 {
     left: 42%;
   }
-  
+
   .word-bank-container-3 #drag1 {
     left: 58%;
   }
-  
+
   .word-bank-container-3 #drag0 {
     left: 74%;
   }
@@ -897,15 +1049,15 @@ a {
   .word-bank-container-7 #drag3 {
     left: 10%;
   }
-  
+
   .word-bank-container-7 #drag2 {
     left: 30%;
   }
-  
+
   .word-bank-container-7 #drag1 {
     left: 50%;
   }
-  
+
   .word-bank-container-7 #drag0 {
     left: 70%;
   }

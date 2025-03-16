@@ -1,3 +1,4 @@
+/***** page 8 part 1 *****/
 .event-circles-container-1 {
     margin-top: 8rem;
     display: flex;
@@ -8,8 +9,6 @@
 .event-container {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: center; */
 }
 
 .event-circles-container-2 {
@@ -64,7 +63,6 @@
     align-items: center;
     justify-content: center;
     transform: rotate(90deg);
-    /* margin-left: 1rem; */
     margin-right: 2rem;
 }
 
@@ -118,7 +116,6 @@
     border: 0.125rem solid white;
     padding: 0.1rem 0.3rem;
     border-radius: 0.375rem;
-    /* margin-left: 0.1rem; */
     margin-right: 0.4rem;
     font-weight: bold;
     font-size: 0.7rem;
@@ -134,6 +131,7 @@
     color: white;
 }
 
+/***** page 8 subtopic *****/
 .points-container,
 .points-question-container {
     display: flex;
@@ -149,7 +147,6 @@
 .points-question-container {
     margin-top: 7rem;
 }
-
 
 .points-half-circle-1 {
     position: relative;
@@ -199,7 +196,6 @@
     &.orange2 {
         transform: rotate(-160deg) translate(16rem);
     }
-
 }
 
 .connection-line-container {
@@ -257,7 +253,6 @@
 }
 
 .principle-title {
-    /* margin-top: 20rem; */
     position: absolute;
     padding: 0rem 1.2rem;
     background-color: white;
@@ -450,6 +445,7 @@
     border-bottom: 0.9rem solid transparent;
 }
 
+/* arrow animation */
 @keyframes arrowAnimation {
     0% {
         margin-top: 1rem;
@@ -464,146 +460,7 @@
     }
 }
 
-.q-title-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.q-title {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #3b3838;
-}
-
-.q-line {
-    border-bottom: 0.125rem solid #3b3838;
-    width: 35rem;
-}
-
-.a-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2.6rem;
-}
-
-.a-container-1 {
-    display: flex;
-    flex-direction: row;
-}
-
-.a-side-div {
-    background-color: #3b3838;
-    width: 4rem;
-    height: 4rem;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.a-side-circle {
-    width: 2.4rem;
-    height: 2.4rem;
-    border: 0.125rem solid;
-    border-radius: 25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* .circle-check {
-    border: 2px solid #3b3838;
-} */
-
-.a-side-checkbox {
-    appearance: none;
-    -webkit-appearance: none;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    font-size: 2rem;
-    /* padding: 0.1rem; */
-    /* border: 0.25rem solid green; */
-    /* background-image: url('../../assets/page8-icons/check-1.svg');
-    background-repeat: no-repeat;
-    background-size: 2rem 2rem; */
-    width: 2rem;
-    height: 2rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
-
-.a-check-icon {
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    transform: rotate(-45deg);
-    height: 0.7rem;
-    width: 2rem;
-    position: absolute;
-    display: none;
-}
-
-.icon-white {
-    border-bottom: 0.2rem solid white;
-    border-left: 0.2rem solid white;
-}
-
-.icon-brown {
-    border-bottom: 0.2rem solid #3b3838;
-    border-left: 0.2rem solid #3b3838;
-}
-
-.a-side-checkbox:checked+.a-check-icon {
-    display: block;
-}
-
-.a-title-container {
-    width: 35rem;
-    height: 4rem;
-    background-color: #3b3838;
-    margin-right: 1rem;
-    color: white;
-    font-weight: 700;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0rem 1rem;
-}
-
-.t-correct {
-    background-color: #a9d18e;
-    color: #3b3838;
-}
-
-.t-wrong {
-    background-color: #ff8989;
-    color: #3b3838;
-}
-
-.page8-check-button {
-    background-color: white;
-    border: 0.125rem solid #3b3838;
-    border-radius: 25rem;
-    padding: 0rem 1.2rem;
-    font-family: 'Heebo';
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #3b3838;
-    /* margin-top: 1rem; */
-}
-
-.page8-check-button:hover {
-    background-color: #3b3838;
-    color: white;
-}
-
-.page8-correct-message {
-    margin-top: 1rem;
-    color: #548235;
-    font-size: 1.2rem;
-}
-
+/***** page 8 subtopic question *****/
 .page8-q-container {
     display: flex;
     flex-direction: column;
@@ -668,10 +525,10 @@
 #medical1 {
     margin-top: 7.5rem;
 }
-
+/**********/
 
 @media only screen and (max-width: 1000px) {
-    /***** page 8  *****/
+    /***** page 8 *****/
     .event-title {
         font-size: 2rem;
     }
@@ -759,16 +616,6 @@
         margin-top: 0.4rem;
         width: 57rem;
     } 
-
-    /***** true false question *****/
-    .a-title-container  {
-        font-size: 1.4rem;
-        width: 46rem;
-    }
-
-    .q-title {
-        font-size: 1.8rem;
-    }
 }
 
 @media only screen and (max-width: 1000px) and (max-height: 384px) {

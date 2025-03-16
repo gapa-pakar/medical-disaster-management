@@ -3,6 +3,7 @@ import Book from './Book';
 import TrueFalseQuestion from '../Quiz/TrueFalseQuestion'
 import './Page9.css'
 
+// Data for the true/false question
 const questions = {
     title: "מה השימוש הנעשה בטופס 101?",
     correct: 4,
@@ -45,11 +46,9 @@ export default function Page9Subtopic(props) {
     const { countPages, setMaxPages, setLinkName, setFinish } = props
 
     useEffect(() => {
-        // if (setMaxPages && setLinkName) 
         setMaxPages(1);
         setLinkName("/page10");
     }, [])
-
 
     return (
         <div className='page1-container'>

@@ -1,3 +1,4 @@
+/***** page 10 part 1 *****/
 .page10-container {
     display: flex;
     flex-direction: column;
@@ -52,7 +53,7 @@
     font-weight: 500;
 }
 
-
+/***** page 10 question *****/
 .p10-q-container {
     background-color: white;
     border-radius: 4rem;
@@ -70,7 +71,6 @@
 .p10-q-line {
     border-top: 0.188rem solid #ffaf42;
     margin-top: -0.6rem;
-    width: 34rem;
 }
 
 .p10-q-text {
@@ -140,10 +140,54 @@
     font-size: 1.2rem;
     text-align: center;
 }
+/**********/
 
 @media only screen and (max-width: 1000px) { 
+    /***** page 10 part 1 *****/
     .page10-container {
         top: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .p10-operations-container-1 {
+        margin-bottom: 1rem;
+    }
+
+    .p10-text-container {
+        width: 70rem;
+    }
+
+    .p10-title {
+        font-size: 1.4rem;
+    }
+
+    .p10-d {
+        font-size: 1.4rem;
+    }
+
+    /***** page 10 question *****/
+    .p10-q-title {
+        font-size: xx-small;
+    }
+
+    .p10-q-container {
+        margin-top: 0rem;
+    }
+
+    .p10-q-text {
+        font-size: 1.4rem;
+    }
+
+    .options-text {
+        font-size: 1.2rem;
+        padding: 0.4rem 0.2rem;
+    }
+
+    .p10-check-button {
+        font-size: 1.2rem;
+    }
+
+    .p10-wrong-m, .p10-correct-m {
+        font-size: 1.4rem;
     }
 }

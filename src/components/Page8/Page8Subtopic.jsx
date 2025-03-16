@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import TrueFalseQuestion from '../Quiz/TrueFalseQuestion'
 import Page8Question from './page8Question'
 
-
+// Array containing the principles for determining concentration points (קביעת נקודות ריכוז)
 const pointsPrinciple = [
     {
         id: 1,
@@ -49,6 +49,7 @@ const pointsPrinciple = [
     }
 ]
 
+// Array containing the principles for dividing the search areas (חלוקה לגזרות)
 const divisionPrinciple = [
     {
         id: 1,
@@ -71,6 +72,7 @@ const divisionPrinciple = [
     }
 ]
 
+// Array for the principles title and description
 const principleText = [
     {
         title: "עקרונות לקביעת נקודות ריכוז",
@@ -82,6 +84,7 @@ const principleText = [
     }
 ]
 
+// Data for the true/false question
 const questions = {
     title: "סמנו את עקרונות החלוקה לגזרות הנכונים:",
     correct: 3,
@@ -124,8 +127,10 @@ export default function Page8Subtopic(props) {
 
     const { countPages, setMaxPages, setLinkName, setFinish } = props
 
+    // State to control the visibility of division points
     const [showPoints, setShowPoints] = useState(false);
 
+    // Function to handle the click event and show division points
     const handleClick = () => {
         setShowPoints(true);
         setFinish(true);
@@ -146,6 +151,7 @@ export default function Page8Subtopic(props) {
                             <div className='points-container'>
                                 <div className='points-half-circle-1'>
                                     {
+                                        // Map through the pointsPrinciple array and display each principle
                                         pointsPrinciple.map((principle, index) => {
                                             return (
                                                 <div key={`principle_${index}`}>
@@ -167,7 +173,7 @@ export default function Page8Subtopic(props) {
                                 </div>
 
                                 {
-                                    showPoints ? (
+                                    showPoints ? ( // If showPoints is true, display division principles
                                         <div className='points-half-circle-2'>
                                             {
                                                 divisionPrinciple.map((element, index) => {
@@ -189,7 +195,8 @@ export default function Page8Subtopic(props) {
                                                 <div className='points-description-1'>{principleText[1].description}</div>
                                             </div>
                                         </div>
-                                    ) : (
+                                    ) : ( 
+                                        // If showPoints is false, show the arrow to expand
                                         <div className='points-arrow-container' onClick={handleClick}>
                                             <div className='points-arrow'></div>
                                             <div className='points-arrow-triangle'></div>

@@ -1,9 +1,9 @@
 
 import React, { useEffect, useState } from 'react'
 import './Page6.css'
-
 import ReportsPage from './ReportsPage';
 
+// Import icons
 import question from '../../assets/page6-icons/question.svg'
 import location from '../../assets/page6-icons/location.svg'
 import time from '../../assets/page6-icons/time.svg'
@@ -17,6 +17,8 @@ import wrongBriefing from '../../assets/videos/wrongReport.mp4'
 import report1 from '../../assets/audio/report1.mp3'
 import report2 from '../../assets/audio/report2.mp3'
 
+
+// Array containing information for page 6 part 1
 const reportsInfo = [
   {
     id: 1,
@@ -109,6 +111,7 @@ const reportsInfo = [
   },
 ]
 
+// Array containing information for video question title reminder
 const briefingInfo = [
   {
     id: "01",
@@ -132,6 +135,7 @@ const briefingInfo = [
   }
 ]
 
+// Array containing information for video question
 const info = {
   videoTitle: "לפניכם סרטון המציג העברת דיווח ביניים של מנהל אירוע לצוות, לאחר הצפייה תצטרכו לענות האם הדיווח הועבר בצורה מיטבית או לא.",
   question1: "האם הדיווח הועבר בצורה מיטבית?",
@@ -148,11 +152,12 @@ export default function Page6(props) {
   const [reportDisplay, setReportDisplay] = useState(true);
   const [report, setReport] = useState("")
 
+  // Switch to the appropriate report page
   const reportsPage = (number) => {
     setReportDisplay(false);
     setReport(number);
   }
-
+  
   useEffect(() => {
     setMaxPages(1);
     setLinkName("/page7");

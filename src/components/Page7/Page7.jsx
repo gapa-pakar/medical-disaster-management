@@ -3,6 +3,7 @@ import './Page7.css'
 import Page7Part1 from './Page7Part1'
 import DragAndDropQuestion from '../Quiz/DragAndDropQuestion'
 
+// Array containing information for page 7 part 1
 const snapshotDetails = {
     title: "תמונת מצב",
     description: [
@@ -45,6 +46,7 @@ const snapshotDetails = {
     ]
 }
 
+// Array containing information for drag and drop component
 const info = {
     title1: "סדרו את השלבים לפי סדר כרונולוגי",
     dropContainerClass: "drop-div",

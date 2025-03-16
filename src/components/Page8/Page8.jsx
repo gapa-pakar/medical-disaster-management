@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Page8.css'
 
+// Array containing information for page 8
 const eventManagement = [
     {
         id: 1,
@@ -87,14 +88,16 @@ export default function Page8(props) {
 
     const { countPages, setMaxPages, setLinkName, setFinish } = props
 
+    // State to track which events have been clicked (revealed)
     const [eventsArray, setEventsArray] = useState([]);
 
+    // Handler for circle element click
     const handleClick = (index) => {
-        if (!eventsArray.includes(index)) {
+        if (!eventsArray.includes(index)) { // Adds the clicked event index to the array if it's not already there
             setEventsArray([...eventsArray, index]);
         }
 
-        if (index === 4) {
+        if (index === 4) { // Sets the finish state to true if the fifth event (index 4) is clicked
             setFinish(true);
         }
     }
@@ -110,41 +113,45 @@ export default function Page8(props) {
             <div className='page1-container'>
                 <div className='event-circles-container-1'>
                     {
+                        // Iterate over each event in the eventManagement array to render the event element
                         eventManagement.map((event, index) => {
                             return (
                                 <div key={`event_${index}`}>
-                                    <div className='event-container' onClick={() => handleClick(index)}>
+                                    <div className='event-container' onClick={() => handleClick(index)}> {/* Clickable container for each event element */}
                                         <div className='event-circles-container-2'>
+                                            {/* Circle representing the event, with dynamic colors */}
                                             <div className='event-circle' style={{ borderColor: event.color, '--hover-color': event.color, '--color': event.color }}>
                                                 <div className='event-title'>{event.title}</div>
                                                 <div className='event-description' style={{ '--background-color': event.color }}>{event.description}</div>
                                             </div>
 
+                                            {/* Conditional rendering for event arrow based on the event index */}
                                             {
-                                                index < 4 ? (
+                                                index < 4 && (
                                                     <div className='event-arrow-container'>
                                                         <div className='event-arrow' style={{ backgroundColor: event.color }}></div>
                                                         <div className='event-arrow-triangle' style={{ borderTopColor: event.color }}></div>
                                                     </div>
-                                                ) : <></>
+                                                )
                                             }
 
                                         </div>
 
+                                        {/* Container for event details, visibility toggled based on whether the event is clicked */}
                                         <div className='event-details-container' style={{ backgroundColor: event.color, visibility: eventsArray.includes(index) ? "visible" : "hidden" }}>
+                                            
                                             <div className='event-info-title' style={{ color: event.color }}>פירוט פעולות:</div>
+                                            {/* Event details section: Conditionally renders list or single detail */}
                                             {
                                                 event.info.details.length > 1 ? (
                                                     <div>
                                                         {
-                                                            event.info.details.map((detail, index1) => {
-                                                                return (
-                                                                    <div key={`detail_${index1}`} className='event-info-container'>
-                                                                        <div className='event-info-number'>{index1 + 1}</div>
-                                                                        <div className='event-info-1'>{detail}</div>
-                                                                    </div>
-                                                                )
-                                                            })
+                                                            event.info.details.map((detail, index1) => (
+                                                                <div key={`detail_${index1}`} className='event-info-container'>
+                                                                    <div className='event-info-number'>{index1 + 1}</div>
+                                                                    <div className='event-info-1'>{detail}</div>
+                                                                </div>
+                                                            ))
                                                         }
                                                     </div>
                                                 ) : (
@@ -153,18 +160,17 @@ export default function Page8(props) {
                                             }
 
                                             <div className='event-info-title' style={{ color: event.color }}>אופן רישום ודיווח</div>
+                                            {/* Event report section: Conditionally renders list or single report */}
                                             {
                                                 event.info.report.length > 1 ? (
                                                     <div>
                                                         {
-                                                            event.info.report.map((report, index2) => {
-                                                                return (
-                                                                    <div key={`report_${index2}`} className='event-info-container'>
-                                                                        <div className='event-info-number'>{index2 + 1}</div>
-                                                                        <div className='event-info-1'>{report}</div>
-                                                                    </div>
-                                                                )
-                                                            })
+                                                            event.info.report.map((report, index2) => (
+                                                                <div key={`report_${index2}`} className='event-info-container'>
+                                                                    <div className='event-info-number'>{index2 + 1}</div>
+                                                                    <div className='event-info-1'>{report}</div>
+                                                                </div>
+                                                            ))
                                                         }
                                                     </div>
                                                 ) : (
@@ -179,7 +185,7 @@ export default function Page8(props) {
                     }
                 </div>
 
-                {/* explaining text */}
+                {/* Explaining text displayed if no event elements are revealed yet */}
                 {
                     eventsArray.length > 0 ? <></> : (
                         <div className='medical-people-text' id='medical1'>

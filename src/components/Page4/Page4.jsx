@@ -7,7 +7,7 @@ import icon1 from '../../assets/page4-icons/icon1.svg'
 import icon2 from '../../assets/page4-icons/icon2.svg'
 import icon3 from '../../assets/page4-icons/icon3.svg'
 
-
+// Array containing information for carousel (page 4 part 1)
 const ManagersInterfaces = [
     {
         title: 'חמ"ל',
@@ -46,6 +46,7 @@ const ManagersInterfaces = [
     }
 ]
 
+// Array containing the quiz data (questions, answers, etc.)
 const quiz = {
     topic: 'ממשקים קיימים בניהול אירוע',
     totalQuestions: 1,
@@ -67,6 +68,7 @@ const quiz = {
     ]
 }
 
+// Arrays to check user input values
 const value1Array = ['חמ"ל', 'חמל'];
 const value2Array = ['חפ"קים', 'חפקים', 'חפק', 'חפ"ק']
 const value3Array = ['מט"ב', 'מטב']
@@ -75,6 +77,7 @@ export default function Page4(props) {
 
     const { countPages, setMaxPages, setLinkName, setFinish } = props
 
+    // States for input values and UI control
     const [value1, setValue1] = useState("");
     const [value2, setValue2] = useState("");
     const [value3, setValue3] = useState("");
@@ -84,8 +87,8 @@ export default function Page4(props) {
     const [displayText, setDisplayText] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
+    // Handle input changes and check answers
     const checkAnswer = (event) => {
-        console.log("hello1")
         setDisplayText(false);
         switch (event.target.id) {
             case 'input_1':
@@ -115,20 +118,20 @@ export default function Page4(props) {
             default:
                 break;
         }
-
-        console.log(readOnly3)
     }
 
+    // useEffect to set up initial page properties and check for mobile view
     useEffect(() => {
         setMaxPages(2);
         setLinkName("/page5");
 
-        if (window.innerWidth < 1000) {
+        // Check if the screen width is under 1000px to adjust UI for mobile
+        if (window.innerWidth < 1000) { 
             setIsMobile(true);
         }
     }, []);
 
-    // hiding next arrow
+    // useEffect to hide the next arrow until all inputs are correct
     useEffect(() => {
         if (!readOnly1) {
             if ((isMobile && countPages === 0) || countPages === 1) {
@@ -137,7 +140,7 @@ export default function Page4(props) {
         }
     }, [countPages, isMobile])
 
-    // adding next arrow back
+    // useEffect to add the next arrow once all answers are correct
     useEffect(() => {
         if (readOnly1 && readOnly2 && readOnly3) {
             setFinish(true);
@@ -147,12 +150,12 @@ export default function Page4(props) {
     return (
         <div className='page1-container'>
             {countPages === 0 ? (
-                // page 4 part 1
+                // Page 4 part 1: Display carousel
                 <div className='interface-container'>
                     <Carousel ManagersInterfaces={ManagersInterfaces} isMobile={isMobile} setFinish={setFinish}></Carousel>
                 </div>
             ) : countPages === 1 ? (
-                // page 4 question
+                // Page 4 part 2: Display question and inputs
                 <div className='interface-container-2'>
                     <div className='question-container'>
                         <h1 className='video-question-title' style={{ color: "#5c83c4" }}>כתבו מהם שלושת סוגי הממשקים הקיימים בעת ניהול אירוע הרס:</h1>
@@ -168,7 +171,7 @@ export default function Page4(props) {
                     </div>
                 </div>
             ) : (
-                // quiz
+                // Quiz
                 <Quiz quiz={quiz} setFinish={setFinish}></Quiz>
             )}
         </div>

@@ -7,22 +7,22 @@ export default function Page7Part1(props) {
     return (
         <div>
             <div className='snapshot-container'>
+                {/* Title section */}
                 <div className='snapshot-div-container'>
                     <div className='snapshot-title'>{snapshotDetails.title}</div>
                     <div className='snapshot-description-container'>
                         <ol>
                             {
-                                snapshotDetails.description.map((element, index) => {
-                                    return (
-                                        <li key={`snapshot_${index}`}>{element}</li>
-                                    )
-                                })
+                                snapshotDetails.description.map((element, index) => (
+                                    <li key={`snapshot_${index}`}>{element}</li>
+                                ))
                             }
                         </ol>
                         <div>{snapshotDetails.additionalText}</div>
                     </div>
                 </div>
 
+                {/* Snapshot subjects section */}
                 <div className='snapshot-subjects-container'>
                     {
                         snapshotDetails.subjects.map((subject, index1) => {
@@ -35,8 +35,10 @@ export default function Page7Part1(props) {
                                         </div>
                                         <div className='snapshot-subject-description'>{subject.description}</div>
                                     </div>
-                                    {
-                                        subject.id < 4 ? <div className='arrow-point-dashed' id={`dashed${index1 + 1}`} style={{ '--color-before': subject.color, '--color-after': subject.colorAfter }}></div> : <></>
+
+                                    {/* Conditionally renders an arrow only for subjects with an id less than 4 */}
+                                    {subject.id < 4 &&
+                                        <div className='arrow-point-dashed' id={`dashed${index1 + 1}`} style={{ '--color-before': subject.color, '--color-after': subject.colorAfter }}></div>
                                     }
                                 </div>
                             )

@@ -4,7 +4,7 @@ import Page1Part2 from './Page1Part2'
 import Quiz from '../Quiz/Quiz'
 import './Page1.css'
 
-// The 'quiz' object contains the quiz data (questions, answers, etc.)
+// Array containing the quiz data (questions, answers, etc.)
 const quiz = {
     topic: 'מבוא למנהלי אירוע',
     totalQuestions: 4,

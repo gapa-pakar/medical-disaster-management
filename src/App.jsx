@@ -118,7 +118,7 @@ function App() {
   // variables
   const [countPages, setCountPages] = useState(0);
   // const [firstPage, setFirstPage] = useState(false);
-  const [lastPage, setLastPage] = useState(false);
+  // const [lastPage, setLastPage] = useState(false);
   const [maxPages, setMaxPages] = useState(0);
   const [linkName, setLinkName] = useState("");
   const [finish, setFinish] = useState(true);
@@ -143,10 +143,6 @@ function App() {
   }
 
   useEffect(() => {
-    if (currentSubject.id === 10) {
-      setLastPage(true);
-    }
-
     if (localStorage) {
       setSelectedPage(JSON.parse(localStorage.getItem('data')));
     }
@@ -245,7 +241,7 @@ function App() {
                 onClick={nextSlide}>
                 <div className='next-arrow'>
                   {countPages === maxPages ?
-                    <Link setCountPages={setCountPages} href={!lastPage ? linkName : '/finishPage'}>
+                    <Link setCountPages={setCountPages} href={window.location.pathname !== '/page10' ? linkName : '/finishPage'}>
                       <img src={next} />
                     </Link> :
                     <img src={next}></img>}

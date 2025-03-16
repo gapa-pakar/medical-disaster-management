@@ -1,3 +1,4 @@
+/***** page 5 part 1 *****/
 .channels-container {
     margin-top: 2rem;
     display: flex;
@@ -46,7 +47,6 @@
 
 .circled-text span {
     height: 19rem;
-    /* width: 0.2rem; */
     color: white;
     position: absolute;
     top: -9.5rem;
@@ -104,6 +104,7 @@
     animation: soundAnimation 1s linear 2s infinite both;
 }
 
+/* animation */
 @keyframes soundAnimation {
     0% {
         opacity: 0;
@@ -203,6 +204,7 @@
     margin-right: 5rem;
 }
 
+/***** open question *****/
 .question-page5-container {
     display: flex;
     flex-direction: column;
@@ -243,6 +245,7 @@
     margin-top: 3rem;
 }
 
+/***** page 5 part 2 *****/
 .report-page-container {
     display: flex;
     flex-direction: column;
@@ -306,7 +309,6 @@
     color: white;
     /* z-index: 100; */
     margin-bottom: -0.6rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -543,6 +545,7 @@
     border-bottom: 0.9rem solid transparent;
 }
 
+/* arrow animation */
 @keyframes arrowAnimation {
     0% {
         margin-top: 0rem;
@@ -584,6 +587,8 @@
 #show3 {
     display: none;
 }
+
+/**********/
 
 @media only screen and (max-width: 1000px) {
 
@@ -661,6 +666,8 @@
     .operation-list-item {
         font-size: 1.2rem;
     }
+
+    /**********/
 }
 
 @media only screen and (max-width: 1000px) and (max-height: 384px) {
@@ -698,5 +705,7 @@
     #side1 {
         top: 20rem;
     }
+
+    /**********/
 
 }

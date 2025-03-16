@@ -5,13 +5,14 @@ import '../Page2/Page2.css'
 import Page2Part1 from '../Page2/Page2Part1'
 import Page9Subjects from './Page9Subjects'
 
+// Importing assets
 import arrowsRight from '../../assets/page9-icons/arrows-right.svg'
 import arrowsLeft from '../../assets/page9-icons/arrows-left.svg'
 import white from '../../assets/page9-icons/white.jpg'
 import yellow from '../../assets/page9-icons/yellow.jpg'
 import helicopter from '../../assets/page9-icons/helicopter.jpg'
 
-
+// Array containing information for page 2 part 1 component
 const briefingInfo = [
     {
         id: "01",
@@ -45,6 +46,7 @@ const briefingInfo = [
     }
 ]
 
+// Array containing information for page 2 part 1 component title
 const titleInfo = {
     pTitle: 'חשיבות התיעוד והרישום:',
     p1: 'שרשרת הטיפול החילוץ והפינוי כוללת תחנות רבות עד ההגעה לבית החולים.',
@@ -52,6 +54,7 @@ const titleInfo = {
     title: "מה שהורג קודם יטופל קודם"
 }
 
+// Array containing information for this component (part 2)
 const evacuationInfo = [
     {
         title: "אמצעי פינוי אזרחיים",
@@ -104,6 +107,7 @@ const evacuationInfo = [
     }
 ]
 
+// Array containing information for page 9 subjects component
 const info = [
     {
         id: 1,
@@ -272,15 +276,15 @@ const info = [
                 [''],
                 ['חוליה רפואית המורכבת מ-3 לוחמים# חובשים +# מט"ב - רופא +# מטפל זוטר – פראמדיק / רופא'],
                 ['העמסת פצועים למסוק תהיה משעה "3" ומשעה "9" של המסוק'],
-            ],  
+            ],
         ],
         table2: {
             title: "3 אופציות חבירה",
             td: [
                 ["אופציה א'", "אופציה ב'", "אופציה ג'"],
                 [
-                    "האופציה המועדפת בחבירה בשטח מאוים. בשאיפה ללא פריקה של כוח (),במידת הצורך פריקה עד טווח דיסקה של מפקד ורופא בלבד.", 
-                    "פריקה של כוח () מהמסוק לצורך העמסת פצועים / טיפול רפואי.", 
+                    "האופציה המועדפת בחבירה בשטח מאוים. בשאיפה ללא פריקה של כוח (),במידת הצורך פריקה עד טווח דיסקה של מפקד ורופא בלבד.",
+                    "פריקה של כוח () מהמסוק לצורך העמסת פצועים / טיפול רפואי.",
                     "פריקת צוות () ויציאת המסוק."]
             ],
             colSpan: "3",
@@ -296,14 +300,17 @@ export default function Page9(props) {
 
     const { countPages, setMaxPages, setLinkName } = props
 
+    // State to control the visibility of the subject information and which subject to show
     const [showSubject, setShowSubject] = useState(false);
     const [subjectNumber, setSubjectNumber] = useState(null);
 
+    // Handle click on a specific evacuation element to display detailed information
     const handleClick = (id) => {
         setSubjectNumber(id - 1)
         setShowSubject(true);
     }
 
+    // useEffect hook to set the page's max pages, link name, and reset subject visibility when countPages changes
     useEffect(() => {
         setMaxPages(1);
         setLinkName("/page9/1");
@@ -316,38 +323,46 @@ export default function Page9(props) {
                 {countPages === 0 ? <Page2Part1 briefingInfo={briefingInfo} titleInfo={titleInfo} arrowsRight={arrowsRight} arrowsLeft={arrowsLeft} page={9} setShowSubject={setShowSubject} /> :
                     <div>
                         {
-                            showSubject ? <Page9Subjects info={info[subjectNumber]} setShowSubject={setShowSubject} /> : (
-                                <div className='page9-container'>
-                                    <div className='page2-p'>אמצעי הפינוי יבחר על ידי המפקד הרפואי והאגמ״י על פי זמינות האמצעים, אופי הפציעה, מצבו של הנפגע,<br></br>הצורך בליווי הנפגע על ידי מט״ב, בית החולים הרלוונטי ושיקולים נוספים.</div>
-                                    <div className='line' id='line-page9-1'></div>
-                                    <div className='more-circle'>לחצו על <br></br>הכפתורים<br></br> למידע נוסף</div>
+                            showSubject ?
+                                // If showSubject is true, render the Page9Subjects component
+                                <Page9Subjects info={info[subjectNumber]} setShowSubject={setShowSubject} /> : (
 
-                                    <div className='evacuation-container'>
-                                        {
-                                            evacuationInfo.map((element, index) => (
-                                                <div key={`element_${index}`} className='evacuation-container1' >
-                                                    <div className='evacuation-title'>{element.title}</div>
-                                                    <div>
-                                                        {
-                                                            element.description.map((element1, index1) => (
-                                                                <div key={`element1_${index1}`} className='evacuation-text-container'>
-                                                                    <div className='evacuation-text' style={{ backgroundColor: element1.color }} onClick={() => handleClick(element1.id)}>{element1.title}
-                                                                        {
-                                                                            element1.subtitle ? (
-                                                                                <div>{element1.subtitle}</div>
-                                                                            ) : <></>
-                                                                        }
+                                    // If showSubject is false, render the main page content
+                                    <div className='page9-container'>
+                                        <div className='page2-p'>אמצעי הפינוי יבחר על ידי המפקד הרפואי והאגמ״י על פי זמינות האמצעים, אופי הפציעה, מצבו של הנפגע,<br></br>הצורך בליווי הנפגע על ידי מט״ב, בית החולים הרלוונטי ושיקולים נוספים.</div>
+                                        <div className='line' id='line-page9-1'></div>
+                                        <div className='more-circle'>לחצו על <br></br>הכפתורים<br></br> למידע נוסף</div>
+
+                                        {/* Container for evacuation info */}
+                                        <div className='evacuation-container'>
+                                            {
+                                                // Map through evacuationInfo array to display evacuation elements
+                                                evacuationInfo.map((element, index) => (
+                                                    <div key={`element_${index}`} className='evacuation-container1' >
+                                                        <div className='evacuation-title'>{element.title}</div>
+                                                        <div>
+                                                            {
+                                                                // For each element in the description array, display the title and subtitle if available
+                                                                element.description.map((element1, index1) => (
+                                                                    <div key={`element1_${index1}`} className='evacuation-text-container'>
+                                                                        <div className='evacuation-text' style={{ backgroundColor: element1.color }} onClick={() => handleClick(element1.id)}>{element1.title}
+                                                                            {
+                                                                                // If a subtitle exists, display it
+                                                                                element1.subtitle && (
+                                                                                    <div>{element1.subtitle}</div>
+                                                                                )
+                                                                            }
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            ))
-                                                        }
+                                                                ))
+                                                            }
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            ))
-                                        }
+                                                ))
+                                            }
+                                        </div>
                                     </div>
-                                </div>
-                            )
+                                )
                         }
                     </div>
                 }

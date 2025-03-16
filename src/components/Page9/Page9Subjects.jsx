@@ -26,43 +26,51 @@ export default function Page9Subjects(props) {
 
     return (
         <div className='page9-subjects-container'>
+            {/* Displaying the subject title with a dynamic background color */}
             <div className='page9-subjects-title' style={{ backgroundColor: info.color }}>{info.title}</div>
             <button className='page9-subjects-button' onClick={() => setShowSubject(false)}>בחזרה לעמוד הקודם</button>
+
+            {/* Rendering a table with dynamic columns and rows */}
             <table className='table'>
                 {
-                    info.tcol.map((tcol, index) => (
-                        <tbody key={index}>
-                            <tr className='tr'>
-                                {
-                                    info.tr.map((tr1, index1) => (
-                                        index === 0 ? (
-                                            <th key={`th_${index1}`} className='th' style={{ backgroundColor: info.color1 }}>{info.th[index1]}</th>
-                                        ) : (
-                                            <td key={`td_${index1}`} className='td' style={{ backgroundColor: index % 2 !== 0 ? info.color2 : info.color3 }}>
-                                                <div className='td-text'>
-                                                    <div>
-                                                        {
-                                                            info.td[index - 1][index1].map((text, index2) => (
-                                                                <div key={index2}>
-                                                                    {renderLineBreaks(text)} {/* use helper function to handle the string proccessing */}
-                                                                </div>
-                                                            ))
-                                                        }
+                    info.tcol.map((tcol, index) => {
+                        return (
+                            <tbody key={index}>
+                                <tr className='tr'>
+                                    {
+                                        info.tr.map((tr1, index1) => (
+                                            index === 0 ? (
+                                                // Rendering table header cells with dynamic background color
+                                                <th key={`th_${index1}`} className='th' style={{ backgroundColor: info.color1 }}>{info.th[index1]}</th>
+                                            ) : (
+                                                // Rendering table data cells with dynamic background color
+                                                <td key={`td_${index1}`} className='td' style={{ backgroundColor: index % 2 !== 0 ? info.color2 : info.color3 }}>
+                                                    <div className='td-text'>
+                                                        <div>
+                                                            {
+                                                                info.td[index - 1][index1].map((text, index2) => (
+                                                                    <div key={index2}>
+                                                                        {renderLineBreaks(text)} {/* use helper function to handle the string proccessing */}
+                                                                    </div>
+                                                                ))
+                                                            }
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                        )
-                                    ))
-                                }
-                            </tr>
-                        </tbody>
-                    ))
+                                                </td>
+                                            )
+                                        ))
+                                    }
+                                </tr>
+                            </tbody>
+                        )
+                    })
                 }
             </table>
             <div className='page9-table-elements'>
                 {
-                    info.table2 ? (
-                        <table className='table1' style={{width: info.table2.width}}>
+                    // Conditionally rendering the second table if 'info.table2' exists
+                    info.table2 && (
+                        <table className='table1' style={{ width: info.table2.width }}>
                             <tr>
                                 <th className='th1' colSpan={info.table2.colSpan} style={{ backgroundColor: info.color1 }}>{info.table2.title}</th>
                             </tr>
@@ -78,12 +86,13 @@ export default function Page9Subjects(props) {
                                 ))
                             }
                         </table>
-                    ) : (<></>)
+                    )
                 }
                 {
-                    info.image ? (
+                    // Conditionally rendering an image if 'info.image' exists
+                    info.image && (
                         <img src={info.image} className='page-image'></img>
-                    ) : <></>
+                    )
                 }
             </div>
         </div>

@@ -18,7 +18,6 @@ export default function DragAndDropQuestion(props) {
     // Allow dropping both on mobile and desktop devices
     const allowDrop = (event) => {
         event.preventDefault();  // Prevents the default action to allow for dropping
-        console.log("allow")
     }
 
     // Handle touch movement on mobile devices
@@ -118,11 +117,11 @@ export default function DragAndDropQuestion(props) {
                             return (
                                 <div key={`subject_${index}`} className={`drop-divs-container-${page}`}>
                                     {
-                                        page === 3 ? (
+                                        page === 3 && (
                                             <div className='d-roles-container'>
                                                 <div>{info.titles[index]}</div>
                                             </div>
-                                        ) : <></>
+                                        )
                                     }
 
                                     <div

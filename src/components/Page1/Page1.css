@@ -261,9 +261,11 @@
     line-height: 2.5rem;
     text-align: center;
 }
- /**********/
+
+/**********/
 
 @media only screen and (max-width: 1000px) {
+
     /***** page 1 part 1 *****/
     .colored-line {
         width: 14.4rem;
@@ -323,10 +325,12 @@
         font-size: larger;
         width: 17rem;
     }
+
     /**********/
 }
 
 @media only screen and (max-width: 750px) {
+
     /***** page 1 part 2 *****/
     .triangle-text-container {
         width: 48rem;

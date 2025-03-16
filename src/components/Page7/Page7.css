@@ -1,3 +1,4 @@
+/***** page 7 part 1 *****/
 .snapshot-container {
     display: flex;
     flex-direction: column;
@@ -35,6 +36,9 @@
 
 .snapshot-description-container ol li {
     padding-right: 0.5rem;
+    color: #343233;
+    font-weight: 500;
+    line-height: 1.7;
 }
 
 .snapshot-description-container div {
@@ -94,9 +98,10 @@
 .snapshot-subject-description {
     text-align: center;
     font-size: 0.9rem;
-    margin: 0rem 1rem;
+    font-weight: 600;
+    margin: 0rem 0.4rem;
     line-height: 1.9;
-    color: black;
+    color: #343233;
 }
 
 #subject2,
@@ -171,10 +176,10 @@
     background-color: #343233;
     margin-top: 0.7rem;
 }
+/**********/
 
 @media only screen and (max-width: 1000px) {
-
-    /* page 7 part 1 */
+    /***** page 7 part 1 *****/
     .snapshot-container {
         margin-top: 6rem;
     }
@@ -185,6 +190,7 @@
 
     .snapshot-description-container {
         font-size: xx-small;
+        margin-right: -4rem;
     }
 
     .snapshot-subject-div {

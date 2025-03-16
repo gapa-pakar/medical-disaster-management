@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import './Page10.css'
 import Page10Question from './Page10Question'
 
+// Array containing information for page 10 part 1
 const operationInfo = [
     {
         id: 1,

@@ -5,6 +5,7 @@ export default function OpenQuestion(props) {
 
     const { question, textValue1, setTextValue1, textValue2, setTextValue2, changeDispaly1, setChangeDisplay1, changeDispaly2, setChangeDisplay2, number, setFinish } = props
 
+    // Handles changes in text input fields
     const handleTextChange = (event) => {
         if (number === 1) {
             setTextValue1(event.target.value);
@@ -13,6 +14,7 @@ export default function OpenQuestion(props) {
         }
     }
 
+    // Handles self-check functionality when the user clicks the button
     const selfCheck = () => {
         if (number === 1) {
             setChangeDisplay1(true);
@@ -22,6 +24,7 @@ export default function OpenQuestion(props) {
         setFinish(true);
     }
 
+    // useEffect to update finish status based on page and user answer
     useEffect(() => {
         if (number === 1) {
             if (changeDispaly1 === false) {
@@ -46,15 +49,16 @@ export default function OpenQuestion(props) {
                         <h1 className='video-question-title' style={{ color: "#95aed7" }}>{question.title}</h1>
                         <div className='question-line' style={{ width: question.width, borderTopColor: "#95aed7" }}></div>
                         <textarea onChange={handleTextChange} type='text' className='video-text-question' id='textarea-page5'></textarea>
-                        {
-                            number === 1 ?
-                                (textValue1 !== '' && !changeDispaly1 ? <button className='check-yourself-button-5' id='button-page5' onClick={selfCheck}>בדקו את עצמכם</button> : <></>) :
-                                (textValue2 !== '' && !changeDispaly2 ? <button className='check-yourself-button-5' id='button-page5' onClick={selfCheck}>בדקו את עצמכם</button> : <></>)
-                        }
 
+                        {/* Conditionally render the "Check Yourself" button */}
+                        {number === 1 ?
+                            (textValue1 !== '' && !changeDispaly1 ? <button className='check-yourself-button-5' id='button-page5' onClick={selfCheck}>בדקו את עצמכם</button> : <></>) :
+                            (textValue2 !== '' && !changeDispaly2 ? <button className='check-yourself-button-5' id='button-page5' onClick={selfCheck}>בדקו את עצמכם</button> : <></>)
+                        }
                     </div>
                 </div>
-                {/* display none, when clicking on showanswer than true than display block */}
+
+                {/* Answer section - conditional rendering based on page and user answer */}
                 <div className='answer-div' id='answer-div-5' style={{ display: number === 1 ? (changeDispaly1 ? "block" : "none") : (changeDispaly2 ? "block" : "none") }}>
                     <ul className='answer-text-5'>
                         {

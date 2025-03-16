@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './Page9.css'
 
+// Importing assets
 import document from '../../assets/page9-icons/document.svg'
 import page1 from '../../assets/page9-icons/1.jpg'
 import page2 from '../../assets/page9-icons/2.jpg'
@@ -10,9 +11,10 @@ import page4 from '../../assets/page9-icons/4.jpg'
 import arrowRight from '../../assets/page9-icons/arrow-right-circle.svg'
 import arrowLeft from '../../assets/page9-icons/arrow-left-circle.svg'
 
+// Array containng information of the book pages
 const pages = [
-    [0, 1, 2, 3],
-    [
+    [0, 1, 2, 3], // Page IDs (indexing for front pages)
+    [ // Front page details
         {
             id: 7,
             title: "מתי נשתמש ובאיזה שלב?",
@@ -59,7 +61,7 @@ const pages = [
             icon: document
         }
     ],
-    [
+    [ // back page details
         {
             id: 8,
             title: '',
@@ -95,73 +97,71 @@ const pages = [
     ]
 ];
 
-
 export default function Book({ setFinish }) {
 
-    const containerRef = useRef(null)
-    const [elementsRight, setElementsRight] = useState([]);
-    const [length, setLength] = useState(0);
-    const [z, setZ] = useState(1);
-    const [hasUpdated, setHasUpdated] = useState((false));
-    const [count, setCount] = useState(0);
+    const containerRef = useRef(null);                        // Ref for the container holding the pages
+    const [elementsRight, setElementsRight] = useState([]);   // To track the right-side pages
+    const [length, setLength] = useState(0);                  // Current page index
+    const [z, setZ] = useState(1);                            // z-index for flipping effect
+    const [hasUpdated, setHasUpdated] = useState((false));    // To track if pages have been updated
 
+    // useEffect hook to get elements from the container and update state
     useEffect(() => {
         const elements = containerRef.current.getElementsByClassName('right');
-        setElementsRight([...elements]);
-        setLength(elementsRight.length);
-        setHasUpdated(true);
-
-        // if (hasUpdated) {
-        //     turnRight();
-        // }
+        setElementsRight([...elements]);    // Update the state with right page elements
+        setLength(elementsRight.length);    // Set the length of the pages
+        setHasUpdated(true);                // Indicate that updates have happened
     }, [hasUpdated])
 
+    // useEffect hook to reset finish state on mount
     useEffect(() => {
         setFinish(false)
     }, [])
 
+    // Function to turn pages to the right (next page)
     const turnRight = () => {
         if (hasUpdated) {
             if (length >= 0) {
-                setLength(l => l - 1);
+                setLength(l => l - 1); // Decrease length to turn the page
                 if (length === 0) {
-                    setFinish(true);
+                    setFinish(true); // If on the last page, set finish to true
                 }
             } else {
-                setLength(elementsRight.length - 1);
+                setLength(elementsRight.length - 1); // Reset length to the last page if it's out of bounds
                 function sttmot(i) {
                     setTimeout(() => {
-                        elementsRight[i].style.zIndex = "auto";
+                        elementsRight[i].style.zIndex = "auto"; // Reset z-index after the flip animation
                     }, 300);
                 }
 
                 for (var i = 0; i < elementsRight.length; i++) {
-                    elementsRight[i].className = "right";
+                    elementsRight[i].className = "right"; // Reset the class of each page
                     sttmot(i);
-                    setZ(1);
+                    setZ(1); // Reset z-index
                 }
             }
 
-            elementsRight[length].classList.add("flip");
-            setZ(c => c + 1);
-            elementsRight[length].style.zIndex = z;
+            elementsRight[length - 1].classList.add("flip");    // Add flip class to the current page for animation
+            setZ(c => c + 1);                               // Increase z-index to ensure proper layer stacking
+            elementsRight[length - 1].style.zIndex = z;         // Set the new z-index for the flipped page
         }
     }
 
+    // Function to turn pages to the left (previous page)
     function turnLeft() {
         if (length < elementsRight.length + 1) {
-            setLength(l => l + 1);
+            setLength(l => l + 1); // Increase length to turn to the next page
         }
         else {
-            setLength(1);
+            setLength(1); // Reset to the first page if we've exceeded the bounds
             for (var i = elementsRight.length - 1; i > 0; i--) {
-                elementsRight[i].classList.add("flip");
+                elementsRight[i].classList.add("flip"); // Flip the pages in reverse order
                 elementsRight[i].style.zIndex = elementsRight.length + 1 - i;
             }
         }
-        elementsRight[length - 1].className = "right";
+        elementsRight[length].className = "right"; // Reset the class for the last page
         setTimeout(() => {
-            elementsRight[length - 1].style.zIndex = "auto";
+            elementsRight[length].style.zIndex = "auto"; // Reset z-index after flip animation
         }, 350);
     }
 
@@ -170,35 +170,34 @@ export default function Book({ setFinish }) {
             <div className="book-section" ref={containerRef}>
                 <div className="book-container">
                     {
+                        // Loop through pages array and render each page
                         pages[0].map((page, index) => {
                             return (
-                                // book page
+                                // Book page element
                                 <div className="right" key={`page_${index}`}>
-                                    {/* pages on the left */}
+                                    {/* Front page (page on the left) */}
                                     <figure className="front" id={index === 3 ? 'cover' : ''}>
-                                        {/* page content */}
+                                        {/* Page content */}
                                         <div className='fb-page'>
                                             <h1 className={pages[1][index].class}>{pages[1][index].title}</h1>
                                             <img src={pages[1][index].icon ? pages[1][index].icon : pages[1][index].image} className={pages[1][index].icon ? 'front-icon' : 'fb-image'}></img>
 
-                                            {/* מתי נשתמש בכל שלב page content */}
+                                            {/* Page content for the last page */}
                                             {
-                                                index === 0 ? (
+                                                index === 0 && (
                                                     <div className='front-roles'>
                                                         <div className='stage-d'>{pages[1][index].description}</div>
                                                         <div>
                                                             {
-                                                                pages[1][index].info.map((d1, index2) => {
-                                                                    return (
-                                                                        <div key={`d1_${index2}`} className='d-container'>
-                                                                            <div className='d-number'>{d1.title}</div>
-                                                                            <div className='d-text'>{d1.d}</div>
-                                                                        </div>
-                                                                    )
-                                                                })
+                                                                pages[1][index].info.map((d1, index2) => (
+                                                                    <div key={`d1_${index2}`} className='d-container'>
+                                                                        <div className='d-number'>{d1.title}</div>
+                                                                        <div className='d-text'>{d1.d}</div>
+                                                                    </div>
+                                                                ))
                                                             }
                                                         </div>
-                                                        {/* table section */}
+                                                        {/* Table section */}
                                                         <div className="side2-title1">עותק קשיח ועותק רך</div>
                                                         <table id='table'>
                                                             {
@@ -225,34 +224,33 @@ export default function Book({ setFinish }) {
                                                             }
                                                         </table>
                                                     </div>
-                                                ) : <></>
+                                                )
                                             }
                                         </div>
                                         <button onClick={turnRight} className='next'><img src={arrowLeft}></img></button>
                                     </figure>
-                                    {/* pages on the right */}
+
+                                    {/* Back page (pages on the right) */}
                                     <figure className="back" id={index === 0 ? 'back-cover' : ''}>
-                                        {/* page content */}
+                                        {/* Page content */}
                                         <div className='fb-page'>
                                             <h1 className={pages[2][index].class}>{pages[2][index].title}</h1>
                                             <img src={pages[2][index].icon ? pages[2][index].icon : pages[2][index].image} className={pages[2][index].icon ? 'front-icon' : 'fb-image'}></img>
 
-                                            {/* תפקידי הטופס page content */}
+                                            {/* Page content for the last page */}
                                             {
-                                                index === 1 ? (
+                                                index === 1 && (
                                                     <div className='back-roles'>
                                                         {
-                                                            pages[2][index].description.map((d, index1) => {
-                                                                return (
-                                                                    <div key={`d_${index1}`} className='d-container'>
-                                                                        <div className='d-number'>{`0${index1 + 1}`}</div>
-                                                                        <div className='d-text'>{d}</div>
-                                                                    </div>
-                                                                )
-                                                            })
+                                                            pages[2][index].description.map((d, index1) => (
+                                                                <div key={`d_${index1}`} className='d-container'>
+                                                                    <div className='d-number'>{`0${index1 + 1}`}</div>
+                                                                    <div className='d-text'>{d}</div>
+                                                                </div>
+                                                            ))
                                                         }
                                                     </div>
-                                                ) : <></>
+                                                )
                                             }
                                         </div>
                                         <button onClick={turnLeft} className='previous'><img src={arrowRight}></img></button>
@@ -262,11 +260,6 @@ export default function Book({ setFinish }) {
                         })
                     }
                 </div>
-
-                {/* <div className='buttons-container'>
-                    <button onClick={turnLeft} className='previous' style={{visibility: length === elementsRight.length + 1 ? 'hidden' : 'visible'}}><img src={arrowRight}></img></button>
-                    <button onClick={turnRight} className='next' style={{visibility: length === -1 ? 'hidden' : 'visible'}}><img src={arrowLeft}></img></button>
-                </div> */}
                 <br />
             </div>
         </div>

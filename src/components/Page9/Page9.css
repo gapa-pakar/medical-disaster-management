@@ -1,3 +1,4 @@
+/***** page 9 part 2 *****/
 .page9-container {
     margin-right: 3rem;
     margin-top: 1rem;
@@ -81,6 +82,7 @@
     font-size: 0.9rem;
 }
 
+/***** page 9 subjects *****/
 .page9-subjects-container {
     display: flex;
     flex-direction: column;
@@ -193,9 +195,7 @@ strong {
     margin-right: 4rem;
 }
 
-
-/* ****** */
-/***** page9 subtopic *****/
+/***** page 9 subtopic *****/
 .page9-subtopic-container {
     box-sizing: border-box;
     margin-top: 9rem;
@@ -468,7 +468,6 @@ strong {
 }
 
 @media only screen and (max-width: 1000px) and (max-height: 384px) {
-
     /***** page 9 *****/
     .page9-subjects-container {
         margin-top: 0rem;
