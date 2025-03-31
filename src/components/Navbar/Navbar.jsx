@@ -6,7 +6,7 @@ import arrowLeft from '../../assets/navbar-icons/arrow-left.svg'
 
 export default function Navbar(props) {
 
-    const { Subjects, currentSubject, setCurrentSubject, selectedPage, setFinish } = props
+    const { Subjects, currentSubject, setCurrentSubject, selectedPage, setFinish, setCountPages } = props
 
     const [showMenu, setShowMenu] = useState(false); // State to toggle the menu visibility
 
@@ -86,15 +86,15 @@ export default function Navbar(props) {
                                     return (
                                         <div key={subject.id} className='menu-titles'>
                                             {/* open menu text link */}
-                                            {showMenu ? (<Link href={subject.id <= localStorage.currentPage || selectedPage === 2 ? subject.link : ''} className='title'>{subject.title}
+                                            {showMenu ? (<Link setCountPages={setCountPages} href={subject.id <= localStorage.currentPage || selectedPage === 2 ? subject.link : ''} className='title'>{subject.title}
                                                 {subject.subtitle ? // Subtitle link
-                                                    <Link href={subject.id <= localStorage.currentPage || selectedPage === 2 ? subject.subtitleLink : ''} className='subtitle-link'>
+                                                    <Link setCountPages={setCountPages} href={subject.id <= localStorage.currentPage || selectedPage === 2 ? subject.subtitleLink : ''} className='subtitle-link'>
                                                         <p className='subtitle'>{subject.subtitle}</p>
                                                     </Link> : ""}
                                             </Link>) : <></>}
 
                                             {/* closed menu icons link */}
-                                            <Link href={subject.id <= localStorage.currentPage || selectedPage === 2 ? subject.link : ''} disabled><div className='icon-container' style={{ backgroundColor: subject.id <= localStorage.currentPage || selectedPage === 2 ? subject.color : '#a6a6a6' }}>
+                                            <Link setCountPages={setCountPages} href={subject.id <= localStorage.currentPage || selectedPage === 2 ? subject.link : ''} disabled><div className='icon-container' style={{ backgroundColor: subject.id <= localStorage.currentPage || selectedPage === 2 ? subject.color : '#a6a6a6' }}>
                                                 <img src={subject.icon} className='icon' /> {/* Subject icon */}
                                             </div></Link>
                                         </div>

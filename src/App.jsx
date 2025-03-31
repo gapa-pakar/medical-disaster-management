@@ -117,8 +117,6 @@ const pathArray = ['/', '/subjectsPage', '/finishPage'];
 function App() {
   // variables
   const [countPages, setCountPages] = useState(0);
-  // const [firstPage, setFirstPage] = useState(false);
-  // const [lastPage, setLastPage] = useState(false);
   const [maxPages, setMaxPages] = useState(0);
   const [linkName, setLinkName] = useState("");
   const [finish, setFinish] = useState(true);
@@ -182,22 +180,20 @@ function App() {
           </div>
         )}
 
-        {/* start and finish */}
         <div>
-          <Route path="/" >
-            <OpeningPage />
-          </Route>
-          <Route path="/subjectsPage">
-            <SubjectsPage Subjects={Subjects} />
-          </Route>
-          <Route path="/finishPage">
-            <FinishPage Subjects={Subjects} />
-          </Route>
-        </div>
+          <div className={!pathArray.includes(window.location.pathname) ? 'split right' : ''}>
+            {/* start and finish */}
+            <Route path="/" >
+              <OpeningPage />
+            </Route>
+            <Route path="/subjectsPage">
+              <SubjectsPage Subjects={Subjects} />
+            </Route>
+            <Route path="/finishPage">
+              <FinishPage Subjects={Subjects} />
+            </Route>
 
-        {/* pages with navbar */}
-        <div>
-          <div className='split right' style={{ display: !pathArray.includes(window.location.pathname) ? "block" : "none" }}>
+            {/* pages with navbar */}
             <Route path="/page1" >
               <Page1 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
             </Route>
@@ -236,7 +232,7 @@ function App() {
             </Route>
 
             {/* arrows */}
-            <div className='arrows'>
+            <div className={!pathArray.includes(window.location.pathname) ? 'arrows' : 'no-display'}>
               <button style={{ visibility: finish || selectedPage === 2 ? "visible" : "hidden" }}
                 onClick={nextSlide}>
                 <div className='next-arrow'>
@@ -264,8 +260,16 @@ function App() {
 
           {/* navbar */}
           {
-            !pathArray.includes(window.location.pathname) ?
-              <Navbar className="split left" Subjects={Subjects} currentSubject={currentSubject} setCurrentSubject={setCurrentSubject} selectedPage={selectedPage} setFinish={setFinish}></Navbar> : <></>
+            !pathArray.includes(window.location.pathname) && (
+              <Navbar
+                Subjects={Subjects}
+                currentSubject={currentSubject}
+                setCurrentSubject={setCurrentSubject}
+                selectedPage={selectedPage}
+                setFinish={setFinish}
+                setCountPages={setCountPages}
+              ></Navbar>
+            )
           }
         </div>
       </div>

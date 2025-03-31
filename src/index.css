@@ -54,7 +54,6 @@ a {
 /***** pages screen *****/
 .split {
   height: var(--dynamic-height);
-  width: 94vw;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -78,17 +77,18 @@ a {
 }
 
 /* Control the left side */
-.left {
+/* .left {
   left: 0;
-  background-color: #111;
-}
+  background-color: #3b3838;
+  width: 6vw;
+} */
 
 /* Control the right side */
 .right {
   right: 0;
   background-color: #f2f2f2;
+  width: 94vw;
 }
-
 
 .navbar {
   display: flex;

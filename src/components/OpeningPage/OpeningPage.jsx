@@ -9,6 +9,7 @@ import connectionSignal from '../../assets/navbar-icons/connection-signal.svg'
 import megaphone from '../../assets/navbar-icons/megaphone.svg'
 import assessment from '../../assets/navbar-icons/assessment.svg'
 import chat from '../../assets/navbar-icons/chat-help.svg'
+import logo from '../../assets/logo.svg'
 
 // Subjects array holding information about each subject's icon, color, and border color
 const subjects = [
@@ -66,6 +67,12 @@ export default function OpeningPage() {
 
     return (
         <div className='home-page'>
+
+            {/* logo */}
+            <div className='logo'>
+                <img src={logo}/>
+            </div>
+
             <div className='home-page-subjects'>
                 {/* Circle and triangle layout for the first subject area */}
                 <div className='subjects-circle-1'>
