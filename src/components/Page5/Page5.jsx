@@ -43,7 +43,7 @@ const reportMethods = [
                 'דרישת תגבור סד"כ',
                 'קשר רציף עם מפקד מד"א'
             ],
-        color: '#5fb3ef'
+        color: '#2171b5'
     },
     {
         id: "02",
@@ -59,7 +59,7 @@ const reportMethods = [
                 'דרישת צר"פ',
                 'דרישת תגבור סד"כ'
             ],
-        color: '#0bc9d5'
+        color: '#4292c6'
     },
     {
         id: "01",

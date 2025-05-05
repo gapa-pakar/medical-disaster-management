@@ -3,45 +3,12 @@ import React from 'react'
 // Array containing the introductory information for the event managers (מנהלי אירוע)
 const managersIntro = [
     {
-        id: 7,
-        title: 'משולש זה"ב',
-        description: 'סבב נפגעים לכודים אשר מתבצע ע"י 3 גורמים מקצועיים',
-        additional: ["רופא", "קצין חילוץ", "מהנדס"],
-        color: "#10214c",
+        id: 1,
+        title: "אירוע רפואי מורכב",
+        description: "אירוע רפואי בו נדרשת התערבות מצילת חיים לבלתי יציבים.",
+        color: "#6baed6",
         direction: "up",
-        number: "07"
-    },
-    {
-        id: 6,
-        title: "דרישה רפואית",
-        description: "דיווח אשר בתכליתו מקדם או משפר את הטיפול הרפואי בנפגע.",
-        color: "#08306b",
-        direction: "down",
-        number: "06",
-    },
-    {
-        id: 5,
-        title: "שיקולי קדימות פינוי",
-        description: "החלטה שקובעת מפונה ראשון ואילך תלוי מצב הנפגעים.",
-        color: "#084081",
-        direction: "up",
-        number: "05"
-    },
-    {
-        id: 4,
-        title: "שיקולי קדימות טיפול",
-        description: "החלטה שקובעת מטופל ראשון ואילך תלוי מצב הנפגעים.",
-        color: "#08519c",
-        direction: "down",
-        number: "04",
-    },
-    {
-        id: 3,
-        title: "תמונת מצב",
-        description: "ריכוז כלל ממצאי האירוע לכדי דיווח אחד מתכלל.",
-        color: "#2171b5",
-        direction: "up",
-        number: "03",
+        number: "01",
     },
     {
         id: 2,
@@ -52,13 +19,46 @@ const managersIntro = [
         number: "02",
     },
     {
-        id: 1,
-        title: "אירוע רפואי מורכב",
-        description: "אירוע רפואי בו נדרשת התערבות מצילת חיים לבלתי יציבים.",
-        color: "#6baed6",
+        id: 3,
+        title: "תמונת מצב",
+        description: "ריכוז כלל ממצאי האירוע לכדי דיווח אחד מתכלל.",
+        color: "#2171b5",
         direction: "up",
-        number: "01",
-    }
+        number: "03",
+    },
+    {
+        id: 4,
+        title: "שיקולי קדימות טיפול",
+        description: "החלטה שקובעת מטופל ראשון ואילך תלוי מצב הנפגעים.",
+        color: "#08519c",
+        direction: "down",
+        number: "04",
+    },
+    {
+        id: 5,
+        title: "שיקולי קדימות פינוי",
+        description: "החלטה שקובעת מפונה ראשון ואילך תלוי מצב הנפגעים.",
+        color: "#084081",
+        direction: "up",
+        number: "05"
+    },
+    {
+        id: 6,
+        title: "דרישה רפואית",
+        description: "דיווח אשר בתכליתו מקדם או משפר את הטיפול הרפואי בנפגע.",
+        color: "#08306b",
+        direction: "down",
+        number: "06",
+    },
+    {
+        id: 7,
+        title: 'משולש זה"ב',
+        description: 'סבב נפגעים לכודים אשר מתבצע ע"י 3 גורמים מקצועיים',
+        additional: ["רופא", "קצין חילוץ", "מהנדס"],
+        color: "#10214c",
+        direction: "up",
+        number: "07"
+    },
 ]
 
 export default function Page1Part1() {

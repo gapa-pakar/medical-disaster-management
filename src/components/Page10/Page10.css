@@ -129,20 +129,23 @@
 }
 
 .p10-correct-m {
-    color: #548235; 
+    color: #548235;
 }
 
 .p10-wrong-m {
     color: #ff5757;
 }
 
-.p10-wrong-m, .p10-correct-m {
+.p10-wrong-m,
+.p10-correct-m {
     font-size: 1.2rem;
     text-align: center;
 }
+
 /**********/
 
-@media only screen and (max-width: 1480px) { 
+@media only screen and (max-width: 1480px) {
+
     /***** page 10 part 1 *****/
     .page10-container {
         top: 50%;
@@ -167,7 +170,7 @@
 
     /***** page 10 question *****/
     .p10-q-title {
-        font-size: xx-small;
+        font-size: 1.5rem;
     }
 
     .p10-q-container {
@@ -187,7 +190,14 @@
         font-size: 1.2rem;
     }
 
-    .p10-wrong-m, .p10-correct-m {
+    .p10-wrong-m,
+    .p10-correct-m {
         font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .p10-q-title {
+        font-size: xx-small;
     }
 }

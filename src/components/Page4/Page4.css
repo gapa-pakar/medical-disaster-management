@@ -239,12 +239,12 @@
 @media only screen and (max-width: 1480px) {
     /***** page 4 part 1 *****/
     .card-title {
-        font-size: 3rem;
+        font-size: 3.2rem;
         margin-bottom: 1rem;
     }
 
     .card-description {
-        font-size: 2rem;
+        font-size: 1.9rem;
         line-height: 1.5;
     }
 
@@ -264,7 +264,7 @@
     }
 
     .item-container {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         width: 36rem;
         padding: 0rem 1rem;
     }
@@ -295,6 +295,20 @@
         font-size: x-small;
     }
     /**********/
+}
+
+@media only screen and (max-width: 1000px) {
+    .card-description {
+        font-size: 2rem;
+    }
+
+    .card-title {
+        font-size: 3rem;
+    }
+
+    .item-container {
+        font-size: 1.7rem;
+    }
 }
 
 @media only screen and (max-width: 720px) {

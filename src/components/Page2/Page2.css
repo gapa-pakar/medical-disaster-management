@@ -320,20 +320,28 @@
         font-size: x-small;
     }
 
-    #title_04 {
-        width: 23rem;
+    .briefing-description {
+        font-size: 1.25rem;
+        margin: 0.8rem 0rem;
     }
 
-    .briefing-description {
-        font-size: x-small;
-        padding: 0;
-        margin: 0.8rem 0rem;
+    #title_04 {
+        width: 24rem;
+    }
+    
+    .briefing-card {
+        width: 32rem;
     }
 
     .briefing-text-container {
         text-align: center;
-        width: 34rem;
+        width: 29rem;
     }
+
+    /* .briefing-text-container {
+        text-align: center;
+        width: 34rem;
+    } */
 
     #b_04,
     #b_05,
@@ -372,7 +380,7 @@
     }
 
     .page2-p {
-        font-size: xx-small;
+        font-size: 1.6rem;
         line-height: 1.5;
     }
 
@@ -442,29 +450,24 @@
     /**********/
 }
 
+@media only screen and (max-width: 1000px) {
+    .page2-p {
+        font-size: xx-small;
+        line-height: 1.5;
+    }
+
+    .briefing-description {
+        font-size: 1.2rem;
+        padding: 0;
+    }
+}
+
 @media only screen and (max-width: 812px) {
 
     /***** page 2 part 1 *****/
-    .briefing-description {
-        font-size: 1.4rem;
-    }
-
     .briefing-number,
     .briefing-title {
         font-size: xx-small;
-    }
-
-    #title_04 {
-        width: 24rem;
-    }
-
-    .briefing-card {
-        width: 32rem;
-    }
-
-    .briefing-text-container {
-        text-align: center;
-        width: 29rem;
     }
     /**********/
 }

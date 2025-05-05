@@ -345,10 +345,6 @@ ul {
 
 @media only screen and (max-width: 1480px) {
     /***** page 3 part 1 *****/
-    .medical-order-container {
-        margin-top: 0rem;
-    }
-
     .triangle-down {
         margin: 0.6rem 0rem;
     }
@@ -378,7 +374,7 @@ ul {
     }
 
     .medical-roles-title {
-        font-size: 1.9rem;
+        font-size: 1.6rem;
         padding-right: 3rem;
         width: 37rem;
         margin-bottom: 0.2rem;
@@ -467,6 +463,16 @@ ul {
         display: none;
     }
     /**********/
+}
+
+@media only screen and (max-width: 1000px) {
+    .medical-order-container {
+        margin-top: 0rem;
+    }
+
+    .medical-roles-title {
+        font-size: 1.9rem;
+    }
 }
 
 @media only screen and (max-width: 750px) {

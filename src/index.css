@@ -948,7 +948,7 @@ a {
   }
 
   .snapshot-subject-div-2 {
-    font-size: xx-small;
+    font-size: x-small;
     width: 15rem;
     padding: 1rem;
   }
@@ -1022,6 +1022,18 @@ a {
 
   .answer-text-5 li {
     font-size: 1.1rem;
+    margin-right: -4rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  /***** drag and drop  *****/
+  .snapshot-subject-div-2 {
+    font-size: xx-small;
+  }
+
+  /***** open question  *****/
+  .answer-text-5 li {
     margin-right: -5rem;
   }
 }

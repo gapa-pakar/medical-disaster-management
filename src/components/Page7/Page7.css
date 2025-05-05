@@ -185,11 +185,11 @@
     }
 
     .snapshot-title {
-        font-size: x-small;
+        font-size: 1.6rem;
     }
 
     .snapshot-description-container {
-        font-size: xx-small;
+        font-size: small;
         margin-right: -4rem;
     }
 
@@ -197,9 +197,12 @@
         width: 16rem;
     }
 
-    .snapshot-text,
+    .snapshot-text {
+        font-size: 1.5rem;
+    }
+
     .snapshot-subject-number {
-        font-size: xx-small;
+        font-size: small;
     }
 
     .snapshot-subject-description {
@@ -231,10 +234,31 @@
 
     .d-roles-container,
     .word-bank-title {
-        font-size: x-small;
+        font-size: small;
+        margin-bottom: 3.5rem;
     }
 
     .snapshot-subject-div-1 {
         width: 17rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .d-roles-container,
+    .word-bank-title {
+        font-size: x-small;
+    }
+
+    .snapshot-title {
+        font-size: x-small;
+    }
+
+    .snapshot-description-container {
+        font-size: xx-small;
+    }
+
+    .snapshot-text,
+    .snapshot-subject-number {
+        font-size: xx-small;
     }
 }

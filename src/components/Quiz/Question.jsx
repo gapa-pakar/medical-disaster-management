@@ -100,7 +100,7 @@ export default function Question(props) {
                                 <div className='line' id='line-page2-part2'></div>
                             </div>
                             {page === 2 &&
-                                (<div className='reminder-line' style={{ backgroundImage: "linear-gradient(to right, #10214c, #02aecc)" }}></div>)
+                                (<div className='reminder-line' style={{ backgroundImage: "linear-gradient(to right, #084081, #2171b5)" }}></div>)
                             }
 
                             {/* Render briefing info (reminders) */}
