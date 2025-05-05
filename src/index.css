@@ -865,7 +865,7 @@ a {
   text-align: center;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1480px) {
   html {
     font-size: calc((0.9vh + 0.9vw) * 0.6);
   }
