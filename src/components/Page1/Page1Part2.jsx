@@ -14,7 +14,7 @@ const trianglesInfo = [
         description: "נועד לקבוע את שיטת הפעולה ודרך החילוץ במוקד חילוץ אחד.",
         more: "מתבצע על 1-2 לכודים במרחק של עד 7 מטרים עם קשר עין ביניהם",
         instructions: ["מתבצע במוקד חילוץ אחד", "חובש ומעלה", 'מפקד ברמת מ"כ ומעלה', "מהנדס מחלקתי ומעלה"],
-        color: "#0a5684",
+        color: "#08519c",
         icons: [circle, medicalKit, document, engineer]
     },
     {
@@ -22,7 +22,7 @@ const trianglesInfo = [
         title: "משולש אסטרטגי",
         description: 'נועד לקבוע את סדר חילוץ הלכודים הגלויים וחלוקת המשאבים (סד"כ ואמצעים) באירוע.',
         instructions: ["מתבצע על כלל הלכודים באתר", "גורם רפואי בכיר באתר", "מפקד האתר", "מהנדס בכיר באתר"],
-        color: "#357b8f",
+        color: "#4292c6",
         icons: [circle, medicalKit, document, engineer]
     }
 ]

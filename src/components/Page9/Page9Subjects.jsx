@@ -28,7 +28,7 @@ export default function Page9Subjects(props) {
         <div className='page9-subjects-container'>
             {/* Displaying the subject title with a dynamic background color */}
             <div className='page9-subjects-title' style={{ backgroundColor: info.color }}>{info.title}</div>
-            <button className='page9-subjects-button' onClick={() => setShowSubject(false)}>בחזרה לעמוד הקודם</button>
+            {/* <button className='page9-subjects-button' onClick={() => setShowSubject(false)}>בחזרה לעמוד הקודם</button> */}
 
             {/* Rendering a table with dynamic columns and rows */}
             <table className='table'>

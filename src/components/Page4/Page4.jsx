@@ -30,8 +30,8 @@ const ManagersInterfaces = [
             "בקשות מהפלוגה יש לעשות זאת דרך הקשר הרלוונטי (כוח אלונקאים, מלווה לפצוע, חיפוק וכו')."
         ],
         icon: icon2,
-        color: '#0abfc8',
-        lightColor: '#0bc9d5'
+        color: '#4292c6',
+        lightColor: '#589dcc'
     },
     {
         title: 'מט"ב',
@@ -41,8 +41,8 @@ const ManagersInterfaces = [
             'בעזרת המט"ב ניתן להבין את מצב הפצוע וכך להחליט ביחד על קדימות הטיפול והפינוי.'
         ],
         icon: icon3,
-        color: '#02b9d8',
-        lightColor: '#02c4e4'
+        color: '#2171b5',
+        lightColor: '#2c8ad8'
     }
 ]
 
@@ -126,7 +126,7 @@ export default function Page4(props) {
         setLinkName("/page5");
 
         // Check if the screen width is under 1000px to adjust UI for mobile
-        if (window.innerWidth < 1000) { 
+        if (window.innerWidth < 1480) { 
             setIsMobile(true);
         }
     }, []);

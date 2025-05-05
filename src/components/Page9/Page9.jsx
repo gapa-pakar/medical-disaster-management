@@ -298,7 +298,7 @@ const info = [
 
 export default function Page9(props) {
 
-    const { countPages, setMaxPages, setLinkName } = props
+    const { countPages, setMaxPages, setLinkName, nextSlide } = props
 
     // State to control the visibility of the subject information and which subject to show
     const [showSubject, setShowSubject] = useState(false);
@@ -306,65 +306,69 @@ export default function Page9(props) {
 
     // Handle click on a specific evacuation element to display detailed information
     const handleClick = (id) => {
+        nextSlide();
         setSubjectNumber(id - 1)
         setShowSubject(true);
+        setMaxPages(2);
     }
 
     // useEffect hook to set the page's max pages, link name, and reset subject visibility when countPages changes
     useEffect(() => {
-        setMaxPages(1);
         setLinkName("/page9/1");
-        setShowSubject(false);
+
+        if (countPages === 1) {
+            setShowSubject(false);
+            setMaxPages(1);
+        }
     }, [countPages])
 
     return (
         <div>
             <div className='page2-container'>
-                {countPages === 0 ? <Page2Part1 briefingInfo={briefingInfo} titleInfo={titleInfo} arrowsRight={arrowsRight} arrowsLeft={arrowsLeft} page={9} setShowSubject={setShowSubject} /> :
-                    <div>
-                        {
-                            showSubject ?
-                                // If showSubject is true, render the Page9Subjects component
-                                <Page9Subjects info={info[subjectNumber]} setShowSubject={setShowSubject} /> : (
+                {
+                    countPages === 0 ? (
+                        <Page2Part1 briefingInfo={briefingInfo} titleInfo={titleInfo} arrowsRight={arrowsRight} arrowsLeft={arrowsLeft} page={9} setShowSubject={setShowSubject} />
+                    ) : countPages === 1 ? (
+                        <div>
+                            {/* // If showSubject is false, render the main page content */}
+                            <div className='page9-container'>
+                                <div className='page2-p'>אמצעי הפינוי יבחר על ידי המפקד הרפואי והאגמ״י על פי זמינות האמצעים, אופי הפציעה, מצבו של הנפגע,<br></br>הצורך בליווי הנפגע על ידי מט״ב, בית החולים הרלוונטי ושיקולים נוספים.</div>
+                                <div className='line' id='line-page9-1'></div>
+                                <div className='more-circle'>לחצו על <br></br>הכפתורים<br></br> למידע נוסף</div>
 
-                                    // If showSubject is false, render the main page content
-                                    <div className='page9-container'>
-                                        <div className='page2-p'>אמצעי הפינוי יבחר על ידי המפקד הרפואי והאגמ״י על פי זמינות האמצעים, אופי הפציעה, מצבו של הנפגע,<br></br>הצורך בליווי הנפגע על ידי מט״ב, בית החולים הרלוונטי ושיקולים נוספים.</div>
-                                        <div className='line' id='line-page9-1'></div>
-                                        <div className='more-circle'>לחצו על <br></br>הכפתורים<br></br> למידע נוסף</div>
-
-                                        {/* Container for evacuation info */}
-                                        <div className='evacuation-container'>
-                                            {
-                                                // Map through evacuationInfo array to display evacuation elements
-                                                evacuationInfo.map((element, index) => (
-                                                    <div key={`element_${index}`} className='evacuation-container1' >
-                                                        <div className='evacuation-title'>{element.title}</div>
-                                                        <div>
-                                                            {
-                                                                // For each element in the description array, display the title and subtitle if available
-                                                                element.description.map((element1, index1) => (
-                                                                    <div key={`element1_${index1}`} className='evacuation-text-container'>
-                                                                        <div className='evacuation-text' style={{ backgroundColor: element1.color }} onClick={() => handleClick(element1.id)}>{element1.title}
-                                                                            {
-                                                                                // If a subtitle exists, display it
-                                                                                element1.subtitle && (
-                                                                                    <div>{element1.subtitle}</div>
-                                                                                )
-                                                                            }
-                                                                        </div>
-                                                                    </div>
-                                                                ))
-                                                            }
-                                                        </div>
-                                                    </div>
-                                                ))
-                                            }
-                                        </div>
-                                    </div>
-                                )
-                        }
-                    </div>
+                                {/* Container for evacuation info */}
+                                <div className='evacuation-container'>
+                                    {
+                                        // Map through evacuationInfo array to display evacuation elements
+                                        evacuationInfo.map((element, index) => (
+                                            <div key={`element_${index}`} className='evacuation-container1' >
+                                                <div className='evacuation-title'>{element.title}</div>
+                                                <div>
+                                                    {
+                                                        // For each element in the description array, display the title and subtitle if available
+                                                        element.description.map((element1, index1) => (
+                                                            <div key={`element1_${index1}`} className='evacuation-text-container'>
+                                                                <div className='evacuation-text' style={{ backgroundColor: element1.color }} onClick={() => handleClick(element1.id)}>{element1.title}
+                                                                    {
+                                                                        // If a subtitle exists, display it
+                                                                        element1.subtitle && (
+                                                                            <div>{element1.subtitle}</div>
+                                                                        )
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        ))
+                                                    }
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    ) : showSubject &&
+                    // If showSubject is true, render the Page9Subjects component
+                    (<Page9Subjects info={info[subjectNumber]} setShowSubject={setShowSubject} />)
                 }
             </div>
         </div>

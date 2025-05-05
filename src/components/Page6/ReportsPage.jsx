@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 export default function ReportsPage(props) {
 
-    const { reportsInfo, setReportDisplay } = props
+    const { reportsInfo } = props
 
     const [reportIndex, setReportIndex] = useState(null);
 
@@ -13,7 +13,7 @@ export default function ReportsPage(props) {
     }
 
     return (
-        <div>
+        <div className='reports-button-container'>
             <div className='report-page6-container'>
                 {
                     reportsInfo.titles.map((report, index) => {
@@ -81,11 +81,6 @@ export default function ReportsPage(props) {
                     })
                 }
             </div>
-
-            {/* Back Button */}
-            <button className='back-button' style={{ '--hover-color': reportsInfo.color }} onClick={() => setReportDisplay(true)}>
-                <div>בחזרה למסך הקודם</div>
-            </button>
         </div>
     )
 }

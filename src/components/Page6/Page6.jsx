@@ -147,21 +147,29 @@ const info = {
 
 export default function Page6(props) {
 
-  const { countPages, setMaxPages, setLinkName, setFinish } = props
+  const { countPages, setMaxPages, setLinkName, setFinish, nextSlide } = props
 
-  const [reportDisplay, setReportDisplay] = useState(true);
+  const [reportDisplay, setReportDisplay] = useState(false);
   const [report, setReport] = useState("")
 
   // Switch to the appropriate report page
   const reportsPage = (number) => {
-    setReportDisplay(false);
+    nextSlide();
+    setReportDisplay(true);
+    setMaxPages(2);
     setReport(number);
   }
-  
+
   useEffect(() => {
-    setMaxPages(1);
     setLinkName("/page7");
   }, [])
+
+  useEffect(() => {
+    if (countPages === 0) {
+      setReportDisplay(false);
+      setMaxPages(1);
+    }
+  }, [countPages])
 
   return (
     <div>
@@ -169,26 +177,23 @@ export default function Page6(props) {
         {
           countPages === 0 ? (
             <div className='reports-button-container'>
-              {
-                reportDisplay ?
-                  (
-                    <div>
-                      <div className='div-triangle-right-background'>
-                        <div className='div-triangle-right' onClick={() => reportsPage(0)}>
-                          <div>דיווחים באירוע רפואי</div>
-                        </div>
-                      </div>
+              <div>
+                <div className='div-triangle-right-background'>
+                  <div className='div-triangle-right' onClick={() => reportsPage(0)}>
+                    <div>דיווחים באירוע רפואי</div>
+                  </div>
+                </div>
 
-                      <div className='div-triangle-left-background'>
-                        <div className='div-triangle-left' onClick={() => reportsPage(1)}>
-                          <div>דיווחים מפקד חפ"ק אלפא<br></br>בתיאום מקדים</div>
-                          <p>(מועבר בשוע"ל + בקשר)</p>
-                        </div>
-                      </div>
-                    </div>
-                  ) : (<ReportsPage setReportDisplay={setReportDisplay} reportsInfo={reportsInfo[report]}></ReportsPage>)
-              }
+                <div className='div-triangle-left-background'>
+                  <div className='div-triangle-left' onClick={() => reportsPage(1)}>
+                    <div>דיווחים מפקד חפ"ק אלפא<br></br>בתיאום מקדים</div>
+                    <p>(מועבר בשוע"ל + בקשר)</p>
+                  </div>
+                </div>
+              </div>
             </div>
+          ) : countPages === 1 && reportDisplay ? (
+            <ReportsPage reportsInfo={reportsInfo[report]}></ReportsPage>
           ) : <Question briefingInfo={briefingInfo} info={info} wrongBriefing={wrongBriefing} page={6} setFinish={setFinish} />
         }
       </div>

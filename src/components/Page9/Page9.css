@@ -8,6 +8,7 @@
     width: 10rem;
     height: 10rem;
     border-radius: 25rem;
+    border: 2px solid #3b3838;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -410,7 +411,7 @@ strong {
 
 /* ****** */
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1480px) {
 
     /***** page 9 *****/
     .page2-p-title {

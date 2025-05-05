@@ -168,6 +168,10 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    console.log(countPages)
+  }, [countPages])
+
 
   return (
     <>
@@ -210,7 +214,7 @@ function App() {
               <Page5 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
             </Route>
             <Route path="/page6" >
-              <Page6 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+              <Page6 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} nextSlide={nextSlide} />
             </Route>
             <Route path="/page7" >
               <Page7 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
@@ -222,7 +226,7 @@ function App() {
               <Page8Subtopic countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
             </Route>
             <Route path="/page9" >
-              <Page9 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
+              <Page9 countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} nextSlide={nextSlide} />
             </Route>
             <Route path="/page9/1" >
               <Page9Subtopic countPages={countPages} setMaxPages={setMaxPages} setLinkName={setLinkName} setFinish={setFinish} />
@@ -248,7 +252,7 @@ function App() {
               <button onClick={previousSlide}>
                 <div className='previous-arrow'>
                   {countPages === 0 ?
-                    <Link setCountPages={setCountPages} href={window.location.pathname !== '/page1' ? `/page${currentSubject.id - 1}` : '/'}>
+                    <Link setCountPages={setCountPages} href={window.location.pathname !== '/page1' ? `/page${!window.location.pathname.includes('/1') ? currentSubject.id - 1 : currentSubject.id}` : '/'}>
                       <img src={previous} />
                     </Link> :
                     <img src={previous}></img>}
