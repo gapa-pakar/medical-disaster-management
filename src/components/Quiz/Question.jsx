@@ -86,7 +86,9 @@ export default function Question(props) {
 
                                 {/* Video at the question screen */}
                                 <div>
-                                    <video className='video-placing-small' src={info.video} controls preload='auto' type="video/mp4"></video>
+                                    <video className='video-placing-small' controls preload='auto'>
+                                        <source src={info.video} type="video/mp4"></source>
+                                    </video>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +119,9 @@ export default function Question(props) {
                             <div className='video-container'>
                                 {/* Video container with video and next button */}
                                 <div>
-                                    <video className='video-placing' src={info.video} controls preload='auto' type="video/mp4"></video>
+                                    <video className='video-placing' controls preload='auto'>
+                                        <source src={info.video} type="video/mp4"></source>
+                                    </video>
                                 </div>
 
                                 {/* Button to move to the question screen after watching the video */}
@@ -127,6 +131,6 @@ export default function Question(props) {
                         </div>
                     )
             }
-        </div>
+        </div >
     )
 }

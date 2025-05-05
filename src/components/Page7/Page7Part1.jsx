@@ -25,7 +25,7 @@ export default function Page7Part1(props) {
                 {/* Snapshot subjects section */}
                 <div className='snapshot-subjects-container'>
                     {
-                        snapshotDetails.subjects.map((subject, index1) => {
+                        snapshotDetails.subjectsInOrder.map((subject, index1) => {
                             return (
                                 <div key={`subject_${index1}`} id={`subject${index1 + 1}`}>
                                     <div className='snapshot-subject-div' style={{ borderColor: subject.color }}>

@@ -14,7 +14,7 @@ export default function Quiz(props) {
         correctAnswers: 0, // Counts the correct answers
         wrongAnswers: 0, // Counts the wrong answers
     });
-    const [isClicked, setIsClicked] = useState(false); // Prevents multiple clicks on "Next" button
+    const [isClicked, setIsClicked] = useState(true); // Prevents multiple clicks on "Next" button
     const [isWaiting, setIsWaiting] = useState(false); // Prevents interaction until the result is shown
 
     const { questions } = quiz // Destructure questions from quiz prop

@@ -20,7 +20,7 @@ export default function SubjectsPage(props) {
                             <div key={index}>
                                 {/* Link component wrapping each subject item for navigation */}
                                 <Link href={element.link} className='link-style'>
-                                    <div className='subject-title-container' id='title-container-1' style={{ backgroundColor: element.color }}>
+                                    <div className='subject-title-container opacity-class' id='title-container-1' style={{ backgroundColor: element.color }}>
                                         <div className='half-circle-container' id='half-circle-1'>
                                             <img className='title-icon' style={{ width: '2.6rem' }} src={element.icon}></img>
                                         </div>

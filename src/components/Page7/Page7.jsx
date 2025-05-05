@@ -11,14 +11,13 @@ const snapshotDetails = {
         "מכלול הנתונים (הגורמים המשפיעים) הדרושים לשם תכנון או לשם ניהול שוטף של משימה."
     ],
     additionalText: "על סמך נתונים אלה יקבל המפקד החלטות לגבי דרכי הפעולה הנדרשות לביצוע המשימה.",
-    subjects: [
+    subjectsInOrder: [
         {
             id: 1,
             title: "איסוף נתונים",
             description: "הצגת הדרישות לנתונים ואיסוף נתונים בצורה יזומה מן המקורות השונים.",
             color: "#3877c0",
             colorAfter: "#1a3b70",
-            answer: 0
         },
         {
             id: 2,
@@ -26,7 +25,6 @@ const snapshotDetails = {
             description: "מיונו, אימותו, הערכת אמינותו ועדכניותו.",
             color: "#1a3b70",
             colorAfter: "#3877c0",
-            answer: 1,
         },
         {
             id: 3,
@@ -34,15 +32,46 @@ const snapshotDetails = {
             description: "זיהוי העובדות הנכונות מתוך כלל הידיעות.",
             color: "#3877c0",
             colorAfter: "#1a3b70",
-            answer: 2
         },
         {
             id: 4,
             title: "קבלת החלטות",
             description: 'קבלת החלטות על רלוונטיות החומר וחשיבותו, וכך על אופן ועיתוי שילובו כנתון ב"תמונת המצב".',
             color: "#1a3b70",
-            answer: 3
         }
+    ],
+    subjects: [
+        {
+            id: 1,
+            title: "עיבוד החומר",
+            description: "מיונו, אימותו, הערכת אמינותו ועדכניותו.",
+            color: "#3877c0",
+            colorAfter: "#1a3b70",
+            answer: 1,
+        },
+        {
+            id: 2,
+            title: "איסוף נתונים",
+            description: "הצגת הדרישות לנתונים ואיסוף נתונים בצורה יזומה מן המקורות השונים.",
+            color: "#1a3b70",
+            colorAfter: "#3877c0",
+            answer: 0
+        },
+        {
+            id: 3,
+            title: "קבלת החלטות",
+            description: 'קבלת החלטות על רלוונטיות החומר וחשיבותו, וכך על אופן ועיתוי שילובו כנתון ב"תמונת המצב".',
+            color: "#3877c0",
+            colorAfter: "#1a3b70",
+            answer: 3
+        },
+        {
+            id: 4,
+            title: "ניתוח החומר",
+            description: "זיהוי העובדות הנכונות מתוך כלל הידיעות.",
+            color: "#1a3b70",
+            answer: 2
+        },
     ]
 }
 
