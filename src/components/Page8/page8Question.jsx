@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from 'react'
 
 // Importing assets (images)
-import image1 from '../../assets/page8-icons/1.jpg'
-import image2 from '../../assets/page8-icons/2.jpg'
-import image3 from '../../assets/page8-icons/3.jpg'
-import image4 from '../../assets/page8-icons/4.jpg'
-import image5 from '../../assets/page8-icons/5.jpg'
+import image1 from '../../assets/page8-icons/1.webp'
+import image2 from '../../assets/page8-icons/2.webp'
+import image3 from '../../assets/page8-icons/3.webp'
+import image4 from '../../assets/page8-icons/4.webp'
+import image5 from '../../assets/page8-icons/5.webp'
 
 // Array containing information for the pictures and their paths
 const pictures = [

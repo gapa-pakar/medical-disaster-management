@@ -9,7 +9,7 @@
 
 .page2-p-container {
     margin-right: 3rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .page2-p {
@@ -49,7 +49,7 @@
 
 .page9-briefing-container {
     height: 35rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .briefings-container {
@@ -354,6 +354,10 @@
         top: 54%;
     }
 
+    .page9-briefing-container {
+        margin-top: 2rem;
+    }
+
     /***** video question intro *****/
     .reminder-line {
         top: 10.7rem;
@@ -372,14 +376,15 @@
 
     /***** video question *****/
     .video-question-title,
+    .check-yourself-button,
     .button-yn,
     .video-yn-buttons div,
     .video-text-question,
     .answer-text {
-        font-size: x-small;
+        font-size: 1.4rem;
     }
 
-    .page2-p {
+    .page2-p, .page2-p-title {
         font-size: 1.6rem;
         line-height: 1.5;
     }
@@ -459,6 +464,19 @@
     .briefing-description {
         font-size: 1.2rem;
         padding: 0;
+    }
+
+    /***** video question *****/
+    .video-question-title,
+    .button-yn,
+    .video-yn-buttons div,
+    .video-text-question,
+    .answer-text {
+        font-size: x-small;
+    }
+
+    .check-yourself-button {
+        font-size: 1rem;
     }
 }
 

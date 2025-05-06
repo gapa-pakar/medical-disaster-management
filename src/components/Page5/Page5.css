@@ -643,11 +643,11 @@
     }
 
     .report-title {
-        font-size: small;
+        font-size: 2rem;
     }
 
     .report-text-container:nth-child(1) {
-        font-size: xx-small;
+        font-size: x-small;
     }
 
     .report-side-title {
@@ -708,4 +708,15 @@
 
     /**********/
 
+}
+
+@media only screen and (max-width: 1000px) {
+     /***** page 5 part 2 *****/
+    .report-title {
+        font-size: small;
+    }
+
+    .report-text-container:nth-child(1) {
+        font-size: xx-small;
+    }
 }

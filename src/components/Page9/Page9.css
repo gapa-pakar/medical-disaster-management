@@ -432,7 +432,7 @@ strong {
 
     /***** page 9 subtopic book *****/
     .page9-subtopic-container {
-        margin-top: 0rem;
+        margin-top: 5rem;
     }
 
     .book-section>.book-container {
@@ -440,7 +440,8 @@ strong {
         width: 56rem;
     }
 
-    .next, .previous {
+    .next,
+    .previous {
         top: 34rem;
     }
 
@@ -461,7 +462,9 @@ strong {
         font-size: 1.4rem;
     }
 
-    .d-container, .d-number, .stage-d {
+    .d-container,
+    .d-number,
+    .stage-d {
         font-size: 1.4rem;
     }
 
@@ -470,7 +473,8 @@ strong {
         margin-bottom: 2rem;
     }
 
-    #th, #td {
+    #th,
+    #td {
         font-size: 1rem;
     }
 }
@@ -491,9 +495,15 @@ strong {
     .evacuation-text div {
         font-size: 0.9rem;
     }
+
+    /***** page 9 subtopic book *****/
+    .page9-subtopic-container {
+        margin-top: 0rem;
+    }
 }
 
 @media only screen and (max-width: 1000px) and (max-height: 384px) {
+
     /***** page 9 *****/
     .page9-subjects-container {
         margin-top: 0rem;

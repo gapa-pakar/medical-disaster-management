@@ -330,7 +330,7 @@
 
 @media only screen and (max-width: 1480px) {
     .report-description-page6 {
-        font-size: xx-small;
+        font-size: x-small;
         width: 74rem;
     }
 
@@ -364,7 +364,7 @@
     }
 
     .report-details-title, .audio-title {
-        font-size: xx-small;
+        font-size: x-small;
     }
 
     .report-details-text {
@@ -388,5 +388,14 @@
 
     .div-triangle-left p {
         font-size: 1.2rem;
+    }
+
+    .report-description-page6 {
+        font-size: xx-small;
+        width: 74rem;
+    }
+
+    .report-details-title, .audio-title {
+        font-size: xx-small;
     }
 }
