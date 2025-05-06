@@ -3,13 +3,15 @@ import React, { useEffect, useRef, useState } from 'react'
 import './Page9.css'
 
 // Importing assets
-import document from '../../assets/page9-icons/document.svg'
+import documentIcon from '../../assets/page9-icons/document-icon.svg'
 import page1 from '../../assets/page9-icons/1.jpg'
 import page2 from '../../assets/page9-icons/2.jpg'
 import page3 from '../../assets/page9-icons/3.jpg'
 import page4 from '../../assets/page9-icons/4.jpg'
 import arrowRight from '../../assets/page9-icons/arrow-right-circle.svg'
 import arrowLeft from '../../assets/page9-icons/arrow-left-circle.svg'
+import document from '../../assets/page9-icons/document.pdf'
+import downloadIcon from '../../assets/page9-icons/download-icon.svg'
 
 // Array containng information of the book pages
 const pages = [
@@ -58,7 +60,7 @@ const pages = [
             title: "טופס 101",
             class: "side1",
             side: "front",
-            icon: document
+            icon: documentIcon
         }
     ],
     [ // back page details
@@ -261,6 +263,13 @@ export default function Book({ setFinish }) {
                     }
                 </div>
                 <br />
+            </div>
+
+            <div className='download-document'>
+                <a href={document} download='טופס 101' className='download-container'>
+                    <img src={downloadIcon} alt='download' className='download-icon'/>
+                </a>
+                <p>להורדת הטופס</p>
             </div>
         </div>
     )

@@ -168,11 +168,6 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(countPages)
-  }, [countPages])
-
-
   return (
     <>
       <div>

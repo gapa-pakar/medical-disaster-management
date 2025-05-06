@@ -651,7 +651,7 @@
     }
 
     .report-side-title {
-        font-size: x-small;
+        font-size: 1.4rem;
         margin-right: 0.9rem;
     }
 
@@ -660,7 +660,7 @@
     }
 
     .operations-title {
-        font-size: xx-small;
+        font-size: 1.2rem;
     }
 
     .operation-list-item {
@@ -670,7 +670,7 @@
     /**********/
 }
 
-@media only screen and (max-width: 1480px) and (max-height: 384px) {
+@media only screen and (max-width: 1000px) and (max-height: 384px) {
 
     /***** page 5 part 2 *****/
     .report-title {
@@ -717,6 +717,14 @@
     }
 
     .report-text-container:nth-child(1) {
+        font-size: xx-small;
+    }
+
+    .report-side-title {
+        font-size: x-small;
+    }
+
+    .operations-title {
         font-size: xx-small;
     }
 }

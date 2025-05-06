@@ -283,12 +283,12 @@
     .div-triangle-down {
         width: 14rem;
         height: 13rem;
-        font-size: x-small;
+        font-size: 1.4rem;
     }
 
     .page1-title-down,
     .page1-title-up {
-        font-size: x-small;
+        font-size: 1.4rem;
     }
 
     .page1-title-up {
@@ -327,6 +327,18 @@
     }
 
     /**********/
+}
+
+@media only screen and (max-width: 1000px) {
+    .div-triangle-up,
+    .div-triangle-down {
+        font-size: x-small;
+    }
+
+    .page1-title-down,
+    .page1-title-up {
+        font-size: x-small;
+    }
 }
 
 @media only screen and (max-width: 750px) {
