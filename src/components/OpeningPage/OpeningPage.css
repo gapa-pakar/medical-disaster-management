@@ -4,10 +4,19 @@
     align-items: center;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
 .logo {
-    position: absolute;
-    top: 31rem;
-    right: 42rem;
+    margin-right: 1.5rem;
     z-index: 1000;
 }
 

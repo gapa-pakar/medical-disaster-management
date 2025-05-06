@@ -68,10 +68,7 @@ export default function OpeningPage() {
     return (
         <div className='home-page'>
 
-            {/* logo */}
-            <div className='logo'>
-                <img src={logo}/>
-            </div>
+
 
             <div className='home-page-subjects'>
                 {/* Circle and triangle layout for the first subject area */}
@@ -89,9 +86,18 @@ export default function OpeningPage() {
                             {/* Main title of the first section */}
                             <div className='subject-title1'>אירוע הרס רפואי</div>
 
-                            {/* Buttons for navigating to different pages */}
-                            <button className='home-button' onClick={() => handleClick(1, '/page1')}>לומדה</button>
-                            <button className='home-button' onClick={() => handleClick(2, '/subjectsPage')}>רענון</button>
+                            <div className='logo-container'>
+                                <div className='home-buttons'>
+                                    {/* Buttons for navigating to different pages */}
+                                    <button className='home-button' onClick={() => handleClick(1, '/page1')}>לומדה</button>
+                                    <button className='home-button' onClick={() => handleClick(2, '/subjectsPage')}>רענון</button>
+                                </div>
+
+                                {/* logo */}
+                                <div className='logo'>
+                                    <img src={logo} />
+                                </div>
+                            </div>
                         </div>
                     </div>
 
