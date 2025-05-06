@@ -4,17 +4,16 @@
     align-items: center;
 }
 
-/* .logo {
+.logo {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    top: 31rem;
+    right: 42rem;
     z-index: 1000;
 }
 
 .logo img {
     width: 4rem;
-    height: 4rem;
-} */
+}
 
 .home-page-subjects {
     width: 95vw;
