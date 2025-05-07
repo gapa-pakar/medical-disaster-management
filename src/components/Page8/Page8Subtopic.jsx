@@ -86,7 +86,7 @@ const principleText = [
 
 // Data for the true/false question
 const questions = {
-    title: "סמנו את עקרונות החלוקה לגזרות הנכונים:",
+    title: "סמנו את 3 עקרונות החלוקה לגזרות הנכונים:",
     correct: 3,
     info: [
         {

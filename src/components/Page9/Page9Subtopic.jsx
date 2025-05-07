@@ -5,7 +5,7 @@ import './Page9.css'
 
 // Data for the true/false question
 const questions = {
-    title: "מה השימוש הנעשה בטופס 101?",
+    title: "סמנו את 4 הסיבות לשימוש בטופס 101:",
     correct: 4,
     info: [
         {
